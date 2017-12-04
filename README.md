@@ -1,4 +1,4 @@
-# adventofcode2017
+# Aron's solutions for Advent of Code 2017
 
 FIXME: description
 
@@ -32,5 +32,5 @@ FIXME: listing of options this app accepts.
 
 Copyright © 2017 FIXME
 
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+This is free and unencumbered software released into the public domain.
+
