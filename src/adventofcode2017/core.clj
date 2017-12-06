@@ -130,10 +130,10 @@
      [ring (first iseq)]
      (recur value (inc ring) (rest iseq)))))
 
-(defn spiral-offset
+(defn spiral-rung
   "Return offset (diagonal jog) for the given value."
   ([value]
-   (apply spiral-offset value (spiral-ring value)))
+   (apply spiral-rung value (spiral-ring value)))
   ([value ring base]
    (if (= value 1)
      0
@@ -146,8 +146,8 @@
   "Day 3. Spiral Memory - Part 1"
   ([input]
    (let [[ring base] (spiral-ring input)
-         offset (spiral-offset input ring base)]
-     (+ ring offset)))
+         rung (spiral-rung input ring base)]
+     (+ ring rung)))
   ([] (day-3a day-3-input)))
 
 (defn spiral-sum
