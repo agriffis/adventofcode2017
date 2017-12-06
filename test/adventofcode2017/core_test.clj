@@ -28,3 +28,11 @@
   (testing "Day 2. Corruption Checksum - Part 2"
     (is (= (day-2b day-2b-example) 9))
     (is (= (day-2b) 333))))
+
+(deftest test-day-3a
+  (testing "Day 3. Spiral Memory - Part 1"
+    (is (= (day-3a) 419))))
+
+(deftest test-day-3b
+  (testing "Day 3. Spiral Memory - Part 2"
+    (is (= (day-3b) 295229))))
