@@ -820,8 +820,6 @@ xzvfbf fopmfxu mvftgr mfupoxf coyhof talcc vpkslo")
 (defn day-6b
   "Day 6. Memory Reallocation - Part 2"
   ([input]
-   (let [wu (-while-unique (iterate redistribute-bank input))
-         uniques (mapv first wu)
-         repeated (first (second (last wu)))]
-     (count (drop-while #(not= % repeated) uniques))))
+   (count (take-while-unique
+            (drop-while-unique (iterate redistribute-bank input)))))
   ([] (day-6b day-6-input)))
