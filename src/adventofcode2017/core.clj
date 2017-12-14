@@ -1,7 +1,7 @@
 (ns adventofcode2017.core
-  (:require [clojure.string :as str
-             adventofcode2017.common :refer :all
-             adventofcode2017.day7 :refer :all])
+  (:require [clojure.string :as str]
+            adventofcode2017.day9)
+  (:use adventofcode2017.common)
   (:gen-class))
 
 (defn -main
