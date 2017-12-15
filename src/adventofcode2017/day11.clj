@@ -74,18 +74,6 @@
      (apply + (vals (optimize-steps step-counts)))))
   ([] (day-11a day-11-input)))
 
-(defn day-11b-brute
-  "Run 11a algorithm on all the sub-paths to find the max distance from
-   starting position. This does a lot of work because it has to re-count
-   the steps every time."
-  ([input]
-   (let [steps (map keyword (str/split input #","))]
-     (apply max (for [length (range (count steps) 0 -1)
-                      :let [steps (take length steps)
-                            step-counts (frequencies steps)]]
-                  (apply + (vals (optimize-steps step-counts)))))))
-  ([] (day-11b-brute day-11-input)))
-
 (defn- take-a-step
   "Take a step in any direction, update and optimize the step-counts map.
    For example, given step-counts {:n 4} and step :s, returns {:n 3}."
@@ -94,25 +82,11 @@
       (update step inc)
       (optimize-steps)))
 
-(defn- count-steps
-  "Given a sequence of steps, generate a lazy sequence of optimized
-   step-counts. This is like mapping or reducing over take-a-step, in fact
-   its raison-d'être is that we need the combination of map (generate a new
-   sequence) with reduce (accumulating a result)."
-  ([steps]
-   (count-steps {} steps))
-  ([step-counts steps]
-   (lazy-seq
-     (when-let [step (first steps)]
-       (let [step-counts (take-a-step step-counts step)]
-         (cons step-counts (count-steps step-counts (rest steps))))))))
-
-(defn day-11b-incremental
+(defn day-11b
   "Find the max distance wandered from starting point, incrementally by
-   mapping over count-steps. Given the puzzle input, this runs 50x faster
-   than day-11b-brute."
+   mapping over steps."
   ([input]
    (let [steps (map keyword (str/split input #","))]
      (apply max (map #(apply + (vals %))
-                     (count-steps steps)))))
+                     (reductions take-a-step {} steps)))))
   ([] (day-11b-incremental day-11-input)))
