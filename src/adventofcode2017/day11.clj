@@ -89,4 +89,4 @@
    (let [steps (map keyword (str/split input #","))]
      (apply max (map #(apply + (vals %))
                      (reductions take-a-step {} steps)))))
-  ([] (day-11b-incremental day-11-input)))
+  ([] (day-11b day-11-input)))
