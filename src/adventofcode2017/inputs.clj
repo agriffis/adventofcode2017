@@ -1,5 +1,3004 @@
 (ns adventofcode2017.inputs)
 
+(def day-1-input "77736991856689225253142335214746294932318813454849177823468674346512426482777696993348135287531487622845155339235443718798255411492778415157351753377959586612882455464736285648473397681163729345143319577258292849619491486748832944425643737899293811819448271546283914592546989275992844383947572926628695617661344293284789225493932487897149244685921644561896799491668147588536732985476538413354195246785378443492137893161362862587297219368699689318441563683292683855151652394244688119527728613756153348584975372656877565662527436152551476175644428333449297581939357656843784849965764796365272113837436618857363585783813291999774718355479485961244782148994281845717611589612672436243788252212252489833952785291284935439662751339273847424621193587955284885915987692812313251556836958571335334281322495251889724281863765636441971178795365413267178792118544937392522893132283573129821178591214594778712292228515169348771198167462495988252456944269678515277886142827218825358561772588377998394984947946121983115158951297156321289231481348126998584455974277123213413359859659339792627742476688827577318285573236187838749444212666293172899385531383551142896847178342163129883523694183388123567744916752899386265368245342587281521723872555392212596227684414269667696229995976182762587281829533181925696289733325513618571116199419759821597197636415243789757789129824537812428338192536462468554399548893532588928486825398895911533744671691387494516395641555683144968644717265849634943691721391779987198764147667349266877149238695714118982841721323853294642175381514347345237721288281254828745122878268792661867994785585131534136646954347165597315643658739688567246339618795777125767432162928257331951255792438831957359141651634491912746875748363394329848227391812251812842263277229514125426682179711184717737714178235995431465217547759282779499842892993556918977773236196185348965713241211365895519697294982523166196268941976859987925578945185217127344619169353395993198368185217391883839449331638641744279836858188235296951745922667612379649453277174224722894599153367373494255388826855322712652812127873536473277")
+
+(def day-2a-example "
+5 1 9 5
+7 5 3
+2 4 6 8
+")
+
+(def day-2b-example "
+5 9 2 8
+9 4 7 3
+3 8 6 5
+")
+
+(def day-2-input "
+1208	412	743	57	1097	53	71	1029	719	133	258	69	1104	373	367	365
+4011	4316	1755	4992	228	240	3333	208	247	3319	4555	717	1483	4608	1387	3542
+675	134	106	115	204	437	1035	1142	195	1115	569	140	1133	190	701	1016
+4455	2184	5109	221	3794	246	5214	4572	3571	3395	2054	5050	216	878	237	3880
+4185	5959	292	2293	118	5603	2167	5436	3079	167	243	256	5382	207	5258	4234
+94	402	126	1293	801	1604	1481	1292	1428	1051	345	1510	1417	684	133	119
+120	1921	115	3188	82	334	366	3467	103	863	3060	2123	3429	1974	557	3090
+53	446	994	71	872	898	89	982	957	789	1040	100	133	82	84	791
+2297	733	575	2896	1470	169	2925	1901	195	2757	1627	1216	148	3037	392	221
+1343	483	67	1655	57	71	1562	447	58	1561	889	1741	1338	88	1363	560
+2387	3991	3394	6300	2281	6976	234	204	6244	854	1564	210	195	7007	3773	3623
+1523	77	1236	1277	112	171	70	1198	86	1664	1767	75	315	143	1450	1610
+168	2683	1480	200	1666	1999	3418	2177	156	430	2959	3264	2989	136	110	3526
+8702	6973	203	4401	8135	7752	1704	8890	182	9315	255	229	6539	647	6431	6178
+2290	157	2759	3771	4112	2063	153	3538	3740	130	3474	1013	180	2164	170	189
+525	1263	146	954	188	232	1019	918	268	172	1196	1091	1128	234	650	420
+")
+
+(def day-3-input 289326)
+
+(def day-4-input "vxjtwn vjnxtw sxibvv mmws wjvtxn icawnd rprh
+fhaa qwy vqbq gsswej lxr yzl wakcige mwjrl
+bhnlow huqa gtbjc gvj wrkyr jgvmhj bgs umo ikbpdto
+drczdf bglmf gsx flcf ojpj kzrwrho owbkl dgrnv bggjevc
+ndncqdl lncaugj mfa lncaugj skt pkssyen rsb npjzf
+kdd itdyhe pvljizn cgi
+jgy pyhuq eecb phwkyl oeftyu pyhuq hecxgti tpadffm jgy
+zvc qdk mlmyj kybbh lgbb fvfzcer frmaxa yzgw podt dbycoii afj
+zfr msn mns leqem frz
+golnm ltizhd dvwv xrizqhd omegnez nan yqajse lgef
+gbej rvek aehiz bgje
+yej cphl jtp swe axhljo ddwk obwsq mnewiwu klddd
+ipiev henods rpn qfpg gjfdgs zcpt sswab eosdhn teeil
+gzje ydu oiu jzge udy sqjeoo olxej
+mgn gox tcifta vzc lxry gox gox mvila qdl jipjnw dvu
+hxk xhk unhdmdz yomze povrt nbww bxu qqsqc rvuk tgffy twddm
+fyx fyx nzkm fyx
+ymnoc zogudq yncom tqrob sidvy dfuu ccjpiej yidvs
+bxebny akknwxw jeyxqvj syl cedps akknwxw akknwxw zpvnf kuoon pnkejn wqjgc
+kcebrkj zmuf ueewxhi mgyepbr nleviqc dez
+argavx fqguii gebohvw klnrq rkqnl goevhbw
+ywqi abwi eswph nlplbl pswhe lnqx fpgk lllnpb
+abpb mpkw ampey yapme xnuyj
+tmuaq asd bhbs sqmbsnw wsbnqsm ydwdncn rpa vrllkh
+dnltf cck djy ydj
+wywwl scezo clowuz dkgqaj dohyzcp
+diimshr vlmsnlj whqb dkicau ckdaiu terp kgcii npqc vvzrqzv nol
+wfpxe sqf tbb ruqpcq zfgb
+kajykuz tsxgtys vuz kglmgg ihnnn plyjxj rcrvo mij plyjxj jqiur
+pxs hmet dwgvd mvhkvn cjxg yvid vmhnkv kwxz rfemsua wdgvd okixk
+lzwxas ddtyeh ivyama crrhxdt hedytd jfw
+vjfv oyd fvjv kfwlj mradbx mckseee xradmb
+llga yytxyvj lstspek lstspek lstspek
+fabgf wgop fabgf bvsfoaw
+grqnbvo tntomdw hizg tmotdwn
+mau ufkw cxfi rhehj ebe xyv rhehj acxngo arl qtl rhehj
+kbkto stqjtm tpcwshj saerkrt pffj dthp pfjf axc gwmmfdw glnqtdy xmskw
+veff zqm hzhxap lgwnwq twsdk mqz xbbarbv cdx fhnwt qjcji bbvbrxa
+fjw eds hofskl nkbsv des hvx xyn
+qzort qzort qesz rtq oonk vwzlw wapoj ifr cta
+pja hvy nhjg paj smtfe fmtse
+xvi tcjj xvkjtab nqftt aumijl xkd cmilegf hvsmodx uuo igmcelf mslkq
+mdhezgv lelzy kzfvsqu hvmvaxw pxiqjc hvmvaxw kzfvsqu
+hsicsav csshrhx znojm eapi lhmzq bbwnz seao gfk azk
+pup xtgjyzy wqt ijeektl
+ktwh qdegzs btj pfwzzho
+xdkmdm izqtjrr iqbke vtp
+fmrbpdr zpccv tmtwx tmtwx tmtwx bys
+ehphfgq idd ehphfgq ehphfgq uphe hvrc jcscne nbnslqy
+xzqucgj fcih fljk barz lvln hcfi azrb
+cmfmclv mfgvifw rnxgn jpg bsnq wnduzj ymsdx smdxy pqomf
+rlqsm qrsml emts qsmcowv scmvwqo
+tshzkpa zwtpda ftsiwo nil tpawdz kjpa ptzashk
+mnep sfc swjawtd vnwud gyulluw zpa kmwyvln evd btnmoi dnwe
+jwq scepq redoxmw rbdzsa wlkzso kxpm bttg vxuc moxwdre ijtdd rzsabd
+wpvo dsjox amuwjm pls lgwksva ctakgpl rmsjj lzwwpr zzm udg
+bji obbn tmwyc afpmkxr glvrd kahhgpq rna qkxyntp vmd mloshc
+ymq rtnr nxjzm pqiddrn qmy vgxw ull
+mmzk ikge zhtzhs xyo qwe lll gjjm icetq qgrr mzwqa knec
+kxomfck idlh xrbowo nyetbnl qskh xuwkkxe upmmmf zhvuyp
+srcwyhl czgr xmhuws jueyh xcuib xhsuwm bxuic
+crkueh beyxopz xpyozbe dxgadw qktmce rjropjg
+lbktun imdpcp fkssp fhcpt fehho jqdnt aoewa
+jmun pynzjo trs ijwcc pelf oft pcsqdxg zvql
+mneaaq vjrg jidlrzz phd mvxpivd ldkhu
+sao xqw nrukn gatkz quscpsx vmz oscoeb
+goi wzxhb rrk aylqqcd mlcbvvf ororn heptid kdu byevr
+qsj lsbieef deez vzwdx hez iwd
+lmgfb keqt mqbsuis ogrr errbi xiqe xsszacp
+ato hmk zfjaj kmh plxup cida dqd pfwh nkbxvpr buajw pxkrvnb
+cli bdwu vrwott vowtrt grle
+zisgks ciuaqr zvk tcb kvz ugmtv
+oegrojm wofpwp gnaocx rweyull ellhwow dtefylf dqsz oiw varr bcirpf oxusz
+oydkmib oydkmib yefts gbl gbl
+sruwjk pgkrp kea gppkr zdcky cfljh
+obpxbax jhpcrj slcsa lgd fborz vvpaus wsrpsws ifijuzo
+rixz jwh uhdaf hoacv hdfua
+kntk qprmfow kntk tbmcjx
+vnqe ooyxtb ixl hdmnpn orpz ykspl xromvj kowtq wmho gquos
+ynk xjjqw sut lmtub bmtlu zdo dztlk bpkuul smhpx rbczg
+zals csdbe sbj dibicq kdfwwt
+coyy pjddlfc lwvhyms ldjdcfp ryubz kfwst dqjrjja jtv jjjaqrd
+jaexhms iqoiln ewgyr exmnrr fsr lgmyy fdofhn
+pjgyn hfoz zbcnz nczbz
+ovntivq vcey vdrkse giu ohyaxy ionyy fvpn yvwrgrv qta
+yelpz htbk njgeyub tggh mdthzp fwyux rduqli twlhfp pnh gywif ttn
+yxhsbil vplsmmx rgtq grsf lyibxhs hctnkfr awg lmloz jroy lpgb wga
+kzytass szyksat tyskasz ehmhhu
+jkus hwjv ymnnkk yffugg cvtnits gbl lywkn szihcn dbrbalf rxqpbqh
+koyfcef wkom mwok qgjrytl
+slmhry lcr slmhry lcr
+mvoxbt cfkz purnsui xar ouhtc thbx
+xcdifw kvvxyrj knac qmypw bou tmukqy eusgaoo bktiu
+ablgnhb axumg bwpxnjp zqpc vtw ghhoxu zqpc znfpvl ghhoxu jlg ntdk
+vmvc cdkhrx cvz rvxk mmcuo udpcayd lsmm gufduzt linj
+mgyeqkv hqionh rgnqgz kkc qrgnzg egkmqyv topdp
+koa dimwx gjxa atlfdy
+uuez ueuz zeuu ezo daq
+ofpaw bgomvmt mqa dexpy mbipd epyzcoa nuwrh vwly xppz qkjrleo rwhnu
+wok grxk lchvtg plrzr lwaax cfeu ijapws dmkdwc cfeu
+zkd hysxxip hlydw wicsvy gbwoaw dapre ktjn dzg uri
+blzh hblz qgmjceg fyf
+vkhpn xnc ogva pjrh cxn hkpnv
+aja cldzta tdcazl lorr fwmxxh knilf ges tdhp gnlo vihrl
+ucpr peair nlbmc msfg
+trv ppq bmo xqd vbui yegsr xqxawu fvuz aclhspo wnan
+loiq fvg kare rmgq hir rzo ossd ziw renh ygtkjys vda
+xmans kio alexs ujekfl vvf ddghn
+fcxvsf bjuytet zrzsobo uhn mlfzhlq bjefs
+zys htlqvky plno pbcqfuf fjwc vshkxrl lonp lyzmy dqmui vyyc glad
+tlc krhcter krhcter bolk tlc opryl
+idcii dverl uswb wusb zgax zhbt gjsnlso yhs
+cti npri rcbxjdw ollj nirp ghfvxzh
+blyhug aflnrrz zudyw ccnstq cyoju jxtqoj ntuknjq gunjiwy ycuoj igac cqctns
+bul yehpnw jifjrhc ifetu ufrodp hqzpeqf hdvpc qtvgxg ibb wcxsitx xztshb
+xzct scetn eoaufyo jtudgkx xrpgxip lpubtq juezstc nuc hokswh obkf ipbu
+nfq lwpmn qltal xnphsqs zlrgf iewtrtd mqzsob duokpy kfbqs icg
+vil zjz xkqrvni uay ystq
+terrrnt lnfg clm lbs ptpiy ybcuup ayzjm pqugx lmc yppit mbf
+dtajh vqivg vnblt fmn qxkw stiwna pclrrr fro khu wbslnqp tjyosu
+uqlehn tjuiy obt uedct bbwiq uxndqn
+hiqfovy xiimca zwne ivunvjk cmctzi mxnnrx dclib xzaoq ieztkg
+shpr xuorihj chuwq poadbo mhtvex gymsp iltgl sypjfua fmyh sgiv
+alv nxjt txnj bhact
+vjvtrex obmrxk fgigs meixbc fggsi awi rxdjpeg
+ypwo oicmbdw xbpeeyj uabzj cjvutvc oicmbdw immtmks
+exijri hogl epr gzdqyur xiiejr pre ihzlgzu
+rlh qfhx lrh qmvrx
+kogq okhd mivmivb mivmivb okhd
+taekt nhjaa znbaahn iaospxy jawwf
+ytdvq ghtqwud jkiig mre kzmmjxu jba nwpykc
+ktyzr aczd exgadhb uinrgac izazxky yyfe
+yrifb qgc lsiuapg teyelxn ugezu
+wdzkc ltx fkhncb hwrecp kfbchn sfcpc hjvq
+rjdjyt ahwxh nvggsmx lmz oshd xbcik powse ahhxw yhiq gxmgsnv
+qdr qjnam gag qjamn kooek mqnaj
+pza gml opf ilfbblu kjp luilbfb rhfrzgp ixagj ofp
+yphz runy dhull bozcsgk wfxekrd akgkbz urcphc
+tfyxwol lhcl npik beug
+szatel yfkve yfkve lzqhs
+yjzqon pcjibu bdncmcl kczuymm pbmg nyn
+rerqvs aoxucwi pmstl sstawu joqu abvcchg mvgjn mslpt vhmfkr utusuh
+gqbec jjpqdh yeaiavi nledfi jhzwc vyxjpf momnm vnknjs nvgjzik ipm
+psirt rispt lrkgma irtsp
+jbbaph xvunete gsvnr mjd ifxhpry cpsx hmuokkx vhcm yth shrrl zbhd
+gfa bcmlxtf sqyanrp cugg qxfvftz pbl ujsgc jajxltm gugc oil
+xjuhyg aht vmyvzhh oby oyb ybo xbybgmx
+atfk qjudfzz mky tfy
+nxk yzy jqgg qxgjt bevvvv efi xcbw bohc zaqlqjq
+hdc qpnx ygmtqw acvoa udboxw dhc klh mwgpk xfpuri
+cycgbkq skwhyf skwhyf veaqss skwhyf
+jnezf jowjt vsdu uck scgxd fvopomz vfajslp
+djvi epgkyqn apzd cpm owm kpwih fsr adlhqu jicp pmc
+erxlmhj wqxvofi ugj ttrmtsb
+omku vmrgoy tdicbje ewml dfnwbap
+gpih pyt ptsmzc gmdbu rqxkqmz objm nurxjz oozbere ztxug koth
+jpnl jpnl dmeh qed
+intdwv ksgw qwlzhq zpd lrl mwjl dozrjwq aujbet bsnf vhqyg
+eqs uot qyz xor aem kmrh mrhk jqx tsbrf
+irytjab mdzm qbb kkjt gofiwo xgbovg kyeyxqn tcks tljhx
+zgejy qodgah nqavvx xnigdvt
+eqve bizrxq lkhz yzwxgt nwe zfe sxypkz xnssept
+bxqn lkfg yfxbszo sphwifz wnj crhbq dvokzw
+vzn afatwye ogzvnu vnz rfjba xtugnj kpbgly ocsjd
+xrc cxr rahv yvhk khyv bed ctgbuq cmqwpqa jlbg hpj vmesvw
+jbshkya dgqw lfl mzcch jxsg czcmh ifruvlw ufwrlvi xcczlol cqqchmr
+rbk mhn tnmqdc sxnnn kvoa mhn sxnnn mgemob ieiyajs
+cqi ghxg ghxg ghxg
+uqwdxn qli gdtkngp gnptdgk udxqwn
+dmcczr dnjaqc qwdta rhrbi hkdwe qdjcan peic iulaz xns
+tcmppb nzq ecy sitdud nft ecy afrbf wvnc vmfpzx tcmppb cgb
+plitv efnpq mjqav nrxxo izg lpitv rwbzdo rdbzwo
+day dntga adtng agndt hhvtd
+yrg iudsh gyr ryg
+qttyeew tco flq bszw jkzftc wdh efcwnp mja rfmju
+moch prkze uslzyv plhjuy kxczyq qlmm hgq
+xtg ypz izy ixg bvs xlqgj xcy sepza abiylsg
+wxvsxn bqag jnlzgxq ikxwa dfd plqxl xlgqnjz nuqvoyb emhodso gaqb
+bzjdsm xmxkj fhuqn gauyw ntl kjxmx zcxdr vrds
+ofjcc uxyzlk ofjcc ofjcc
+zwosex kkvwobl cpudsmb kes zklf bayuojr otqnyr udbbs
+iqpvzh ybds piovrh oivprh voprih pov sfl
+upns cpeelht xboyk itb hsxdmt dnwgfbw upns fygf kwdpxzm mli dyy
+djwutl sikh shki ikhs gecd jqkon trqyw
+prbbdf vdp bvvfjcg ydqb muxygg
+vhpurzn psemqe xwqfk hrvonxu nxkxacq
+xicmhss tnpja qiad woipfy uvadcq usljh hzgs jntvfv wzikk
+mmupc twntp upcmm pumcm
+qnisuzy lppnfd uiqr eyqbain uxlp eyrfwjo olgkrps sbikam zin vckr
+nmokl skfni jcdfot njzqeaj nqzjjea
+slmaxx offfzqp wudicrf nfn rwfcdui cwirufd
+paffi murnjd oyj lbtjdqe babuas dtqh qkt stapzl yrqlp
+eedc rig zmnfmn edec ecde
+bcfdf edovdj lacx nzvze sordvxj ybs ujh zvvvp rzstejg ueosuq
+xrrfsd okuvem znzlvmb jwzcb bfg bmuxbc qzwfry
+pqgxybd cvgra acgn ocd ancg fvfcx fbb bfb zfzv
+tmmv mpywyg fwl bnvcv lcnv flw
+xxnfbro papc ianru beuzx apcp rnt
+wuyhycj nrnc cka ebg rncn rvo wcyhjuy
+thh cmoog hwf imqfp okzpxd
+rzxiqt rtaiy ytria tyria
+cjkmro myif myif xyirn aqxlol wlhwibi dhzsen pzwgm bfbz bufjs qwffg
+mxhiui umiihx zomyll vfieccs
+yyntf rjk iivgj mwh rjk
+dsshx wsmaxhc xcwuelh rdsgtr wsmaxhc rgtsfj
+rdh nwlxiwu xsjzbpr bsgps
+ufyo vqtzkg kpeohu mxzt fyuo gawgaq youf
+hzbhut bxsnjwb zuhhbt zhhtbu
+pdz sgntypg ragev hrrji goitft yphnebs xjzoo sqf jsuzijq dsocb hcxg
+pptsq woomypc woomypc woomypc
+axcg wfbnpql ejqb cmnn nncm csvlc wraludb pkmp whtht tfpicer
+moom oomm ommo vfqeii
+xvrgpp rofl yxyrkb oage nypzau pwfnkn jxnhkw cyxsi clzb adwpuh
+mfbz vdtt muzhm wvwwfl ttdv
+cpqgvbu byc pgfrlkr aftl tqm zcqxi juu gnf ppovxh huoa
+konpcp lzordid jqng lwxs nqgj gghkxmf kyn ngqj
+iorhccj xfygc cnfr tysqc xpcyf vmjpitf nut zmrk mgbrtb tcblxwf dkadwrm
+kov jtmp xoatesx qxkilp rmggpfx ltpxzwf vko reqms mqq nps
+hjigmk fyqy wpuwe mwmso thsimfs okcmeyh mzqkez duzaq vzhyrm uyvpkox cwivpls
+ukoerf korufe zhs ntwfz hugem vriyk enfaib hrrcdgf zllsk vkiyr
+shkx khxs wntpjv qdevaw noqyht nwpvjt egh hgok mukdjfi law bzbvjz
+dquk kczxsq tdu trnkjs wqtdc ybvcb
+hlrotxn cumcjkm qwufgle ylm nejh hnje pvaigrx myl sfvsd
+szmvisn aywic vsnimsz iufmybr
+zjozr zojzr qmn ffrggdh wam dafvok
+nxkvlhr posmf posmf posmf zhlzb
+ywis kpqpyb qae zqxpuz pcj hbsfz ejlwa lajew znuom
+qxsl ussivur dstd avojo
+yoeagao egpaqm ymzf kkauy ivm illir wsvchne skmamvn nqxc
+cldo ixzzy vhk nra zhypgab
+qjdd ecxud tbuqq mpotbdk tjdpczn knncm tyy
+rbfc fhhjf innia tsjbbbv fmtcuup rapvhqz ebpzt whdbms gvjoy lykl fquvcby
+bihhfwi lhal udxz uwjwp dmb
+fekxamy uophet yzvv rqj zawlp ldrv mdymkzy taauf
+rcwxvmh edueui ltdyo xfghz dgjig senm ifj
+qcu fii axmgijj ifi oixjfsg jxagijm
+sdtyr rbdh yvnvq czzuig wro
+lot xkto cmpiena nht ozcg aotcw xiegl cyaouj und lsclep cexn
+pgihljk cmgmv sajhi zfvbqij ogwoc ajsih zmppe
+jexwkdp dwpexjk mzjydfu bff rubgdb
+yshfhx emkl hshxyf mkle
+dxgti jdo tkwprv pbxbrqd oiz gsbdphd qotu utfdnq tzvve bqc
+ovdf bshfxyl xspjpd vljdsm mgkd djlsvm mlsjdv
+etyia eytai sfq qafj xzgp ewhsn snwhe lhqp
+zjz mwh dorxm ges gexo rckwsa dltoq mmntha
+hqkuj ypsjcxo dixbe rmvnhjh ovnr
+edc iffaxc lolu xwrvpb gva vti vit
+ceuxq xbwejr lzyvm rozseit cwe mham fivpwj qtv omaktaw
+alzdrk tsxbuld mdbq pgbdtoo xwf vzalric nqe jqwlxsy cbtylu dtubxsl lqm
+rqjmjcs exjpn kpilcgu ihcm lfadjm mlri hpd vqs cxqwqhu twxrtk
+aeuvlcp aubvnw riedvz arypagp uuvg kliehx cokt ogh xsdw cdsyywv
+ddwrgvp bscaq bbfv qrbutp
+jpdg uey eyu uyarl zgbk qyhqq fdvlql zmwkp
+kbt bkt lebhpfu smrzt xalw mmwa zmtzfry tkb
+fcvcv oewfzu fvvcc mldww lwdmw
+ejrltsu sqoyx wfvsdbp bfdspvw bfir jqhgrmt ofdmrjg ysq
+jzwucwn erqjd eikq knpf cvk xvqnscy eei wvfjzmj xujq cqaim boev
+jqhkmr ipjpj zwno ybu krhqjm zqfyyzb dyciy
+ugwsw rpwteje qtvwi pwyhrzt hfcdfmc qbovk ibws
+ffy kdder qjookz bfvmvvq yjzuaj fvxllfb pjyz jcezhye fimyydt qjookz qjookz
+loupd nwsc yytvuqo ltcqxnf
+iho ulvxguz fxbf iqu ofjtmvq xhs ybbusd kxg mebdnah ucttcf zufb
+wzdb wumuhtv kef aavv buu xmjtlur faaccl wospwff bjasr eapfsi
+jau qzszci ciu inagax
+kui tqig fyovsp fvwol fyovsp mzth tcp nhoq
+ajdla wtpj amylu jly tvq wjqef
+ofqc einz bdze tows bdze eew
+avwavzt aesrsjv lbmpi hllv chdbul ezelxn
+imcprs cafb clfg rsjo iylqu nvk vkrq izezlnu vkqr tyhnv
+rwj zboui reh buzio wuhpvid cpzy jrw tsbuiby hmxwqr ute
+ixq luwbi uoiwsjh souz ysoubw uilbw ffwjvw ewzswoh hci zmfdaov whowzse
+xrhgqf xrhgqf giyv giyv
+toiqgzv gakg udgdlb wvi carrn pjyha muqclu
+wuxthi srtszr ourab hpds bakvy fnk yefe yfee doowxcx
+ijdc ujhvls xmy hwg yetsda qelbe nang xgywo wgh
+bhm icq cnam dec enksf qfctz pwxoo bdf cnma xoowp rbls
+jguzh fextz yax kesaunn waljo jltcza tfzxe dezs syi ebwxnks
+flvq bzgd clvqw ahtyvu xbdyv wssxx boscm grgl nqcg
+caskpli hqctxxc nwpyo wjlqfqf ebti dva
+wmsz fzpd ikgeq gti ejftoou ezs cqef mybojc rgwz
+mdaay yfppa pavl fuuvfkh hpod tpb dhxmia emdecm rbqcwbk vecyt
+neha rmvl ndp vlrm dpn debghi vyhvc
+bnp zkxdu iqqkesd abtlx hmjasdq kyvekr krt srrjyd oxmfev oot
+dumlcqd ccm hyir oritdz madjjw
+oakqrs advfmu verrc zkfdcn btndsp
+onlkinl rdtm bscfxre bnu oumyrvv kgc zkj
+tfxfsgm uwmic agswclg uofezgc
+wpfdyjn kjlihk etbot fbu scm gwccce xgownte wig cuaijbo
+bzbdk etozk qracb oftfoo lkooe
+xupzw vmxwu sis wzpxu
+gbz oqbgh jwgrru bzg kwmxcfc jrurgw
+agyjnyc tuec imxlult omwiyjg fiwnoqx nhmnro qtg kbr agyjnyc
+koiq llreotu elrtoul dubfvgy whq
+htm lll crzppb gdjaae nsmxzh gnfvn obiuy ymspzbo iuboy
+thm xlfrr pbxdfo mht tygi sapxgbv mmngzf dej
+eus seu qmstw ues
+yvfsw esut biblze kbjcpk estu xih qzki ezlbbi blzv
+ohq ugc tqqeo jygvpwm vfs ldnfibp ycbpa sml rmime
+kuuow gbg nzwdaf wiimtg lam oqmm
+wsbwkdd hda nqk ticz mvt
+gqbljyh zqugqs cjod sxwlqy qkfs wwvwvt dsojb qbhjlgy riusoa uosari
+jkphfx dbt les jsvoij rnuw mxmmchu dol vto swn
+qqxe vwvephr twdqlyg cvdu xjiych clooq vkwavl whvverp yuz vkwval
+txtbudi tiutdbx wqhx tws utgbf amh hmf izsez ooz
+egdube nhsxjs nxjshs xoy sjsxnh
+egdziod diodegz ejxn zogedid uhhkr rnm cyvvuc uqbl
+rbn pinwag sidwdwv jqdbe jlbemk blkeaqq ipfqbtn zkrbp
+bdryz sbh wxvn mhot wemsfm oemkff
+vxyn xvdwwo xhd vyca zxjaw vfkz xhg ofsphks dyq mmzzd
+yjrqsjf iiesdh envwyx rmtbmiv ggzsg ukx bprfym qmyqc vag ymho hjtoh
+fuxxrd wbweptd vkoffr wbweptd
+gfwcez smetli yjyh pslpz qyokpsm qsy cxjymg wqfkf obuq awz
+eqhm ceest kayf heqm
+rdi dti vntcf ewkmpvf jjwoihc
+sfq qlb xrm ocy vtnj zdznbal zvon stln zwnj wsgalvq vhphap
+pya jay mgnyo pya xmapdn
+hrwbj xhr gvwl ktq ktq gvwl
+rzgqi hjwtthl kxhggbl wepc hgavj ctmqug
+tzfwkc xeqfath iiuwq iiuwq dhwuvy
+gibagy smq getjofc lum msq ulm xuxu bilrus ily
+xlv ndrkch hdcknr nqltoze xvl
+wmc vuzlrj mwc atp cvpx atv ujatz
+hxpafgl ymjltv nvvpy ahycdk jhpdcks ettm lvqyw ertpivm dnezwxx usi kdhcay
+vrh hqyomv mcq ilwjbkz yprjxad
+ugv szfitxg zeluib pfj ijm zmiigxx gltxzz jzljhgh otskue
+mxp bilj jlbi tce yfted zxsqas ftyed
+ykasqv ehye kirmnl upmi dojwmw wzj ykasqv ifixn vreoypz
+kerbgub nnroqk onkqnr gbebkur tjhl knjo ccsem yozvrcg
+ygq evkoj wkn ffljhds scxeibh egsybeg mwvi vgjblj qda ywqpp
+hocvpl ozgkxp xgmj ejzyxm
+gernu kks lxe nxzv sypg xle goz
+xoatis fjp wzlbo dzkonz jtutyj vdonj swro tqclemv xhomap ymeqkua vaxcw
+mxcyjs ywyxndk wng vpftv nsuvu
+jmiyyhh gwser shgcu jmyg cjzegc hmhe eopg kmkan
+smdd dmds mgqhtkh qtamih haqmit skkcy
+dnj rmggy rgymg uburbao rymgg
+klcpjgq ons ajyv sqryt son pjlcgkq xlobdt
+piw shonk tzi mcdumz noskh tebolw yaypn
+ozm mvmjgtg nxj weommiq asnmhzq xjn uobztuo cqgjh utfb oydt ommiewq
+qlwgsc vvpe xgft ahpjc zjtx iyof scwqlg dxgcokx ltrefj xyzq rwto
+ggqdd dqgdg ggdqd kjkmmfp
+htzjam fjbg iagc xls iagc iydtf ihxl boa iydtf
+vhe nqj bwgdoi hhaoa qtulz
+axvyja hpdkwee hnryj prou rgadv oubjdqg knjbc
+caz xibj wqkzwe peioeya vmz hesy ftb
+dudwcr gupj sjrtzc xsqbb hiet nujv bebcvsj eks uuzlcx gex
+kywozi tfzuc mflssw hnxxxqt zzc tzfuc hkokuv mnjg lwkavjp lvpwjak xez
+izgh zfv cingjt dkf cknite qox vfz zvf
+ojpu dzk tehpgnt gntpteh
+glxfxa uxq ajtles ahgzn ajlste zwgc mrpu adz wuunwhc zda
+hdgdtn hnoyz aromkb qujfv yjgmn tbf atw
+uyvsv oaopjv uyvemxk ldpp tthe iisjk txr hebmd yxevukm rkziao znt
+ypdr mnwuzvw acpg kzwz ywbn wcrr umrnlbe lkult ljify azyhu mgqoo
+abmpl omsd xmyl mxyl mgoq kracrf ufm ppwi zpggh
+uxfdpv jnm vvc vchunhl ubv ktj mxolsxz
+fcja eci edzrb nlvksaw lhf ycohh tfztt xso ceub tyv
+rkwtp tcmmvv kufg cxui hdamg suuaej fgku cvjlv
+oldbgy riadoyo djsi wca zxoeq pmemqap aijxa
+nyy ruxcosx xisqoz yny jvzfpbe tlfdiaj ybd jifatdl zuzv
+kxwdz qvrvx svllp ergmme
+swjfuv eronk favcxfm acptbh pnbjn ciqcrlt rgvdnlt icgahb
+ddza xxfn use obqka bfzwjp gmf bld fyvde mxdfdl
+ame bmxbyf ame bmxbyf
+rdgby pyfog dybrg gdryb lpztd
+sntg impd uxgxai naoalb ntnk xgix
+oadpmqj oso criln izih oos
+ouzjq gtl ito xefqt phnv ouzjq hoyjjj
+mlp rboq lpm roqb whvp
+tghcw ggshevw dzsgj ggshevw kec ggshevw
+kmwhb kfcb mbhkw gemz fdh
+euve veue kplrq evue
+hikfiw bcdktj hcnawja gjasvwc vcht igrzly rkxijxe ikfwhi dvmp
+hvksis kafs ktcs sfyqzyt etctrgt vodwr wff tskc juobnm
+dpcsodn ehwc pglywfl yhdp mdiyzx
+ibog umftejh cfm pnxhna wqwx yabnk ygws dqw
+dezz tqw qism rarfe fpmlab xvbau irwtfs wwmoyss yvn xetqp xtqep
+pchqwk npsmd jefec qok uuc ucnpz rlkakn
+kudh rjysb xrdbx bkbmjfo xrdbx
+rogu ssdwsus voa ncw obkxsr
+tflf hlevus scq rrbpat tau wxsq wxoblt
+rzr lex kqdy whtj ffnys xlgkkff msjhy dimaq hrc wyde qkwf
+ghtwd wernjpn tdgwh olrfvmr edq gxvp
+rjirvf skhdgln aauit bipu mubjiwp kowz gyjfbjx cmgdqs
+aftfpbv agajyy aqjll vsf twh robpys lebt eav yribup
+sby ymkla sxkbfwl awmd nhb vlp
+kizvjj ycjswr jkzjiv vuy jijzkv jcs
+cwvch xzqfal tephz lqfzax cnkbdcr mql zflaxq
+jjxzwl himpra ssjf bibfiui seeaq pzse
+jogrn jogrn sqew jogrn oixgwr
+khonpyw iiyxir vybhc ndnxxv kzlt ipmncn
+okqkqu svbemi nfn ovd xgwy edd ujet nrrbv dde vdo
+jobvf dus asvio vaosi sovia
+knmz qbz nkmz zmkn
+isbmopr unduey impobrs hea zswciev sopbmri duuj
+ocs ntgnrdu kbvtzp cvyieu fiyn znmh lhrz ixtnzrj vktbpz lbpqx vzkpbt
+muduhc sabc dlyoisz kuaz ogpyepw yuog ictiiqt
+xjflsf nfklvml thfh uajnmby cichyj xxoqi lpime bxpyx
+riahifn bohbgd obhdgb jni qzvkf ybp hjkkwq ytutd cakcsh smfdoe tuytd
+iddku nccp zgtl yne ppzpqcx lwm
+refpcz uqt uqt uqt
+mtn czxkagb nmt caqacrg bcakxgz
+itxjii uethxbj vpds bsqod diqax inv zrwt doepe
+bfyaj nbvhg zmi buf
+dtre dkwdr nrapm qtfth odvt bbcnae vxuk gqm enlg
+ybt qcfozrk yzrh bfp euuozuz pzsdkxx mhi nbkzprb
+vpuhqn gyx caint antci vfep incat kqdakdx
+ddhi chgnjk ibg xbemitr mjtdph eovw
+ngbtuvq qdttlsg dbqhhwk bkrqze qdttlsg qdttlsg
+evn smvhi dgcmn xjo ascc ahbpj uvzc pwn tung
+ksu thr omg onvsqzz rllakar ysfjtfj grxwyx oawix gpk suk
+qvb iouav yhtndkd vuoia ouaiv
+kud kofcip hcczrgc cvvxxlk rvyamwe duthdzr dftun
+rgv ynw gph tmxwfup nwy
+dnc trawj kwzbx trawj zvp
+ogqxijy tbqtsg tbo vqinnlq jbvgl sfafh rve mcxqs ubh
+qccr lpv puuvdyb tydaflf uxic
+tlon tbfwkxg tlon tlon
+iytiz qjlqaqw uixb lnt zwro uzgxqfi gklgnqs zwgoidw iifk wkwdo
+tmvhxw tmvhxw tmvhxw fhiqpjy ejk kvysd
+cmphg xjjz groiccd dvetuk xbwa zhm lyi ohhd neg bxaw yil
+kdmzopy lxx bvhach goxmxu qbqvzcm qbbrhvb nrfom aixmio grpxz hbrqbbv lkucih
+bnqn phqr uycuxc mopyyfh bbpesqm stgigq stggqi cwtjm asqhpl imvlxj lbmloo
+pws iuvbvjr cwccm qbr srqnstz cjebq
+bfh jobkcy gtbroe lpagq icmax jobyck fbh
+ounqdo qrrr pwi alho rrqr beao rsioepe
+vrccqge qvcgrce cbslkjs qnclw rvmjkw
+aaxjns deupjs wtgxtp penad depbho tbrdt depbho qxg zhjxpgd
+drqfo kbp jfa jaf
+izn oczcitj cpae quvzqo iwwk jck idjdpm
+ecort zgcvxx bvh vrprsf
+fhubfvy ndcfjo kol hyufbfv hvpka
+kpt zgajpc rjvsxa gayznjd
+xeoixk peq kfu lqa mjnv mzvh bicl hlfk
+wyt imdx lksy twy
+xeptp ilxs qbsqzwn rsy slxi xtpep dsdkekl
+rotvbt fuirp elos ciu nhx bxej trmtx ixn xbpc vrxtma
+skcprn yns sao ghlq vftezvc aaryahy telt
+fkaov gexa xijv yiksa xega dhgw okfva gxxs edkecag mqbqvrm nrzcqub
+ljc jujxeof fdj gdzjzr mabbktu pmyrfv uspven zxry snt hrah
+nhujhdr jdhrnuh midm bbavhpp cpjk zmpbasz eptrpou znq zqn
+ywzfq wuu lfflon uuw rke qzwyf hjbms gakx
+yqrq zsk jzn uuuzrml kzs lseupsg waynfh blech
+gwyqej weyjqg uwuje uujwe
+lxud rnwkc bgygkh csq rfvtos ystqp keb gkakodj uthcce eqxifl
+elvj evj rfwo vvgkosh aarcgjs utsbh orwf jxcqvmh uowmktl qtgf
+bqszre oxntty ombwiz mbiwzo
+ccp iilcc tacf czk giwv erqi jgdfah wip xtrzhv wosvbyb
+gymyw rwsxeg gvydr izyk spsonkg knospsg
+djj tbr tbr tbr ice
+yyzh zkykapw puydtik ysxc hjumhsd cuhhw dnnhida yyzh lnklymg
+nhbcxsu ccrbbyw scbxunh ghxrkqh brcwcyb
+latdaav sexa ipzuzjl ayusb etb fshh
+giz akqd vjmabii arfuzgv efrww jxkvolg efrww vrnzgbx
+jmcc vqy adkzj fqrkdo tjrczp ccmj cfponk rptzjc
+jsviu sraw imsj fujm cdf xwqhl lhz ojejzuy trtqblg
+ibz dulm muoq quom etvjzxn tuhrpp jfukac jqctqn qhgbae msgmcit ludm
+zgx bpfa elhp rnyqtq wyceube nkeuxz
+lzxfo vygpecv jszacku zfxlo
+cpmv ysaaj xnp wbvqg hrsiuj venjxna yeqvwmk ftaga dcqxc jgapb rqdixp
+xpbbe tyn hfdlu fto wrgzkou sxylv cqto wdv xqc pnu rapk
+pkrxypl wnu oipq tzbhnc gpug tgzf ofjb
+mvaz bwcv gll itgcye dessw szt gzimgeu bvmohh wbywyhc kzerxbr anjsive
+lhvnrzs qkmjwy pnyciwp mgp jfdz ghvtf yusfzg upab
+xbscukx aubulj snbcmc uscxkbx ddpucyg
+hgv ollh yzpjmpy fcicyae vhg gvh
+prd onyd iux oik xui
+zipadig nvewx cir lbpcusx dljqy
+ifyxzsc btmy lsu tmyb lus ldyzx
+egmyxbe ieasvek dylmj qahtatr uyqgbk
+mejjczw spj vaekp kdud
+vwan mgenld mnlged vpfuil euoxlr rclkpi dfknyoa rhthij kcyxl qaxab crlpik
+pqm eihogk iwml nuauxi ngilkoh jmu mbdi cqxz nblb rmuj zczdgp
+pswbe mtzch wbeps fxtnc psa aioff pas
+prwrpvz oadpqvz tgzrt giom pjyihh rxdir dmya xjolzxv
+khdybe obqkjn kdq jkvmgwo enpat wyw qjbnko waid msest wwkoyts
+yep liv ofmtpod imdd qyw
+afnrx jgn gxarpb myltj ggrsajy mdaobjo vbtn vbtn zlziz eds
+hqr kqu oub skoeqk icnfm cqvld aay bto
+rga odaf exoosh pwevx zpbd plaa xoseoh
+mbr gqu oxvchrt nqa larxmjx pfozej
+ozuo ywubjbg xcua eblwqp nfdvw hmhen zkjfu gmhgp bsyi ktprtf
+src vrysby srybvy znwjm hmypwdl gdmau pqe
+cldr crhi lbaq fbuduyn hygbz uhida
+qrxukq dygkp oaks soka oask
+vpido ajgfq pwlv hezt fmg epwrxo rqvjke iovpd hhkjm
+anxf ydl xnfa hqph olorp
+exydcg onxjm psqlbv ehz boar hze qsblpv
+mnzrvc ipj swg ijp sgw gdkntsd fzz grqwly
+erpq qghpj fay gci uglm afy
+jwbq hbxaub jpdilyt yvalrlk topl qup
+eczonk ftcc paltirb owz tihhe dglxory wthvqcb qdnxm lirejh alyxsr
+ooruaby gboyeu lkv arrz jcqyzl uxlfk fhmeony fcmh
+wzr xjb pwmf okqj adwcedy lkidve uwekxf asbdzr biub
+dikhur pxgh urdinjh wednf ulzdxs
+iplf byt tyt qnnlba pzt bednml ljjtkvo tjovlkj uwms xat
+htzk ltmfha xikeze atfmhl fchxhyz
+lqala bqwgcul vetaa xuxjau zcb wtdmomu wfqmpq sief uyblyz ahv
+aytvvo awm ojaaigg awm dbfaokz
+abq npcyld fzbfku oia qss jkxldm wgtmki pasgxi dieix rpqnuac tecnfy
+nmr qzfj qjfz lsz vnahex
+djxoo jzlkh svy xige
+tjlkkg glcuvmh fwzlhi ecun qlgulj hrfhyql qgdlf ofakqdf zokkvm gelxkq oowgs
+upfpk gfstjlv lxc rjd nhj sbq jpzsz zsjzp
+favd nzqfdid nekfjsf mtjndu
+sgdqx uvpuefv vhwrgd aivav gsqxd jdhfoq
+llaf cthbgy njrpw fqgkx jzf xqkgf lnrfrm gkxqf
+wzdwlc wisst alw kyjeur sjsqfcr tta bijnyn whfyoxl
+dtjr baxkj lmnyrlg nrmyllg
+mtgky xmwf zdko nnocxye gytkm ygp hixk xwmf
+maudjy okgjga uadjmy dzfrk omd
+azz ajdcqkd bcafn zaz dcjaqdk gylyzo
+xzvfbf fopmfxu mvftgr mfupoxf coyhof talcc vpkslo")
+
+(def day-5-input [2 2 -1 1 -1 1 1 -5 -5 -1 0 -8 -2 -11 -4 -5 -10 -4 -9 -9 1 1 -11 -8 -19 -14 -6 -2 -1 -11 -23 -8 -7 -9 -26 -1 -8 -11 -34 0 -22 -17 -41 -12 -43 -33 -15 0 2 -41 -41 -26 -48 -52 -47 -30 -38 -20 -4 -21 -17 -19 -55 -32 -12 -55 1 -34 -8 -15 -59 -56 -16 -23 -43 -5 -41 -56 -32 -67 -14 0 -28 -32 -7 -54 -19 -9 -24 -63 -2 -60 -5 -78 -11 -84 -50 -36 -72 -14 -30 -4 -62 -6 -1 -69 -17 -33 -32 -45 -71 -87 -71 -60 -19 -80 -11 -106 -45 -27 -23 -51 -77 -67 -103 -17 -98 -109 -91 -125 -68 -39 -34 -96 -49 -64 -38 -105 -31 -100 -89 -108 -69 -36 -94 -38 -124 -123 -79 -92 -42 -14 -87 -68 -17 -36 -21 -54 -98 -79 -142 -25 -60 -112 -99 -64 -15 -78 -37 -64 -15 -129 -32 -102 -74 -112 1 -146 -151 -147 -153 -4 -181 -22 -176 -4 -57 -151 -86 -121 -38 -137 -160 -156 -72 -73 -149 -64 -182 -117 -146 -180 -195 -27 -194 -191 -108 -153 -40 -149 -100 -120 -207 -83 -94 -73 -200 -95 -155 -94 -76 -9 -149 -70 -125 -49 -146 -223 -68 -139 -26 -132 -142 -165 -2 -45 -154 -129 -130 -185 -60 -34 -173 -91 -37 -40 -153 -189 -236 -95 -128 -46 -14 -53 -245 -67 -9 -208 -244 -198 -74 -62 -104 -51 -251 -48 -50 -115 -76 -79 -32 -82 -65 -185 -124 -32 -189 -124 -174 1 -273 -223 -275 -238 -200 -184 -229 -195 -152 -63 -150 -73 -44 -54 -187 -49 -250 -192 -290 -282 -266 -214 -117 -199 -83 -104 -251 -176 -262 -296 -39 -259 -87 -132 -166 -67 -194 1 -294 -8 -3 -264 -217 -228 -233 -241 -294 -210 -72 -307 -259 -33 -101 -103 -235 -100 -110 -253 -292 -134 -269 -52 -265 -15 -29 -272 -126 -210 -151 -308 -40 -40 -112 -268 -185 -346 -237 -287 -34 -302 -41 -25 -191 -29 -170 -95 -315 -278 -160 -220 -99 -126 -224 -33 -350 -76 -138 -340 -284 -268 -128 -238 -197 -93 -110 -120 -190 -140 -64 -217 -296 -103 -363 -199 -254 -233 -190 -282 -136 -174 -309 -61 -206 -18 -105 -111 -163 -287 -188 -145 -294 -251 -398 -265 -273 -50 -250 -376 -5 -357 -6 -8 -198 -20 -82 -158 -122 -196 -97 -183 -48 -428 -36 -88 -424 -35 -380 -109 -209 -323 -394 -102 -276 -153 -229 -320 -391 -7 -328 -127 -430 -102 -372 -447 -222 -401 -184 -183 -49 -239 -413 -101 -187 -289 -12 -418 -248 -279 -318 -134 -443 -272 -456 -143 -3 -209 -276 -414 -189 -302 -238 -241 -106 -332 -375 -400 -476 -9 -95 -412 -52 -127 -442 -278 -25 -446 -411 -39 -55 -80 -234 -361 -223 -384 -283 -47 -164 -18 -38 -87 -393 -93 -380 -493 -73 -150 -241 -378 -211 -516 -349 -520 -38 -397 -406 -16 -461 -276 -448 -316 -376 -156 -369 -216 -431 -309 -400 -135 -523 -40 -508 -87 -25 -151 -355 -141 -3 -495 -153 -438 -343 -161 -66 -455 -70 -248 -278 -548 -300 -337 -290 -551 -200 -68 -540 -476 -395 -245 -318 -424 -112 -556 -541 -94 -148 -542 -100 -120 -199 -569 -471 -298 -16 -453 -469 -50 -500 -84 -435 -579 -287 -522 -77 -83 -347 -437 -171 -231 -139 -350 -357 -221 -214 -224 -148 -125 -385 -255 -38 -320 -254 -517 -532 -80 -286 -58 -97 -390 -309 -548 -319 -323 -238 -297 -12 -312 -517 -434 -466 -103 -621 -448 -503 -72 -601 -287 -61 -577 -87 -143 -33 -482 -275 -529 -340 -279 -130 -512 -63 -109 -528 -22 -549 -317 -375 -377 -385 -23 -191 -138 -509 -40 -565 -559 -14 -547 -28 -159 -153 -585 -508 -582 -431 -580 -637 -561 -513 -243 -420 -298 -485 -132 -613 -157 -521 -596 -61 -420 -498 -577 -563 -354 -662 -264 -273 -111 -597 -466 -389 -345 -306 -102 -57 -596 -1 -45 -12 -619 -47 -43 0 -323 -9 -319 -529 -402 -238 -191 -487 -315 -65 -386 -110 -605 -363 -461 -6 -95 -95 2 -596 -454 -618 -83 -481 -283 -386 -247 -417 -707 -564 -603 -17 -712 -140 -336 -567 -443 -36 -476 -251 -735 -589 -198 -197 -476 -49 -736 -422 -383 -569 -732 -1 -104 -261 -352 -453 -273 -344 -66 -307 -698 -158 -238 -280 -207 -624 -491 -765 -506 -146 -616 -711 -650 -655 -393 -19 -315 -311 -572 -675 -533 -156 -373 -744 -142 -582 -491 -796 -777 -125 -483 -426 -510 -560 -700 -778 -407 -440 -409 -238 -738 -477 -147 -152 -317 -110 -323 -788 -601 -202 -517 -487 -726 -300 -1 -554 -448 -15 -191 -531 -568 -466 -527 -132 -254 -290 -8 -400 -655 -788 -376 -249 -662 -315 -378 -41 -793 -163 -29 -327 -839 -133 -124 -129 -673 -32 -605 -393 -664 -374 -135 -366 -717 -93 -601 -763 -788 -494 -802 -282 -443 -491 -461 -197 -83 -96 -162 -97 -161 -232 -144 -472 -118 -429 -387 -724 -789 -636 -298 -484 -720 -526 -382 -102 -449 -846 -525 -547 -696 -524 -272 -843 -286 -247 -838 -447 -489 -797 -483 -386 -775 -340 -772 -158 -293 -256 -432 -812 -273 -93 -487 -264 -594 -330 -712 -798 -131 -591 -539 -677 -455 -470 -108 -573 -57 -845 -383 -273 -890 -747 -913 -648 -625 -650 -544 -137 -490 -434 -734 -182 -355 -859 -835 -141 -536 -874 -102 -940 -359 -83 -800 -894 -712 -470 -687 -578 -435 -935 -400 -780 -814 -458 -892 -481 -371 -761 -348 -388 -891 -764 -297 -536 -695 -314 -336 -978 -379 -462 -597 -533 -561 -9 -474 -292 -560 -420 -828 -721 -769 -874 -157 -495 -771 -899 -571 -98 -282 -233 -203 -982 -416 -142 -993 -540 -979 -851 -506 -238 -292 -184 -695 -195 -632 -575 -962 -76 -546 -705 -13 -271 -222 -124 -380 2 -1003 -251 -525 -228 -644 -159 -624 -477 -912 -712 -343 -263 -88 -745 -85 -374 -675 -804 -610 -854 -511 -612 -964 -731 -358 -495 -946 -466 -364 -1053 -57 -101 -829 -155 -600])
+
+(def day-6-input [11 11 13 7 0 15 5 5 4 4 1 1 7 1 15 11])
+
+(def day-7-example "
+pbga (66)
+xhth (57)
+ebii (61)
+havc (66)
+ktlj (57)
+fwft (72) -> ktlj, cntj, xhth
+qoyq (66)
+padx (45) -> pbga, havc, qoyq
+tknk (41) -> ugml, padx, fwft
+jptl (61)
+ugml (68) -> gyxo, ebii, jptl
+gyxo (61)
+cntj (57)
+")
+
+(def day-7-input "
+vpryah (310) -> iedlpkf, epeain
+aqfemi (38)
+bwtsue (18) -> crdoq, lhxdfj
+eeyaxfn (72) -> idsab, jnhyc, vswgxoh, hivnzrk, afcsq, vpryah, dqiby
+vddsv (64)
+xnoux (41)
+apajk (61)
+fdgjgwt (13174) -> piofa, uxrros, ngiys
+tgjmrpl (43)
+jjxhgkx (1478) -> jncwn, tydjgm
+nbrqwvs (201) -> zzkzfln, htdimcs
+qcnoadr (70)
+wwcngr (77)
+deweh (1549) -> qaqof, kvyiqr, zfmqlj
+ygeoklq (12)
+bpszadt (35)
+bdlzzvy (98)
+fbaiatg (13)
+pidgnp (95856) -> ehlwoxs, hbldvzk, ezwzp, tylelk, jkxutle, kkflx, oucqw
+vijgqvl (40)
+ofjjqdj (46)
+vgsqrp (46)
+idqgxkl (81)
+nafzy (65)
+nxspzd (82)
+cnrwew (222) -> vnyaqgw, zooxx
+qhdqak (2571) -> vmgxg, knmmys, zkwplas, bsqpcne, xgqdjhe
+rxbrsd (28)
+hubvoh (152)
+mpwlly (12)
+rotzn (10)
+drswab (57)
+udkvb (250) -> fkvhdj, flhhbd
+coedb (62)
+fpwoels (35)
+huzzk (131) -> fqozst, naacbhr
+etxfihy (98) -> tgjmrpl, hdiprgd, hospabk, fvmws
+mbtin (67)
+yaawixo (67)
+kxcid (77)
+sibko (27)
+khshj (177)
+otnrfom (37)
+hzqpddb (16)
+ngiys (963) -> ybqzq, vcrgmn, ysmqsps, bwrenq, opomx
+yybtd (16)
+myhgys (11) -> daesbhs, qrmipn
+amhmm (64) -> pxkhwuu, gnbmz
+soiza (34)
+dqiby (202) -> fdklcbu, qcnoadr
+jleqdi (69)
+fdyuo (91)
+gxmdnq (42)
+wdnlqh (43)
+lmmffej (337) -> twjvtbu, suvwi
+qrrdb (94) -> zqvhd, vcgcmuh
+gkzpb (207)
+rfkdn (163) -> zpjju, bxwtlj, igzrzi
+iyegmn (58)
+johqe (47)
+nmfhgq (141) -> dzbnx, cveuc, sfrwf
+jknrln (13)
+hivnzrk (206) -> coxuqy, ewuohku
+xulpd (54) -> itzmwqp, egtem
+quqixmj (203) -> jykfxee, vsqcws
+wjkfdvb (10)
+fusiiz (47)
+awvqy (71)
+auztp (27)
+ghuyt (65)
+xzfrad (23)
+nvkhow (96)
+htdimcs (93)
+kwolrk (90)
+dhsyxu (35)
+chjdhl (40)
+gndjq (70)
+izxeuz (97)
+dgqquh (92)
+yenbb (51)
+wogrc (27)
+cijhcl (16)
+ebaevkk (97)
+mxikfk (23)
+elxfl (320) -> ohneffn, jyvhtle, sgymtmx, mitvkt, kaxvdwl
+aivprd (58)
+ujnas (94)
+ubdfq (12)
+ozuqsau (8)
+hlszj (23)
+tpdch (17)
+atgamme (26)
+nwlacty (167) -> vhuwgi, zaiopar
+kyizmdu (53)
+xgufltj (96)
+rqbjjuo (49)
+pkipyhb (98)
+mojsngw (92)
+bncmd (95)
+hkssn (463) -> gjpglfg, bqlmhj, cvseh
+mgoew (180) -> gqmbul, geqrb, oidjn
+fdvfx (58)
+mkohhbb (82)
+btami (41)
+ohbhyq (20)
+jnyvdz (98)
+sbzee (24)
+dyeds (47)
+xmendwz (76)
+dwybhqe (326) -> ftyilib, lhmhrpi
+dydlyj (88)
+cgtddkw (164) -> jcikl, jaxjy
+jircuj (729) -> qyqthsz, ctqaxh, scbjq
+xernf (34)
+ljpeina (81)
+dvvlx (16)
+itzmwqp (76)
+opbrn (78)
+ekpvnh (61)
+btbuwwi (105) -> btami, ffrrwb, niuvu, atzuayu
+ceqayn (77)
+gtgdmny (11)
+unqmapv (58) -> ofjjqdj, vgsqrp, ayogkum, ymerus
+phrrm (5)
+botmw (78)
+fbhxulf (40) -> flbumzk, csxdpl
+tdbwpcj (98)
+qdfzlv (73) -> blkcnq, idqgxkl
+cfiurqp (12)
+pejkmud (33)
+doqxpij (154) -> xaidhn, mcmijwy
+mmjpziu (38)
+ryjrq (69)
+dzienj (115) -> gybbvb, mbtin
+iisuf (42)
+mtfqemm (8)
+gwpzvb (48) -> qjlrpjn, prtah
+pkjykh (81)
+hgqesr (672) -> satuz, zozajw, hzauzw
+ayogkum (46)
+cdqkuuw (216) -> lhjpci, mlkddpw
+dvips (13)
+klvhv (34)
+kvypj (91)
+rcytc (700) -> doqxpij, dwybhqe, yeuaeqp, bpvit, ljhqql
+wadeqe (98)
+dqwocyn (1215) -> aepss, jtxphqg, gveca
+unbjm (40)
+qhwtf (97)
+afxazvx (49)
+pyraep (46)
+lwpwtbj (71)
+kasozsw (143) -> sayhdkv, ghhhiwl, kreehw
+xfjpbus (96)
+llalv (35)
+xpzadg (15) -> ydjrtcd, ebaevkk
+igzrzi (182) -> chjdhl, buyou
+skzxsyk (31)
+hontwg (58) -> pgnbhl, qoksme, dzlgor, gmfsl, sdvag, nbrqwvs
+smmdlo (416) -> cxgdzl, facddx, doehwd
+drtfi (19)
+uglla (19)
+mjbdmlf (67)
+ykhycl (496) -> xmkkpat, iroikgp, khshj, kxqhlbm, vfrna
+twvkgl (74)
+iuagzo (69)
+qxvpdh (28) -> qptzj, hkcghm
+poviv (76)
+knhati (51)
+uashrrc (50)
+ouiwlb (98)
+tzxvnri (12)
+bnqutso (11)
+fqozst (39)
+xypex (18)
+gerpefi (69)
+wbqjf (24)
+xaidhn (91)
+lwpmgk (61)
+wuluf (72)
+ffrrwb (41)
+ooobx (45)
+fdhvp (137) -> ybjld, uksim, wbqjf, sbzee
+pxkhwuu (89)
+rrxrsx (77)
+crxbcqe (1033) -> rmocf, xjiql, mocrsqu
+msywua (32)
+zqatt (72) -> pzggi, abdjb, wvisr, ibushn, fdkvm, dobqmg, gbqig
+jfclt (107) -> pjssvle, tmsnmf, iisuf, njhppm
+upndyov (83) -> pkcpn, qvknu
+gbbnux (279) -> yotrh, bnsqqv
+scbjq (89) -> ogorkv, rvglq, upnls
+ydgusm (66)
+sayhdkv (87)
+nqzlzs (10)
+coazy (129) -> wkmey, skzxsyk
+vhcza (20)
+pgtmio (19)
+tprgqt (81)
+euoqdcd (62)
+zddlo (62)
+dlapc (26)
+qorsgjk (62)
+hsyoiy (23)
+pyplv (26)
+gqmbul (8)
+jwgvg (62)
+lyrxhp (90)
+uekiz (23) -> wwcngr, xqyrozn, ikclk, uents
+ibyvotn (65)
+ewtqg (51)
+qwlze (52) -> malwro, gwyrxmf, blstaec, ehoqrji, bqppw, btbuwwi
+gjpglfg (29) -> vumpiw, yfzbdl, nlgoig, fqppio, uykfql, gvujhex
+ftohrkw (16)
+hmtnj (28) -> qorsgjk, vneld
+qggjzz (106) -> yqxvhbl, wsyqwf
+pgilb (19)
+hueuhx (54)
+thats (64)
+arveor (80)
+yuymxvd (80) -> llbxkj, zmpyqv
+cisaxsf (161) -> rptfwu, mqjpes
+pkuqykh (68) -> bpyce, fusiiz, mdrto
+otqdauw (32)
+ylnua (76)
+uyjtxt (87) -> gahwap, fqxrjg, mnxmtp
+zfzpgfw (25) -> rwouyb, gjvfc, zbtswr
+vzrfuvn (83)
+bdzkzv (318) -> baimp, wfgyg
+ceywcm (68)
+ypeap (60)
+mqjqez (70)
+iueqa (53)
+hqhkw (70)
+bpyce (47)
+wseii (36)
+vxxhu (32)
+nqomdre (40)
+pxnvwaj (11) -> rcytc, hontwg, vjhwn, deweh
+qvknu (90)
+qcsfpn (85)
+eprljo (98) -> hdjlp, qqfgo, xbhww
+cwdfqo (6) -> ctqym, nxxfgn, uoenrx, owdcg
+fgzwvuy (67)
+ajdtudl (263)
+dngqchs (1012) -> mxpxbm, quqixmj, qneezf
+zdiygz (207) -> tujrz, vpmuei
+jkxutle (5247) -> scjrx, srcfgoo, rfkdn
+jeywnj (13043) -> kkjro, jxysad, crxbcqe, pgdgh, qozxrgg
+holcno (13)
+qtjpthc (45) -> hfpspc, iniuzfq
+malwro (93) -> saxar, dydlyj
+bujphvu (154) -> dpcuy, rimobjs, mevce
+hgogzfl (17)
+xgqdjhe (327) -> gbbnux, zuanzd, nbykdlk
+rtzodmx (76)
+mdrto (47)
+xuwmc (256) -> yekxli, xnfybs
+ptmqsnr (83)
+mplgqv (77)
+uhoryyb (4957) -> slohro, kkjnouk, lmfchi
+yrbwhz (19)
+elcnwtn (110) -> mmqtzmj, rnfoji, xayhv
+wtkxd (73)
+ftyilib (5)
+bztcy (224) -> mysjwy, wbqkf
+unnvung (64)
+gufqi (12)
+zntrkc (71)
+zxdhxrb (69)
+tzvtu (78)
+ohneffn (65) -> ffcefem, qjxyfa, bojjcl, bhqkvi
+rtcicn (211) -> hqcwl, pgilb, dniub
+hmwfqwz (225) -> zqczqd, xdrjmkv
+obilnz (93)
+satuz (271)
+fdkvm (189) -> hueuhx, ujyxvl
+mxtcei (11914) -> eeyaxfn, dhrbaor, mzgayzs, tfphsaq
+cqupm (71) -> vsvne, wwrkqb, jtgcmc, yyria, hkntpfd, cbefqk
+gymuodz (63) -> rimua, whfeq
+zfmqlj (121) -> kdbfv, abccyo
+muecxv (98)
+cldldxp (14) -> uuztubk, hrqsnls, eeergq, vyqlzi
+acpwe (135) -> yrbpdq, iwtqde
+hcrxqbw (80)
+xmkkpat (43) -> ivwybv, mjbdmlf
+okqwb (85)
+pwmazwj (59)
+qwtheza (22)
+euxrv (110) -> sfuegcs, kqfesp, azjunml
+qvowcc (30)
+zelwp (61) -> nxspzd, lrhkoc, ybfqzep, sqwovza
+pqqfpa (355) -> dezgi, dtakrnu
+uykfql (405) -> efijtd, phdetz
+jyvhtle (25) -> jasol, esivz, wprhap, fqyog
+czyok (75) -> pkipyhb, sbsfo, izkej
+vpmuei (62)
+ydjrtcd (97)
+bgjwy (82)
+xupkjdt (31) -> mzjhsq, cimubay
+coxuqy (68)
+wupsg (81)
+prtah (59)
+pewvv (39) -> rtcicn, vysjpf, lxxbgm, bztcy, fgbsxh
+kemme (38)
+rpanfr (42)
+mmqtzmj (76)
+auocefh (10)
+mweox (60) -> ddrsd, nxwtdg, jlvakq, gmaxala, rtwur, qqkwjoy, lmmffej
+kazlt (312) -> cgetpc, jknrln
+rqqxoou (82) -> lbeqp, jfsnic
+jrygk (124) -> zkkvh, xjvwjq
+rvglq (18)
+ajyzem (70)
+qhgvoj (129) -> uwpuqd, pyplv
+scgpm (19)
+apbjfv (43)
+waxvx (96)
+dpqrxbr (55) -> nafzy, bgscxgk
+jtzrvt (55)
+qnzdaj (262) -> ablgyqv, xhang
+jfvoui (45)
+vfmiaz (38)
+xnqznos (5)
+qhfoy (63)
+fsqws (95) -> yyrwb, vnuwoq, vlllp, reuaanp
+aunrdo (61)
+pbcpt (7)
+xwunxz (1100) -> klhzgvj, walzh, snquxtz
+lshkygc (19)
+bkqndr (44)
+dhrbaor (1511) -> fpkuumw, fytlv, knendm, xxsobt, wlqfnkr
+opomx (191) -> pycim, khnemp
+zlvgiq (76)
+oioqg (63)
+dkeosz (13)
+irgymg (99)
+iyqcty (19)
+ozugcs (60)
+ewoebye (55)
+dxggcx (34) -> nuwpvd, ylnua, vljooo, ykzjkp
+qyvxs (83) -> qtcsae, gjdrco, zffoytm
+ogorkv (18)
+zuanzd (73) -> tutmv, ubkhce, ebzton
+qozxrgg (1351) -> yuymxvd, zjuupn, uyjtxt
+lbeqp (62)
+bqlmhj (2246) -> cvahi, jgbvdp, wehfli
+ptyuh (70)
+jlhsd (41) -> ygnlbv, wochkc, nzazpe
+ayfafvc (33)
+ldmgzql (17) -> qsods, ewoebye, yesozb, bfqotji
+rdytzgp (127374) -> uhoryyb, vfwwc, hkssn
+nxxfgn (59)
+iniuzfq (81)
+vysjpf (228) -> ohbhyq, bhzeep
+scjrx (448) -> ejoee, uyvuqp, yaera
+tzobgt (88)
+ljhqql (44) -> tbzqsrb, wtkxd, amhug, axgpt
+vvpacb (126) -> ijmaxm, cjoeyrm
+zqvhd (88)
+zagaz (88)
+emhblpr (85)
+lrosl (82)
+orcrc (74)
+vyfhcqp (109) -> jwgvg, pyfeav
+njhppm (42)
+eowjgp (188) -> ueqkrm, nhgchm
+wlodh (39)
+vsqcws (25)
+jxcxv (60)
+hybvw (92)
+qdgsn (47)
+jasol (41)
+zgrcahy (64)
+mhassg (80)
+eeergq (53) -> oeehfxg, emhblpr
+ojozup (29)
+gmeqmy (66) -> mbslas, vimplcz
+zzekx (81)
+xjvwjq (14)
+heezga (300) -> jtfdy, scgpm
+pjhoue (56)
+djejdy (98) -> fdvfx, ykoazai
+fkzxmb (55)
+ezwzp (7179) -> jlhsd, oedan, emuek
+tlwqwlk (23)
+fqyog (41)
+elvzp (33)
+ydusqh (80) -> qucxsqh, lrfttlb, vzrfuvn, ptmqsnr
+dweli (58)
+qbnldp (85) -> cguzndh, oldoxo
+xbhww (55)
+smjtypd (35)
+vcgcmuh (88)
+iedlpkf (16)
+zttytvi (93) -> qkjed, jnxbxzk
+bszaj (104) -> txhbij, kwolrk
+qwagq (67)
+gxzxapn (12)
+fqppio (139) -> fllao, orcrc, uhmmouc, twvkgl
+opnpx (94)
+esivz (41)
+iqbtc (94)
+wznad (369)
+nujmyt (309) -> vbzyp, qwagq
+vuzkop (57)
+dxzahps (8)
+idsab (142) -> befsr, mhlgi, uashrrc, fkmyndg
+vtjrflg (73)
+wfgyg (69)
+ghhhiwl (87)
+phpjy (44)
+ekffumh (295) -> wznad, metsfo, afycii, czyok
+jhltpk (61)
+kaxvdwl (125) -> hzqpddb, aqeqvr, esegn, hdyrxg
+uxgux (53)
+zhnug (77)
+cjoeyrm (72)
+sdvag (387)
+efbvz (54)
+rksqqfr (90)
+xplsuaq (98)
+joryloo (24)
+mxpxa (128) -> vtjrflg, guccv
+tjcujd (193) -> cmfit, tcvpst
+wkmey (31)
+hgkjgm (4609) -> xcjxzq, ekffumh, juscckl, dngqchs
+vneld (62)
+lmfchi (67) -> qnzdaj, efqrg, murzaw
+umajdu (17)
+ierjhuk (15)
+bvviqc (60)
+qcizo (70)
+cwaymbr (98)
+iemeek (37)
+lhxdfj (92)
+nlgoig (240) -> xyfsr, ghuyt, ibyvotn
+xxviu (12)
+doehwd (169) -> ahcba, pbqdzda, xijkpj
+nzazpe (88)
+wehfli (105) -> asuodq, fbaiatg
+athdvrh (3021) -> ajika, gxmdnq
+hwluwdo (5)
+yvttt (201) -> fdgccyg, joryloo
+dyxzd (216) -> gubya, pnxmfdc
+ehoqrji (79) -> kqvsah, yanwn
+iwdzu (98)
+owdcg (59)
+vgaxwnn (78)
+wlqfnkr (47) -> wseii, axhfcb, iomjmn, rczoepp
+jxysad (99) -> jtydj, udkvb, plpctjz, ydusqh
+jaedvjj (76)
+iemgv (23)
+skjez (147) -> aivprd, cbdyc
+bwrenq (295) -> lyaqynn, hlcnf
+hoarkjh (12)
+tyvhz (222) -> wjkfdvb, powfmo
+yiyjz (71) -> ljpeina, zzekx
+fiwnjv (45)
+dzwnlq (54)
+algav (26)
+nhgchm (47)
+ejoee (115) -> algav, atgamme
+jncwn (94)
+gypuu (21)
+xeiur (185)
+zqczqd (82)
+zordz (166) -> zhubam, hoarkjh
+xtocem (23) -> ajyzem, hqhkw, jcshcvr, zxbnkvs
+hhndlt (17641) -> sfxvp, ypzqp, pewvv
+rrtpjw (7238) -> ptfyi, hgqesr, jmdlczf
+aduuei (65)
+dzrywb (84)
+fpnjjy (91) -> dgqquh, ftatt
+wprhap (41)
+cvahi (39) -> auorp, jypccpq
+gxhjjv (62)
+zbrhqwq (171) -> kckevg, pbcpt
+rimua (86)
+fxqaw (63) -> avfsez, tprgqt
+lyorl (80)
+csmjw (142) -> hwluwdo, phrrm
+crqesym (75)
+gkskqqb (13)
+cnuygks (10)
+owxbfr (80)
+gubya (56)
+nnjrm (69) -> nesoknh, mkohhbb
+gjdrco (85)
+gtditk (58)
+vlfxdli (66)
+qwtvro (870) -> cfiurqp, ubdfq, xxviu
+isoayc (6)
+coicjc (185)
+yuktpa (74)
+txnuvci (44)
+jbomczw (82)
+jykfxee (25)
+yyria (21) -> qztfbzn, xfmneu
+xgibks (66) -> qvuhbo, abspab, ehegh, bvelsl
+liklroi (108) -> xowek, qdgsn
+kdbfv (78)
+flhhbd (81)
+halwu (66)
+enorooc (44)
+jfnknli (2345) -> hubvoh, csmjw, kzpyvis, hmyuwix, fbhxulf
+yeuaeqp (162) -> vojcrx, jnshvhq
+plzrspg (188) -> pdprpyn, itacy
+jcshcvr (70)
+uckyywt (96)
+zpyoxs (52)
+gvujhex (419) -> jbmxm, ozuqsau
+zxbnkvs (70)
+ydcibyi (1431) -> sakmn, yuktpa, ielyzgp
+ffcefem (31)
+mxpxbm (77) -> mvldvib, phpjy, mtqdya, enorooc
+yzssszb (80)
+srltg (96)
+txznlay (55)
+jwmjagj (30)
+ejzoa (468) -> pqqfpa, fsqws, kqhusg
+iwtqde (57)
+tdxsqf (391) -> ejrychc, wqpfc
+hrqsnls (133) -> ooobx, jfvoui
+ewgvg (14873) -> sohohlc, fxhlrok, ykhycl, xabull, gdvqsyp
+flgjahm (5240) -> bwhovd, zqatt, hcqsg
+odtetse (25)
+floca (98)
+jfsnic (62)
+hdiprgd (43)
+fwfbd (81) -> djxvowe, mssypcn
+whfeq (86)
+lrfttlb (83)
+aygltsd (44)
+ztoitoz (59)
+zooxx (30)
+cumlar (39)
+gzarnps (75) -> mojsngw, hybvw, ssuho, phmoj
+lpgtx (63)
+psdhpk (110) -> ceqayn, kimsadh
+jfvmu (44)
+hfpspc (81)
+nghcpr (88)
+idfuz (87) -> lwpmgk, scfrwrg
+qqnroz (666) -> uvexl, ldmgzql, vtphqb, tjcujd
+tutmv (94)
+gmaxala (403) -> yybtd, cijhcl
+kimsadh (77)
+tbzqsrb (73)
+ijmaxm (72)
+biokfm (155) -> nvflr, sabolzl
+lnllv (255) -> tpdch, nyeur
+ulpfyrr (93)
+twjvtbu (49)
+qkdiej (25)
+deyxep (58)
+jbolstg (1053) -> aizud, hxowycm, fzcerr
+jvxecw (59)
+rxwxqe (53)
+geqrb (8)
+fytlv (35) -> pshil, bppdgwm
+lbgqy (20)
+gmtsea (8)
+nbvlp (47)
+vkdpaip (50) -> xfjpbus, ilkhnhw
+btsvvyg (21)
+shjlwli (264)
+uzxjt (8)
+xichd (209)
+vhuwgi (20)
+plmaxee (62)
+texooeb (55)
+qneezf (143) -> bsnxzz, yntilqc
+dzlgor (43) -> jnmgovh, lzqtep, umuur, nuajwg
+ubkhce (94)
+cvxkylq (99)
+ctqaxh (61) -> tslfayy, xquzvw
+yfzbdl (75) -> kmyvyx, lyrxhp, tuyon, rksqqfr
+rdrrye (338)
+jrgiha (7)
+wpugb (69) -> xhubgcl, psdhpk, htgvzw, shjlwli, xtxppp, nusvn
+odmmo (456)
+hgblqo (31)
+jcikl (59)
+khkaq (16)
+mcmijwy (91)
+sgymtmx (85) -> uxbyymt, tnngtb
+fqxrjg (15)
+rhfznek (52) -> vckzclh, kurnhks, ftthnl, fseduzt, gxumijt
+txhbij (90)
+yaann (187) -> drtfi, golkvpd
+dfolgy (80)
+qoukeij (82) -> szdthny, bpszadt
+rmocf (100) -> fkbivys, ryjrq
+rpxni (39)
+xmvthbd (40)
+soddek (333) -> wragpj, qcldyng
+gwyrxmf (93) -> ntugl, bkqndr, nhnwkzo, txnuvci
+bzwiavk (122) -> vszfxh, unbjm, hkxefzm, vijgqvl
+okrnkqa (70)
+pasveb (20)
+qxivh (85)
+aakrpyc (14)
+qfellsp (80)
+yowbd (346) -> ooazmvu, jtzrvt
+ielyzgp (74)
+ihslyyb (51)
+faubz (59)
+itacy (93)
+fwevqj (33)
+zzsbd (78)
+edygy (258) -> yzfnlfl, hwdkwn
+sohswca (66)
+jngifv (614) -> rdthc, ajdtudl, skjez, eprljo
+ivfffiz (96) -> iqbtc, opnpx
+hcbdbh (400) -> cibrtjo, gkxdmxg
+rulkpe (27) -> faubz, ftbsur, luixm, jvxecw
+fpkuumw (31) -> arveor, hsykei
+xabull (769) -> egkqlyz, obdtlhg, mgoew
+cvcvyeu (100) -> rawfw, ceywcm
+wjqdusq (186) -> odtetse, swastze
+khnemp (95)
+rudbmkz (30)
+llbxkj (26)
+tbfkvty (97) -> aymgd, glmcscm, coedb
+kufceqa (95)
+exaqlbc (186) -> tejonrz, hlszj
+hxxexy (82)
+cveuc (57)
+pnxmfdc (56)
+jtwrh (43)
+pfuyke (217) -> hsyoiy, ovfby
+wdgfw (49)
+obdtlhg (66) -> pbmni, gerpefi
+abdjb (285) -> nzhfbo, begrb
+onwhg (40)
+wfixt (70)
+ngtpz (98)
+gxumijt (297) -> yrbwhz, yxzdn, otslex
+murzaw (64) -> cwaymbr, iwdzu, ouiwlb
+jtxphqg (108) -> aakrpyc, vjyhqx
+wjkqpqr (235) -> auocefh, cnuygks, nkxdfu, rotzn
+vsvne (183) -> qkllvda, uzxjt
+jqhify (94)
+ntadc (61)
+niuvu (41)
+bbsvfl (6)
+powvrta (32)
+nvflr (64)
+kebfmsz (269) -> fhryrfj, vxxhu, wycfrkz, wrurg
+ueqkrm (47)
+elyuo (55)
+kzpyvis (24) -> akumg, dfghz
+fozgkmk (28)
+skdbvqr (4471) -> smmdlo, cqupm, buyazh, elxfl
+pycim (95)
+spgyst (88)
+vojcrx (87)
+xorbfm (20) -> pwmazwj, ztoitoz, udiykt
+wsyiyen (504) -> cisaxsf, rejss, zbrhqwq, xeiur, fyfjc, eaxqpmn
+ivwybv (67)
+zsjvdo (128) -> omnyr, hrhfd
+uvfou (368) -> ygeoklq, tzxvnri, gufqi
+objgx (80)
+zpcqx (226) -> izxeuz, qhwtf
+emuek (149) -> tzvtu, zzsbd
+dytadg (35)
+crdoq (92)
+lljifba (68) -> jeywnj, fdgjgwt, ewgvg, mxtcei, wetrsmz, sgvaf, hhndlt
+hcizj (91)
+zzkzfln (93)
+hmjzw (117) -> aujgtj, lshkygc
+blkcnq (81)
+udiykt (59)
+nhnwkzo (44)
+tiunb (46)
+ccbgy (64)
+khjexez (59)
+tydjgm (94)
+mssypcn (56)
+swpjozm (66)
+yryyz (249)
+vdham (232)
+scfrwrg (61)
+xyfsr (65)
+golkvpd (19)
+qovcwth (59)
+dzngp (183) -> onwhg, xmvthbd
+vqbfan (51)
+pkdeoh (16)
+foozzq (114) -> klsxgx, kcorlw
+ehegh (54)
+kqhusg (155) -> dfolgy, yzssszb, qfellsp
+jxzfb (88)
+airlri (97) -> pidgnp, lljifba, gmewl, tbedct, ryvidhy, rdytzgp
+kreehw (87)
+zkkjh (93)
+vqlyyx (43)
+mkbjgur (34)
+faqsp (40)
+fiqnz (32)
+esyzn (66)
+swastze (25)
+wbiys (58)
+xiyhl (49) -> ktvry, ezoar
+aonpvtr (82)
+pgibhk (75)
+axgpt (73)
+kxqhlbm (31) -> sulyr, qeksx
+apgqnys (82)
+osipmuv (366) -> qkaaq, ffrgif, qxvpdh
+lzqtep (86)
+jrjkj (69)
+omnyr (37)
+jmdlczf (22) -> idfuz, xichd, pkuqykh, xpzadg, kioxu, huzzk, vgrbrzc
+vvivo (60)
+uents (77)
+utprdt (33) -> ihslyyb, knhati
+lcqed (45)
+vnyaqgw (30)
+szdthny (35)
+rwqopie (35)
+vgrbrzc (11) -> swpjozm, ibdon, sohswca
+spjim (73)
+bipyp (78)
+mvxqfe (85)
+vlszzu (333) -> nafvoj, foozzq, jgwajk, ppedet, hqpkdyb
+jdrkeh (5)
+ftbsur (59)
+uldlh (30)
+dzbnx (57)
+vswgxoh (63) -> obilnz, zkkjh, ulpfyrr
+xbowtoi (53) -> tdbwpcj, muecxv
+mysjwy (22)
+tetyj (135) -> xckaw, tadprtr
+pbqdzda (38)
+gahwap (15)
+vjyhqx (14)
+aywrlw (132) -> xxvfb, bmxoqy
+zgzxr (235) -> ewvlay, slclu
+jgwajk (104) -> fdyuo, keoqd
+powfmo (10)
+auorp (46)
+jtydj (372) -> rpsmo, lbgqy
+iomjmn (36)
+slclu (34)
+isvfa (95)
+mhcyj (61) -> gxhjjv, ipppjn
+rpsmo (20)
+flbumzk (56)
+xtxppp (72) -> miidkpe, srltg
+vpsls (6)
+hlansqa (53)
+znbvji (44)
+kieild (43)
+klsxgx (86)
+asuodq (13)
+tuuzrr (98)
+xckaw (50)
+efqrg (202) -> vgaxwnn, opbrn
+ibagnjs (59)
+vyevfn (120) -> jtwrh, kieild, gmevoe
+kvyiqr (95) -> kvypj, hcizj
+qghotl (82)
+pzywvr (92) -> txswi, jljgd, hxxexy, apgqnys
+akmsaq (97)
+mhseysh (49)
+uarsqn (53)
+ryvidhy (123921) -> pxnvwaj, skdbvqr, qhdqak
+cqdggj (216) -> efkyht, gtgdmny, ohbzmqz
+ykoazai (58)
+sydiov (1417) -> xvhpqmh, exaex, utprdt
+algetkl (73)
+hbldvzk (2628) -> sydiov, ropjtoe, rhfznek
+pzggi (189) -> efbvz, dzwnlq
+rnfoji (76)
+ytfnug (39)
+jpxgvjl (82)
+yotrh (38)
+xpqnuh (31)
+ewuohku (68)
+vlllp (75)
+erpdg (544) -> rdnozh, plzrspg, tirehn
+ablgyqv (48)
+yqxvhbl (42)
+hgrjt (98)
+joees (23)
+eqsqenp (26)
+mnxmtp (15)
+wetrsmz (16444) -> wpfywy, litnjrv, rpmtne
+bkicgcc (33)
+dwvbnp (80)
+qptzj (76)
+ibvyfys (220) -> rpzit, bepnzsh, khjexez
+bwhovd (457) -> yhgutqw, amhmm, cwdfqo, vlaowv, vkdpaip, tyvhz, unqmapv
+fyfjc (21) -> qghotl, jbomczw
+zaiopar (20)
+rimobjs (88)
+ipfmr (121) -> mkvblbi, btrdhk
+mbslas (81)
+zkwplas (63) -> tdxsqf, gzarnps, nujmyt
+hoilkqz (84)
+jljgd (82)
+wfwma (85)
+rfeqsq (77)
+ptfyi (789) -> exaqlbc, vdham, vxjvov
+jdtwus (115) -> cumlar, rpxni
+ddrsd (319) -> aibabp, dweli
+buyou (40)
+plrma (94)
+cmfit (22)
+nbjrv (39)
+aizud (118) -> eirze, xnoux
+jgbvdp (91) -> pasveb, vhcza
+vckzclh (240) -> vuzkop, gpgmx
+xdzya (8219) -> malnjq, jircuj, zxdfpy
+zfaxas (30)
+keoqd (91)
+xnqeu (30)
+wycfrkz (32)
+oidjn (8)
+ihmqbiu (1005) -> hcbdbh, abicjs, rpiuf, zpcqx, pzywvr
+rpiuf (332) -> znbvji, rjjeggt
+ygykyu (85)
+abicjs (375) -> ierjhuk, psmvz, nfkbhas
+ehclf (40)
+okmwjoa (92)
+uxbyymt (52)
+xqyrozn (77)
+eaxqpmn (9) -> zagaz, tzobgt
+undug (38)
+uxrros (89) -> kebfmsz, sqnfn, mlztke, ibvyfys, facjth, soddek, kxsefnd
+rlyxbi (303) -> qrrdb, vvpacb, klcuumi, etxfihy, tptxpuq
+vmgxg (652) -> coicjc, dpqrxbr, mhcyj, pzmmc
+xoabt (58)
+qztfbzn (89)
+jbmxm (8)
+noqmsh (81)
+pgujeq (325) -> fiqnz, msywua
+gmewl (70663) -> sxpee, flgjahm, hrbukg, rrtpjw, hgkjgm, twxwam, xdzya
+pnszexz (43) -> ycxyxg, ycnnc
+aledrs (33)
+rwouyb (94)
+uuztubk (139) -> rxbrsd, hwekwoq, ffzjjj
+uwojoup (80)
+svlvlj (254) -> pqsfee, fguhavr
+ykzjkp (76)
+vfrna (72) -> dhsyxu, dytadg, gjihp
+vimplcz (81)
+cwppzzd (58)
+bstqyq (35)
+mtqdya (44)
+enmoyyj (10)
+lfqtv (510) -> lnllv, gelep, lwujegj, uowiif
+aujgtj (19)
+hdyrxg (16)
+ezoar (72)
+zkkvh (14)
+ylmwjuo (155)
+mdanw (181)
+klhzgvj (77) -> qmsxr, wuluf
+rpmtne (88) -> heezga, xuwmc, rdrrye, qyvxs, sppxgv
+zozajw (139) -> esyzn, vlfxdli
+drfzng (58) -> hmwfqwz, zelwp, pgujeq, gzqutgv
+hzauzw (75) -> hgrjt, tuuzrr
+aepss (136)
+zkaqnra (1790) -> upndyov, mcnsxuh, rulkpe, pfuyke, dzngp
+egtem (76)
+reuaanp (75)
+apexe (85) -> pkjykh, wupsg, kdrke
+agmao (53)
+ctdsj (58)
+izkej (98)
+wfpxk (30)
+cmqni (56)
+qoksme (241) -> algetkl, xhqrf
+otslex (19)
+vumpiw (269) -> uwoyjsd, xdwrl
+zimidd (21) -> hcrxqbw, uwojoup
+eegwdp (82)
+pjssvle (42)
+zbtswr (94)
+dzugjhb (60) -> orxgo, irgymg, cvxkylq, svfgh
+befsr (50)
+lrhkoc (82)
+cbaah (5)
+cimubay (62)
+vnuwoq (75)
+vbzyp (67)
+exaex (135)
+nmvki (40)
+xdwrl (83)
+gmfsl (306) -> yktmvtf, auztp, vhlizib
+wsyqwf (42)
+phdetz (15)
+krquje (51)
+vyqlzi (111) -> wnqny, hwhhyhh
+qmsxr (72)
+ojzpzsa (10)
+qvuhbo (54)
+esegn (16)
+bdqnomo (80)
+tgexl (76)
+nuvrtnk (69)
+zarww (162) -> vrqdv, ojozup
+qqmpq (2091) -> dxggcx, kazlt, elcnwtn
+pgdgh (1072) -> uzoroj, yaann, pnszexz
+walzh (127) -> nbvlp, suyawzr
+kkjro (582) -> vyfhcqp, yiyjz, nnjrm, oojlo, fdhvp
+sxpee (31) -> sppgjfx, qwlze, erpdg, xngnhi, jngifv, jjxhgkx, lfqtv
+jnshvhq (87)
+ppavww (82)
+vljooo (76)
+zdaorg (42)
+hlcnf (43)
+mzgayzs (814) -> hpsljy, rgpazuy, wjqdusq, cvcvyeu, qfzyvjr, euxrv, xfkpfqd
+dfntl (44)
+efijtd (15)
+sqcet (53)
+malnjq (550) -> xqrnd, jrygk, qoukeij, hmtnj
+ktvry (72)
+fkvhdj (81)
+qtcsae (85)
+uwpuqd (26)
+oeehfxg (85)
+nfchpk (47) -> amooqlb, rxwxqe, uarsqn
+hykmnhl (82)
+tadprtr (50)
+kqfesp (42)
+piofa (2046) -> mxpxa, jbkek, cqupq
+fseduzt (174) -> cbacfi, ypeap, vvivo
+moeujf (181) -> bkfbj, apajk
+vlysce (28)
+xowek (47)
+cqfyjm (68)
+nzhfbo (6)
+ovfby (23)
+nkxdfu (10)
+ooazmvu (55)
+qrmipn (77)
+wragpj (32)
+bgasdfq (408) -> zxphdt, jdrkeh
+srcfgoo (9) -> tetyj, qdfzlv, gymuodz, qbnldp
+hztzf (152) -> spgyst, jxzfb
+ebzton (94)
+imdqhns (35)
+tejonrz (23)
+yvpzbgp (64)
+luviddq (61)
+akumg (64)
+ixwoprg (102) -> zpyoxs, wwkdvm
+uowiif (106) -> luviddq, jhltpk, dtsdw
+zznnz (18)
+dnmsps (61) -> plrma, jqhify
+wfkxhlf (82)
+yyrwb (75)
+kdwict (157) -> umajdu, hgogzfl
+gpgmx (57)
+mzjhsq (62)
+cxgdzl (27) -> glumdc, unnvung, ccbgy, zgrcahy
+knendm (39) -> jaedvjj, poviv
+xymtys (154) -> ayfafvc, ywrze
+xrmslfs (214)
+ycnnc (91)
+plpctjz (296) -> cwppzzd, taaoji
+qazqwkj (30)
+swqgxh (76)
+phmoj (92)
+knmmys (620) -> pyhohkx, xiyhl, jdtwus, fwfbd
+vcrgmn (227) -> zhnug, rfeqsq
+cibrtjo (10)
+kkjnouk (9) -> tbfkvty, vaqhekv, zbxopzp, biokfm
+bpmus (87)
+yntilqc (55)
+ejrychc (26)
+nusvn (104) -> kqokslj, owxbfr
+begrb (6)
+axhfcb (36)
+lgmjeng (35)
+kqfob (25)
+qqfgo (55)
+fsose (121) -> tmpysyn, hsjbzgd
+hospabk (43)
+cvxcr (23)
+nefpbc (64)
+dpcuy (88)
+zsratan (39)
+gybbvb (67)
+tbedct (142596) -> ydcibyi, ejzoa, lcbkylu, wpugb, rlyxbi, jbolstg
+wpxhphx (146) -> otnrfom, iemeek
+xjiql (84) -> mplgqv, rrxrsx
+kurnhks (54) -> zlsrhdz, pgibhk, zsancei, crqesym
+fknai (16)
+abccyo (78)
+jaxjy (59)
+zxdfpy (59) -> ikeiwjo, qwfosq, mmotdue, hjkrxly, zttytvi, swjcx, kvheuf
+cgetpc (13)
+wwrkqb (185) -> ruhqq, jrgiha
+sfrwf (57)
+qjxyfa (31)
+vhlizib (27)
+hwekwoq (28)
+mocrsqu (109) -> vqlyyx, wdnlqh, apbjfv
+mevce (88)
+yldsmt (57)
+wwkdvm (52)
+reqlm (51)
+pdprpyn (93)
+irgumpr (71) -> xgibks, eowjgp, bzwiavk, cgtddkw, tinitt, cnrwew
+jjdfk (53)
+lmtebyt (85)
+ibdon (66)
+jjvbyf (62)
+ncffht (97)
+hpsljy (156) -> cukfipr, nqomdre
+wqpfc (26)
+glmcscm (62)
+mitvkt (137) -> dlapc, eqsqenp
+kmemzft (51)
+gqwfi (51)
+lhmhrpi (5)
+tirehn (80) -> bdlzzvy, jnyvdz, zkwzctg
+tmsnmf (42)
+lxxbgm (56) -> hlansqa, agmao, dihvt, uxgux
+yhonqw (579) -> tcaex, nwlacty, gkzpb, qtjpthc, ipfmr
+oedan (21) -> zntrkc, lwpwtbj, awvqy, mmomd
+gelep (34) -> qxivh, lmtebyt, wfwma
+fllao (74)
+sabolzl (64)
+tmpysyn (22)
+wrurg (32)
+sfuegcs (42)
+bhqkvi (31)
+qgkaso (58)
+fhryrfj (32)
+hjkrxly (47) -> texooeb, elyuo
+ssuho (92)
+rejss (89) -> powvrta, fojnd, otqdauw
+ffzjjj (28)
+qkaaq (180)
+suvwi (49)
+rczoepp (36)
+bhzeep (20)
+kkflx (7330) -> coazy, kdwict, ojcpgj, qjdqn
+gkxdmxg (10)
+upnls (18)
+bepnzsh (59)
+xxsobt (137) -> zznnz, ziyta, xypex
+bgscxgk (65)
+tptxpuq (194) -> kemme, vfmiaz
+qummd (77)
+efkyht (11)
+mmomd (71)
+sulyr (73)
+txswi (82)
+ksbjftc (185) -> gfghu, spjim
+gjvfc (94)
+egkqlyz (148) -> vlysce, fozgkmk
+aqeqvr (16)
+kvheuf (63) -> johqe, dyeds
+ajika (42)
+dihvt (53)
+zmpyqv (26)
+xxvfb (17)
+fvmws (43)
+hsjbzgd (22)
+uyvuqp (79) -> dfntl, jfvmu
+cvseh (2033) -> liklroi, zsjvdo, bwtsue
+juscckl (99) -> svlvlj, bujphvu, bgasdfq, ctdcrl
+ruhqq (7)
+yekxli (41)
+ywrze (33)
+jrksg (58)
+mkvblbi (43)
+suyawzr (47)
+yhgutqw (10) -> oybow, ctdsj, deyxep, iyegmn
+qucxsqh (83)
+iurmaj (40)
+ejjgym (69)
+jfajopz (76) -> aonpvtr, hykmnhl, ppavww, wfkxhlf
+undaxyj (92)
+avfsez (81)
+gbqig (181) -> qgkaso, gtditk
+qaqof (130) -> oxerrb, afxazvx, mhseysh
+xdrjmkv (82)
+tocdoo (82)
+mlztke (233) -> bgjwy, lrosl
+aymgd (62)
+mcnsxuh (143) -> xnqeu, xrjrjp, qvowcc, qazqwkj
+afycii (199) -> okqwb, mvxqfe
+atzuayu (41)
+svfgh (99)
+tnngtb (52)
+hwhhyhh (56)
+qrlmd (98) -> xernf, klvhv
+wnjtvt (11)
+wzruwk (82)
+luixm (59)
+hkntpfd (107) -> pyraep, tiunb
+mqjpes (12)
+pshil (78)
+wvisr (137) -> znkqj, dwvbnp
+slohro (598) -> qhgvoj, mdanw, zimidd
+rdnozh (304) -> lgmjeng, llalv
+psmvz (15)
+zlsrhdz (75)
+taaoji (58)
+wbqkf (22)
+metsfo (253) -> xoabt, wbiys
+kckevg (7)
+hhrlaah (155) -> smjtypd, rwqopie
+daesbhs (77)
+tuyjnby (44)
+danfue (32) -> okrnkqa, mqjqez, gndjq, qcizo
+ropjtoe (942) -> wpxhphx, wrwusvc, zarww, xymtys
+tinitt (240) -> gypuu, btsvvyg
+kxsefnd (285) -> cmqni, pjhoue
+yzfnlfl (27)
+wpfywy (530) -> mifmz, edygy, nmfhgq, danfue
+hwldx (66)
+sakmn (74)
+ehlwoxs (7524) -> qggjzz, zordz, phntkf
+fekdmb (96)
+ziyta (18)
+cbdyc (58)
+ibushn (41) -> thats, nefpbc, yvpzbgp, vddsv
+lcbkylu (732) -> gawbtev, aejhrrh, zfzpgfw
+mhlgi (50)
+rptfwu (12)
+fkmyndg (50)
+tylelk (24) -> drfzng, yhonqw, wsyiyen, dqwocyn, qqnroz
+azjunml (42)
+hfjazyf (80)
+nuajwg (86)
+cukfipr (40)
+pkcpn (90)
+guccv (73)
+pyfeav (62)
+ikeiwjo (157)
+hqcwl (19)
+xayhv (76)
+wemzz (76)
+cqupq (88) -> jjvbyf, zddlo, plmaxee
+btrdhk (43)
+eirze (41)
+litnjrv (1103) -> fxqaw, jbqehvt, hhrlaah
+gveca (66) -> bstqyq, imdqhns
+wpgziu (88)
+vfwwc (61) -> anoza, zjhnhz, hgdghys
+losjvw (61)
+zbxopzp (147) -> qaqgap, cqfyjm
+uksim (24)
+uiiqr (1611) -> ysxuvi, yryyz, dnmsps, cqdggj, vyevfn, dzienj
+mifmz (170) -> tgqxadm, efqzxka
+hkxefzm (40)
+ojcpgj (121) -> fpwoels, dzyfjvd
+xqrnd (35) -> wlodh, gbmexj, zsratan
+ahcba (38)
+jnxbxzk (32)
+ftthnl (222) -> halwu, mdktwy
+qjlrpjn (59)
+nuwpvd (76)
+jnhyc (252) -> lcqed, fiwnjv
+gmevoe (43)
+glumdc (64)
+rajiodp (268) -> uldlh, rudbmkz
+qebkt (95)
+vddfzu (67) -> wchtkp, aduuei
+hcqsg (939) -> zgzxr, moeujf, xtocem, hivsxt
+wrwusvc (60) -> bdqnomo, objgx
+uzoroj (199) -> dvips, dkeosz
+ujyxvl (54)
+nltqkvf (66) -> fwevqj, aledrs, elvzp
+lhjpci (34)
+igqup (69)
+vszfxh (40)
+ztxjb (81)
+aibabp (58)
+vaqhekv (217) -> pejkmud, bkicgcc
+wchtkp (65)
+ycxyxg (91)
+rgpazuy (44) -> waxvx, uckyywt
+bppdgwm (78)
+csxdpl (56)
+vxjvov (68) -> tocdoo, jpxgvjl
+vuckhv (87)
+wnqny (56)
+kcorlw (86)
+jlvakq (239) -> ngtpz, xplsuaq
+tcfmra (96)
+twxwam (8975) -> qwtvro, osipmuv, cldldxp
+xhang (48)
+qneggdm (169) -> iurmaj, faqsp
+umuur (86)
+tuyon (90)
+aqoik (53)
+oldoxo (75)
+rjjeggt (44)
+fdklcbu (70)
+tslfayy (41)
+zpjju (68) -> ncffht, akmsaq
+xijkpj (38)
+xfmneu (89)
+fdgccyg (24)
+qkllvda (8)
+zhubam (12)
+emreip (94)
+euypgtx (80)
+tbwieh (108) -> uglla, iyqcty, pgtmio
+mlkddpw (34)
+zxphdt (5)
+ohbzmqz (11)
+dylrpo (69)
+zjuupn (51) -> sibko, mlighq, wogrc
+xykvys (160) -> iemgv, joees
+nxwtdg (51) -> tcfmra, nvkhow, fekdmb, xgufltj
+mlighq (27)
+abspab (54)
+fzcerr (10) -> zhnjnvg, bncmd
+fxhlrok (69) -> dyxzd, rajiodp, hztzf, apexe
+xvhpqmh (47) -> tuyjnby, aygltsd
+nafvoj (127) -> aqoik, tapirho, kyizmdu
+bkfbj (61)
+hmyuwix (50) -> bpmrgr, soiza, mkbjgur
+ilkhnhw (96)
+fkbivys (69)
+ikclk (77)
+ysxuvi (249)
+sppgjfx (530) -> bszaj, ozzxjr, ivfffiz, cdqkuuw
+dfghz (64)
+bxwtlj (214) -> khkaq, pkdeoh, dvvlx
+uvexl (205) -> ftohrkw, fknai
+xrjrjp (30)
+oopiw (214)
+yesozb (55)
+wochkc (88)
+dzyfjvd (35)
+efqzxka (71)
+hdjlp (55)
+pbmni (69)
+afcsq (190) -> zlvgiq, wemzz
+hsykei (80)
+swjcx (79) -> nbjrv, ytfnug
+yanwn (95)
+orxgo (99)
+tcvpst (22)
+xnfybs (41)
+ctqym (59)
+hwdkwn (27)
+bvelsl (54)
+gkegoh (51)
+cbacfi (60)
+gjihp (35)
+hgdghys (1528) -> acpwe, yvttt, xbowtoi, hmrrarb, qneggdm
+aejhrrh (281) -> gkskqqb, acgiwii
+pzmmc (83) -> kmemzft, ewtqg
+ffrgif (6) -> bpmus, vuckhv
+naacbhr (39)
+qeksx (73)
+ncymzc (202) -> holcno, lmueep
+gfghu (73)
+qbncqqm (76)
+qqkwjoy (297) -> iuagzo, nuvrtnk
+sohohlc (697) -> gmeqmy, xstgov, ncymzc
+zhnjnvg (95)
+blstaec (115) -> kxcid, qummd
+uhmmouc (74)
+tfphsaq (1875) -> sndfkkd, vddfzu, xorbfm
+phntkf (31) -> jjdfk, sqcet, iueqa
+xfkpfqd (236)
+tujrz (62)
+sfxvp (167) -> uvfou, kasozsw, jfajopz
+lyaqynn (43)
+bfqotji (55)
+jbkek (164) -> txznlay, fkzxmb
+kqvsah (95)
+zffoytm (85)
+bpvit (184) -> tgexl, qbncqqm
+ocuhfpd (95)
+xhqrf (73)
+jtgcmc (47) -> aqfemi, undug, bpznnqh, mmjpziu
+rdthc (173) -> zfaxas, wfpxk, jwmjagj
+hrbukg (6404) -> vlszzu, irgumpr, xwunxz
+sndfkkd (83) -> yldsmt, drswab
+znkqj (80)
+xhubgcl (254) -> xnqznos, cbaah
+epeain (16)
+jbqehvt (225)
+dobqmg (159) -> ejjgym, igqup
+fguhavr (82)
+dtakrnu (20)
+ozzxjr (254) -> ojzpzsa, enmoyyj, nqzlzs
+sqwovza (82)
+hqpkdyb (106) -> bvviqc, jxcxv, ozugcs
+ybfqzep (82)
+bpmrgr (34)
+qcldyng (32)
+sbsfo (98)
+saxar (88)
+xucrab (63)
+mdktwy (66)
+nkegq (69)
+gawbtev (100) -> jleqdi, dylrpo, zxdhxrb
+htgvzw (180) -> rpanfr, zdaorg
+fojnd (32)
+yaera (143) -> mpwlly, gxzxapn
+vlaowv (226) -> dxzahps, mtfqemm
+lwujegj (101) -> emreip, ujnas
+rtwur (311) -> shgcr, euoqdcd
+dniub (19)
+qaqgap (68)
+oucqw (7596) -> qrlmd, gwpzvb, aywrlw
+nesoknh (82)
+rpzit (59)
+uwoyjsd (83)
+rawfw (68)
+bnsqqv (38)
+sgvaf (43) -> ihmqbiu, mweox, zkaqnra, uiiqr, athdvrh, qqmpq, jfnknli
+ysmqsps (61) -> hfjazyf, lyorl, mhassg, euypgtx
+facjth (57) -> wvaynsl, ygykyu, bhaebe, qcsfpn
+gdvqsyp (388) -> zdiygz, ksbjftc, uekiz
+bsnxzz (55)
+qyqthsz (5) -> nkegq, jrjkj
+xcjxzq (1306) -> hmjzw, ylmwjuo, xupkjdt
+nbykdlk (339) -> gmtsea, qahfrp
+acgiwii (13)
+xquzvw (41)
+kdrke (81)
+bpznnqh (38)
+zhckae (58)
+ypzqp (1219) -> jewrs, juytoy
+vrqdv (29)
+klcuumi (42) -> swqgxh, rtzodmx, xmendwz
+bsqpcne (362) -> xulpd, ixwoprg, rqqxoou, xykvys, nfchpk
+oxerrb (49)
+hivsxt (147) -> bipyp, botmw
+kmyvyx (90)
+nfkbhas (15)
+hkcghm (76)
+kqokslj (80)
+djxvowe (56)
+jypccpq (46)
+yktmvtf (27)
+dezgi (20)
+bojjcl (31)
+zsancei (75)
+jnmgovh (86)
+buyazh (1149) -> jrksg, zhckae
+sppxgv (276) -> hgblqo, xpqnuh
+cguzndh (75)
+shgcr (62)
+hmrrarb (53) -> wadeqe, floca
+lmueep (13)
+ntugl (44)
+ftatt (92)
+pgnbhl (210) -> qovcwth, bhxmn, ibagnjs
+qsods (55)
+xngnhi (841) -> jfclt, fpnjjy, wjkqpqr
+relztcy (22)
+vtphqb (237)
+qahfrp (8)
+bqppw (269)
+hxowycm (16) -> okmwjoa, undaxyj
+oojlo (111) -> losjvw, ekpvnh
+fgbsxh (268)
+mmotdue (113) -> relztcy, qwtheza
+tienxkv (358) -> rqbjjuo, wdgfw
+qwfosq (35) -> aunrdo, ntadc
+anoza (37) -> bdzkzv, dzugjhb, hgltuwc, odmmo, tienxkv, yowbd
+kioxu (159) -> qkdiej, kqfob
+ybjld (24)
+juytoy (80)
+xstgov (206) -> wnjtvt, bnqutso
+tapirho (53)
+vjhwn (1738) -> xrmslfs, djejdy, oopiw
+iroikgp (75) -> vqbfan, gkegoh
+jtfdy (19)
+ybqzq (363) -> vpsls, bbsvfl, isoayc
+pqsfee (82)
+bhxmn (59)
+amhug (73)
+yxzdn (19)
+wvaynsl (85)
+hrhfd (37)
+yrbpdq (57)
+ipppjn (62)
+ygnlbv (88)
+zjhnhz (2113) -> fsose, tbwieh, myhgys, nltqkvf
+facddx (151) -> hwldx, ydgusm
+gnbmz (89)
+bmxoqy (17)
+pyhohkx (17) -> nghcpr, wpgziu
+sqnfn (235) -> ztxjb, noqmsh
+gzqutgv (185) -> gqwfi, yenbb, reqlm, krquje
+tgqxadm (71)
+qjdqn (27) -> wzruwk, eegwdp
+mvldvib (44)
+gbmexj (39)
+ppedet (34) -> qhfoy, lpgtx, xucrab, oioqg
+ctdcrl (38) -> kufceqa, qebkt, ocuhfpd, isvfa
+bhaebe (85)
+amooqlb (53)
+tcaex (115) -> cvxcr, mxikfk, xzfrad, tlwqwlk
+uoenrx (59)
+ewvlay (34)
+zkwzctg (98)
+qkjed (32)
+jewrs (80)
+snquxtz (53) -> dzrywb, hoilkqz
+miidkpe (96)
+hgltuwc (316) -> ptyuh, wfixt
+oybow (58)
+dtsdw (61)
+qfzyvjr (156) -> ehclf, nmvki
+ymerus (46)
+cbefqk (65) -> fgzwvuy, yaawixo
+nyeur (17)
+baimp (69)
+")
+
+(def day-8-example "
+b inc 5 if a > 1
+a inc 1 if b < 5
+c dec -10 if a >= 1
+c inc -20 if c == 10
+")
+
+(def day-8-input "
+um inc -671 if lbf != 5
+j inc 236 if umr > -6
+fk inc -246 if j < 241
+uy dec -404 if mmw <= 2
+j inc 372 if gk >= -1
+uy inc -380 if umr > -4
+dy inc 257 if es > -9
+es dec 769 if es < 4
+t inc -429 if umr >= 0
+hg dec 13 if dy < 267
+is inc 66 if fk == -246
+fk inc -30 if es > -775
+ada inc 258 if umr > 3
+eri inc -950 if lx > -4
+umr dec -789 if x >= -4
+um inc -783 if aao > -7
+j inc -97 if ada != -1
+es inc 406 if fk != -283
+lx inc 43 if kg <= 7
+f inc 464 if lx <= 44
+kg inc 884 if t >= -435
+mmw inc 836 if gk > -3
+a dec 496 if um > -1447
+eri dec -617 if uy == 24
+j inc -858 if kg < 886
+hg dec -854 if umr == 789
+dy dec -246 if f >= 457
+lbf inc 122 if a != 10
+aao inc -408 if uy > 19
+f dec 908 if uy != 18
+t dec -775 if j >= -351
+t inc -594 if yk <= 3
+es inc 28 if gk == 0
+es inc -306 if kg >= 894
+mmw dec 154 if kg <= 885
+dy inc 832 if aao <= -402
+lx inc -426 if a >= -8
+umr dec -792 if eri > -341
+a inc -609 if gk <= -6
+j dec -970 if lx > -393
+uy dec -241 if yk > 0
+yk inc 411 if is > 61
+ada dec -253 if is == 66
+is dec -486 if aao > -413
+yk dec 561 if a == 0
+dy inc 976 if um == -1454
+dy inc 885 if eri < -331
+hg inc -5 if gk <= -9
+t dec 717 if f <= -443
+mmw inc -293 if lx <= -379
+t inc 77 if lx != -383
+uy dec -89 if ada <= 258
+fk inc -381 if fk < -272
+eri dec 711 if mmw < 398
+is dec -273 if gk != -3
+umr dec 384 if aao != -414
+is dec -36 if is != 825
+ada dec 422 if es < -326
+fk inc 207 if mmw < 389
+uy dec -357 if lx == -383
+es inc 829 if dy <= 3199
+aao dec -173 if gk == 0
+x dec 274 if is >= 824
+t dec -400 if is <= 833
+fk dec -677 if f == -444
+x inc -494 if j == 623
+t dec -406 if f < -443
+gk dec 704 if gk == 0
+x inc -637 if x < -758
+x dec 194 if gk != -710
+um inc 956 if fk > 26
+ada inc -527 if aao > -239
+j inc -774 if f <= -436
+es inc -121 if ada > -689
+hg dec -461 if gk < -698
+t inc 780 if is < 828
+yk inc -858 if es >= 504
+dy inc 145 if j > -159
+is inc 929 if f != -453
+mmw inc 702 if fk > 17
+lbf dec 123 if aao >= -240
+hg dec -543 if a == 0
+kg dec -610 if es > 488
+hg inc -726 if hg < 1854
+kg dec -410 if j <= -146
+dy inc -469 if gk <= -712
+a inc 252 if aao > -237
+dy dec 168 if uy <= 478
+gk inc -530 if a > 244
+gk dec -254 if uy == 479
+es inc -960 if j > -152
+umr dec 561 if hg != 1126
+uy inc 420 if j < -148
+mmw inc 976 if j < -142
+umr dec -852 if gk >= -1238
+aao dec 559 if eri >= -1042
+gk inc -745 if j <= -142
+t dec 183 if hg < 1112
+t inc 725 if yk == -150
+lbf dec -142 if kg < 1912
+mmw dec -908 if is <= 1758
+um inc 329 if f == -447
+x dec 543 if ada > -704
+gk inc 226 if eri <= -1041
+es dec -176 if mmw == 2975
+ada inc -156 if eri >= -1053
+ada inc -523 if t <= 1347
+aao inc -717 if x < -2145
+gk inc -236 if t >= 1354
+lx dec -266 if lx != -389
+hg dec -324 if dy >= 3169
+f dec 96 if x != -2143
+yk inc -270 if um != -1450
+aao inc -916 if lbf == 141
+es inc -943 if f == -540
+a dec 974 if lbf > 131
+dy dec -35 if yk == -413
+kg inc 112 if eri >= -1053
+mmw inc -30 if gk <= -1754
+um dec -288 if mmw < 2978
+es dec 774 if uy == 900
+t dec -60 if x > -2145
+j inc 1 if x > -2148
+dy inc 222 if es >= -1232
+is dec -221 if x != -2142
+hg dec -626 if uy > 887
+is dec -114 if t <= 1408
+j inc -564 if umr == 1488
+a inc -29 if f != -540
+umr dec 373 if fk != 17
+a dec -788 if fk >= 14
+ada inc 316 if aao >= -1153
+x dec 970 if lbf != 141
+x dec -209 if aao >= -1159
+uy dec 279 if lx != -117
+f dec 517 if hg >= 2065
+j dec 566 if a <= 75
+x dec -346 if a <= 59
+t inc 576 if lx > -118
+um dec 785 if es >= -1229
+a dec -949 if mmw > 2974
+j inc 915 if x <= -1929
+hg inc 177 if is < 1873
+is inc -678 if f >= -1052
+umr dec 254 if lx > -123
+x dec 754 if um < -1160
+aao dec 977 if uy <= 894
+yk inc -157 if aao <= -2124
+um inc 631 if is >= 1867
+lx inc -99 if ada <= -1058
+fk dec -834 if x < -2695
+is dec 105 if x != -2680
+a inc 462 if umr <= 864
+mmw inc 394 if lbf > 150
+gk inc -370 if lbf >= 146
+is inc 722 if yk > -586
+dy inc -882 if gk != -1753
+t inc 983 if gk == -1763
+fk dec 874 if fk > 14
+hg dec -949 if lbf < 142
+es dec -592 if uy == 891
+dy dec 823 if gk >= -1762
+mmw dec 137 if gk >= -1751
+hg dec 704 if dy >= 2343
+t dec -921 if j != -372
+x dec 95 if is >= 2485
+dy inc -117 if kg >= 2017
+gk dec 551 if um <= -545
+ada inc -161 if umr >= 856
+mmw inc 633 if umr != 862
+fk dec 38 if lbf >= 140
+kg dec -954 if x >= -2787
+um inc 325 if hg > 2481
+um dec -72 if j > -375
+umr dec 910 if gk <= -1756
+fk dec -628 if j != -356
+mmw dec 267 if aao != -2123
+eri inc -857 if um != -137
+um inc -651 if eri != -1896
+j dec -122 if a >= 1473
+umr dec 177 if gk == -1753
+mmw inc -16 if t > 2911
+eri dec 502 if um <= -785
+hg inc 134 if x != -2775
+lx dec 263 if kg <= 2978
+hg dec 83 if es != -1235
+mmw dec -837 if umr <= 693
+dy inc 148 if um < -792
+gk inc -13 if j > -247
+x dec 749 if yk >= -568
+lbf inc 606 if is != 2489
+x inc 588 if dy >= 2345
+dy dec 243 if yk <= -574
+umr dec 1 if es == -1233
+f dec 104 if t == 2903
+aao dec 32 if es != -1224
+x inc 882 if j < -245
+hg inc -998 if uy == 890
+dy dec -605 if dy <= 2115
+hg inc 45 if gk != -1769
+lbf inc -521 if t > 2894
+umr inc -115 if a != 1473
+lx dec -795 if x == -2194
+t inc 143 if f < -1154
+es dec 629 if is > 2494
+lbf inc 195 if fk <= -263
+fk inc 926 if aao <= -2153
+um inc 351 if es != -1230
+t dec -541 if lx != 316
+mmw inc -329 if mmw != 4178
+dy inc 708 if is > 2481
+j inc 386 if t != 3050
+hg dec 253 if umr == 568
+um inc 236 if mmw >= 4172
+fk inc -874 if hg != 1328
+lbf dec -499 if um != -202
+lbf dec 999 if gk > -1774
+gk dec 474 if fk > -219
+mmw dec -598 if yk > -585
+fk inc -508 if t == 3046
+mmw inc -638 if x == -2193
+f dec 756 if a == 1477
+mmw dec -339 if aao > -2161
+um inc 109 if lbf <= -578
+fk dec -421 if lx < 321
+is inc -725 if ada >= -1226
+fk dec -458 if ada >= -1226
+uy dec -588 if aao <= -2160
+ada inc 404 if dy != 3420
+x inc 788 if f <= -1910
+kg dec -520 if is == 1754
+es dec 895 if lbf < -568
+fk dec -999 if lbf == -578
+kg dec -38 if lbf != -574
+uy inc 343 if lbf != -579
+is dec -176 if es <= -2125
+lbf dec -680 if lbf < -573
+eri inc 562 if uy != 1823
+x inc 87 if fk >= 1158
+umr dec -850 if eri > -1843
+um inc -978 if eri <= -1849
+x dec 389 if gk < -2241
+f inc -288 if a != 1486
+kg dec -484 if uy < 1826
+lx dec -328 if lbf != 97
+um inc -998 if gk <= -2240
+yk inc 314 if mmw <= 5120
+t dec -884 if es == -2128
+uy dec 190 if f <= -2199
+lx dec 128 if umr > 1425
+eri inc 807 if a > 1485
+ada inc 272 if umr < 1422
+hg inc 630 if is == 1937
+um dec 143 if ada >= -949
+eri dec -334 if lx != 637
+fk dec 147 if umr < 1426
+gk dec 309 if uy == 1631
+aao dec 233 if hg == 1336
+is dec 825 if yk > -271
+lbf dec -498 if umr <= 1413
+kg dec 473 if es > -2131
+mmw dec -728 if hg != 1327
+dy dec 309 if hg <= 1341
+dy inc -863 if kg >= 3023
+x inc -465 if lx <= 647
+a inc 253 if x >= -1793
+kg inc -184 if eri < -1500
+um inc -527 if lx != 652
+j inc -455 if hg > 1328
+eri inc 866 if yk != -263
+aao inc -47 if gk > -2553
+gk inc 228 if gk < -2554
+gk inc -493 if fk <= 1006
+mmw inc 800 if x == -1784
+lbf inc -351 if umr < 1426
+a inc -903 if ada > -958
+umr inc 942 if es != -2128
+dy inc 600 if a < 830
+j dec -247 if lx < 646
+gk dec -922 if t >= 3930
+mmw inc -114 if lx != 654
+fk dec 415 if um > -1764
+t inc -763 if lbf < -246
+ada inc 818 if is > 1108
+uy inc -839 if t != 3171
+fk inc -335 if is > 1106
+fk dec -335 if yk == -263
+fk inc -291 if dy == 3711
+lx dec -665 if yk != -263
+es dec -772 if uy != 792
+umr dec -528 if um != -1764
+t dec -95 if es < -2137
+es inc -800 if yk >= -261
+kg inc 150 if j >= -70
+f dec -118 if mmw < 6536
+a inc 595 if uy > 794
+is inc 927 if lx > 636
+eri dec -61 if x != -1785
+hg inc -878 if yk != -260
+gk inc -727 if fk <= 305
+mmw dec -945 if a <= 833
+aao inc -101 if x >= -1792
+hg dec 567 if es > -2131
+gk inc -689 if mmw < 7484
+ada inc -644 if eri > -1452
+yk inc -810 if yk > -265
+um dec 655 if aao < -2533
+t dec 179 if umr != 1943
+gk inc 833 if hg >= -110
+fk dec 998 if fk < 315
+a dec -558 if aao > -2543
+x inc 426 if lbf == -249
+uy inc 892 if yk > -1075
+umr inc 250 if es <= -2127
+mmw inc -727 if umr >= 2193
+kg dec 111 if es == -2128
+dy dec 898 if fk != -693
+yk dec 168 if umr >= 2191
+uy dec 113 if dy <= 3711
+mmw inc -752 if yk == -1241
+yk inc -181 if t > 2989
+mmw dec -636 if t < 2995
+a inc -424 if hg == -109
+j dec -762 if ada > -780
+lx dec 565 if uy <= 1577
+aao dec 858 if j == 697
+fk inc -383 if a < 969
+eri inc -51 if lx <= 85
+aao inc 666 if j > 690
+t dec 234 if a == 964
+aao inc -69 if fk > -1085
+es inc -721 if gk >= -2215
+is inc -185 if lbf > -251
+mmw dec 411 if es == -2849
+f dec -214 if gk == -2210
+yk inc 904 if aao >= -2804
+es inc 883 if mmw != 6210
+x dec 6 if ada != -774
+aao inc -776 if um != -2419
+j inc -653 if yk == -344
+gk dec 338 if fk != -1072
+yk inc -13 if x >= -1360
+lbf inc 201 if dy < 3716
+yk dec -904 if aao != -3575
+f dec 922 if j == 697
+uy dec -562 if lbf != -53
+gk dec 50 if lbf <= -47
+t inc -670 if mmw > 6222
+lx inc 515 if uy == 2133
+yk inc 261 if dy > 3704
+x dec -854 if uy == 2133
+kg inc 66 if umr == 2196
+kg dec -83 if j != 706
+ada inc 739 if gk > -2590
+eri dec 379 if eri == -1497
+dy inc 638 if aao >= -3583
+a dec 130 if is > 1851
+mmw dec 399 if uy == 2133
+eri inc -195 if f > -2801
+j dec 885 if dy > 4339
+eri inc -544 if aao == -3587
+kg inc 895 if t != 2984
+yk inc 258 if dy <= 4350
+es dec 660 if dy == 4342
+umr inc -92 if gk < -2592
+eri inc 361 if x == -504
+um dec -298 if gk != -2588
+fk dec 532 if j < -184
+uy inc 31 if f < -2791
+aao dec 31 if j != -182
+ada inc 448 if um <= -2113
+fk inc -13 if eri <= -1703
+t inc -59 if es >= -1971
+gk dec -909 if x == -510
+es inc 805 if hg >= -112
+j dec 734 if kg >= 3919
+um inc 369 if aao != -3606
+yk inc -548 if dy > 4348
+gk inc 934 if j < -182
+x dec 346 if hg <= -107
+lbf dec -379 if eri != -1718
+lbf inc -921 if f >= -2802
+mmw inc -191 if eri <= -1703
+umr inc 252 if lx != 600
+mmw dec 410 if ada >= -330
+gk inc 558 if a != 828
+mmw dec 320 if um <= -1744
+ada dec 517 if t < 2933
+is dec -616 if ada > -835
+yk dec -406 if j <= -185
+yk inc -526 if lbf <= -586
+ada inc 368 if j == -188
+kg inc -89 if f <= -2791
+kg dec -531 if lbf == -590
+mmw inc -252 if f < -2787
+is inc 293 if eri > -1713
+lbf inc 509 if kg <= 4367
+eri inc 607 if fk > -1620
+f dec -313 if j > -194
+ada inc -582 if aao >= -3611
+a inc 373 if x == -850
+eri dec 668 if ada != -1057
+um dec 112 if lbf <= -72
+lx inc 91 if t > 2919
+a inc 157 if is > 2139
+fk inc -207 if a != 1371
+um inc 108 if t <= 2929
+aao inc 80 if lx >= 681
+fk inc 437 if lbf == -81
+umr inc 473 if lbf <= -75
+eri inc 509 if umr != 2822
+a dec -7 if is >= 2146
+fk inc -10 if t != 2920
+is dec 235 if a > 1358
+ada inc -655 if eri == -1201
+kg dec 983 if f >= -2486
+es dec 640 if t <= 2938
+eri dec -700 if is < 1919
+ada inc -213 if fk == -1401
+hg dec -846 if kg != 3381
+f dec 584 if a <= 1361
+aao inc 731 if gk != -1107
+t inc 823 if kg == 3377
+es dec 382 if j > -195
+fk inc -83 if ada < -1916
+umr inc 948 if eri > -511
+a inc -765 if eri == -501
+a inc 114 if f > -2478
+aao inc 343 if aao == -2798
+t inc -172 if eri < -498
+fk inc 905 if x < -840
+dy dec -731 if a > 597
+lx inc 410 if um <= -1744
+eri inc -859 if lbf <= -90
+fk dec 820 if ada < -1916
+yk dec 14 if dy != 5078
+aao inc -89 if lbf != -81
+umr dec 242 if aao > -2457
+f inc -563 if lx <= 1100
+uy dec 967 if uy <= 2166
+eri dec 984 if lx > 1086
+hg dec 816 if mmw <= 4653
+hg dec -413 if um == -1753
+dy dec -410 if mmw > 4643
+uy dec -298 if lx >= 1094
+mmw dec -611 if dy > 5483
+t dec 471 if is != 1915
+fk inc 505 if aao >= -2463
+gk dec -947 if fk == -894
+es inc -556 if umr >= 3532
+es inc 768 if x >= -853
+yk dec -865 if aao == -2455
+hg inc -481 if a != 609
+ada inc 904 if es == -1971
+hg dec -518 if um < -1750
+yk dec -744 if fk != -889
+a inc 410 if f > -3047
+dy inc 522 if is >= 1913
+um inc 882 if is < 1915
+es inc -950 if fk > -889
+is dec -211 if is == 1911
+kg inc -160 if um == -871
+a inc 315 if j == -188
+umr inc 840 if eri <= -1479
+kg inc -805 if ada <= -1013
+um inc 701 if x == -850
+a inc 735 if umr == 4375
+um inc -413 if lbf != -76
+dy inc 310 if mmw <= 5268
+lbf inc -210 if dy != 5800
+um dec -489 if lx == 1095
+fk dec -743 if mmw <= 5258
+lx inc 332 if mmw > 5249
+hg dec 396 if mmw >= 5251
+yk inc -672 if fk > -896
+a inc -872 if t >= 3114
+a inc 22 if umr >= 4370
+es inc 374 if um > -98
+uy inc 609 if lx <= 1434
+a dec 580 if is >= 2118
+hg dec -809 if lx >= 1424
+fk dec 451 if aao != -2446
+mmw dec -339 if gk < -156
+hg inc 566 if gk < -153
+hg inc -629 if uy >= 2100
+lx dec 314 if a > 1503
+lbf dec 173 if lx >= 1109
+t dec 107 if ada == -1021
+dy inc 421 if mmw <= 5607
+is dec 751 if hg != 731
+hg inc 844 if hg != 730
+eri inc -44 if a == 1505
+uy dec 230 if t <= 3002
+uy inc -450 if eri < -1521
+kg dec 353 if j == -188
+lbf inc -100 if mmw >= 5592
+umr dec -946 if f >= -3045
+t inc 893 if j == -188
+lbf dec -263 if hg <= 1572
+j inc 22 if umr == 5313
+eri dec 598 if aao >= -2463
+umr dec -591 if eri > -2130
+t dec 489 if dy <= 6230
+ada dec -547 if a != 1505
+eri dec -38 if dy > 6220
+ada inc 895 if is == 1371
+is inc -303 if mmw < 5599
+uy dec -217 if a <= 1513
+a dec -366 if x <= -851
+um dec 570 if t < 3411
+uy inc -560 if mmw <= 5599
+um dec -234 if gk != -152
+fk dec 305 if um == -430
+lx dec -553 if a > 1505
+yk dec -923 if yk < 1335
+yk dec 137 if es < -1590
+hg dec 737 if es > -1605
+yk dec 607 if eri < -2080
+um dec -588 if eri != -2097
+aao inc -230 if aao != -2455
+fk inc -654 if t >= 3398
+umr dec 525 if kg != 2064
+mmw inc -242 if lbf < -90
+lbf dec 682 if aao >= -2462
+yk inc -971 if t >= 3402
+t dec -403 if fk <= -2296
+ada dec 404 if kg == 2059
+dy inc 95 if yk < 542
+lbf inc 427 if j <= -182
+j inc 10 if j <= -179
+x dec 524 if f <= -3051
+lx dec 326 if gk != -163
+umr dec 176 if lx >= 789
+um dec 264 if eri == -2089
+t inc 197 if eri == -2084
+dy dec 574 if es > -1605
+lx inc -898 if um >= -110
+es dec -845 if um >= -113
+es inc -731 if yk < 537
+lx dec 424 if f >= -3053
+a inc 525 if lx != -535
+uy dec 692 if yk > 531
+a inc -591 if fk >= -2309
+fk dec -204 if aao != -2459
+mmw dec -420 if fk <= -2110
+yk inc 166 if j < -168
+umr inc 535 if gk < -158
+eri dec 417 if yk >= 695
+umr inc 230 if mmw != 5363
+umr inc -36 if lbf < -348
+f dec -763 if aao < -2450
+uy inc -841 if es >= -1490
+is dec -381 if gk >= -167
+x dec 981 if hg == 828
+f inc 682 if ada == -530
+fk inc 268 if uy != -450
+dy dec 891 if ada < -529
+uy dec 943 if hg != 828
+ada dec -496 if a < 907
+is dec 380 if gk == -159
+aao dec 772 if eri < -2505
+umr dec -646 if umr > 6151
+dy dec 978 if t == 3809
+kg inc -768 if fk > -1834
+lbf dec -107 if x <= -1828
+lx dec 822 if yk <= 709
+umr inc -504 if ada > -533
+aao dec -710 if es == -1483
+uy inc 17 if hg >= 838
+fk dec -48 if a == 914
+fk inc -80 if j >= -182
+gk inc 339 if um < -113
+lbf inc 224 if f != -1603
+lbf inc 553 if kg == 1291
+umr dec -384 if ada > -535
+lx dec -618 if t == 3809
+aao dec -291 if ada >= -534
+lx dec -385 if f <= -1591
+lbf inc -918 if is <= 1069
+kg inc 807 if dy != 3871
+a dec -120 if eri >= -2509
+fk dec 886 if uy == -452
+is inc 668 if f == -1600
+ada dec 281 if dy >= 3872
+aao inc 952 if j > -182
+eri inc -279 if kg >= 2098
+gk inc -357 if gk <= -153
+lbf inc -255 if um == -106
+es inc -509 if um < -105
+j dec 929 if umr < 6681
+is inc 906 if um != -114
+ada dec 951 if gk >= -523
+aao dec 80 if kg > 2089
+t inc 811 if hg < 832
+yk inc 303 if f > -1601
+gk inc 180 if mmw <= 5351
+is dec -639 if umr < 6672
+mmw dec -142 if kg <= 2103
+fk dec -275 if is != 2643
+ada inc 568 if x <= -1822
+a dec 677 if yk != 1005
+yk inc 111 if es <= -1990
+eri inc -17 if eri >= -2793
+lbf inc 974 if gk == -516
+hg inc -723 if lbf == 337
+mmw dec 408 if dy <= 3877
+t dec 142 if mmw < 5084
+gk dec 53 if yk != 1111
+lbf dec -434 if aao != -1344
+kg dec -837 if f >= -1593
+f inc 513 if eri <= -2804
+fk dec -925 if fk >= -2756
+t inc 280 if kg != 2100
+lx dec 328 if dy < 3880
+t inc -359 if j < -1103
+es inc 289 if ada < -1203
+x dec -414 if gk >= -574
+aao dec 710 if dy == 3873
+es dec -70 if ada <= -1187
+ada dec 883 if j == -1110
+is dec -635 if um != -105
+is inc 627 if a == 1034
+um inc -348 if ada > -1190
+mmw dec -270 if uy >= -454
+ada dec 362 if is > 3900
+eri dec -504 if t != 4541
+uy inc 910 if eri >= -2804
+es dec 261 if fk < -1821
+uy dec -430 if uy >= 456
+yk dec -841 if um >= -107
+j dec -287 if fk >= -1834
+a dec 90 if uy <= 897
+lx inc 867 if hg < 819
+yk dec 265 if fk >= -1820
+is inc -444 if umr >= 6676
+kg inc 586 if f == -1600
+es dec -298 if uy != 889
+mmw inc -896 if gk >= -576
+a dec -320 if t >= 4538
+t dec -722 if hg >= 819
+mmw inc -778 if ada < -1553
+um dec -914 if j != -826
+kg inc -964 if f < -1605
+yk inc -51 if umr >= 6670
+um dec 219 if j == -820
+dy inc 727 if a == 1264
+a dec -817 if kg <= 2692
+um dec 99 if fk == -1826
+kg dec 302 if uy != 892
+j dec -696 if lx <= -688
+uy inc -626 if t <= 5268
+a dec 961 if hg <= 837
+yk inc -803 if a != 1119
+mmw dec 678 if lx < -680
+lbf inc 862 if fk < -1825
+kg inc -786 if t <= 5259
+aao dec 91 if x == -1407
+uy dec -548 if t == 5263
+aao inc 638 if is != 3463
+hg dec 244 if uy > 807
+f inc 58 if lbf >= 765
+fk inc 581 if is != 3455
+hg dec -692 if fk >= -1247
+um inc -752 if aao < -1424
+lbf dec 14 if lbf != 783
+t dec 270 if f == -1542
+uy inc 70 if hg <= 1277
+is inc 676 if lx == -682
+is inc 230 if um >= -163
+gk dec 799 if yk > 1107
+ada dec -20 if eri != -2804
+lx dec -278 if umr == 6678
+gk inc 83 if umr <= 6686
+lbf inc 265 if a >= 1118
+is dec 476 if j != -820
+eri dec 509 if lx > -413
+is dec -486 if dy < 4606
+kg dec 989 if is > 4847
+lx inc 996 if dy >= 4591
+is inc -371 if eri > -3303
+kg dec 209 if f != -1542
+kg dec -21 if kg < 1394
+uy dec -34 if x == -1417
+mmw inc -753 if hg != 1285
+gk dec 862 if kg > 1408
+ada dec 346 if is < 4856
+umr inc 262 if es > -1888
+lx inc -842 if umr < 6948
+f inc 557 if yk != 1103
+dy inc -323 if lbf >= 1030
+kg dec 610 if ada >= -1883
+f dec 727 if f != -1544
+es dec -922 if aao > -1435
+kg inc -628 if f == -2269
+eri inc -762 if lx < -245
+a dec 246 if a <= 1118
+aao dec 51 if kg >= 181
+is dec 761 if x >= -1417
+j inc 359 if x == -1417
+mmw dec 562 if ada < -1880
+lbf dec 955 if aao != -1426
+umr dec -851 if x == -1417
+t dec -845 if is <= 4101
+lbf inc -666 if hg > 1272
+um dec -105 if f >= -2274
+gk inc 191 if umr != 7781
+dy dec -399 if eri <= -4072
+is inc 681 if t != 5835
+mmw inc -731 if ada > -1883
+x inc -603 if yk < 1111
+j inc 860 if fk <= -1239
+t dec -480 if kg > 175
+eri inc 308 if mmw > 957
+hg inc 37 if gk >= -1163
+eri inc 868 if kg >= 172
+gk inc 381 if f > -2276
+ada inc -231 if fk < -1234
+uy dec -404 if gk >= -781
+es inc -33 if yk != 1105
+j inc -210 if um != -66
+umr dec -783 if kg == 176
+a inc 287 if hg < 1322
+es inc 794 if f >= -2270
+f inc 816 if a < 1417
+eri inc -136 if fk <= -1235
+j dec 421 if lbf < 362
+kg dec -889 if fk > -1248
+um inc 701 if yk <= 1110
+x dec -487 if fk < -1243
+aao dec 623 if umr <= 8582
+mmw dec -307 if eri > -3038
+t inc 803 if f == -1453
+kg dec 980 if a < 1404
+dy inc -974 if gk < -772
+yk inc 221 if eri < -3040
+gk inc -421 if aao > -2059
+mmw dec -751 if f <= -1445
+kg dec 422 if lx <= -250
+dy dec 191 if x <= -1535
+um inc -318 if gk != -1195
+mmw inc 870 if kg != 651
+j dec -865 if t < 7131
+um dec 886 if t < 7124
+ada inc 171 if eri < -3030
+x dec -755 if es == -202
+fk inc -325 if hg >= 1313
+t dec 984 if t != 7130
+j dec 55 if aao == -2056
+fk dec 80 if x <= -773
+dy dec 852 if lx != -256
+is inc 295 if a >= 1408
+uy dec 733 if hg < 1318
+x inc 868 if um <= -560
+t dec -532 if t != 6128
+aao inc -530 if x == 90
+is dec 374 if lbf == 358
+aao inc 93 if t == 6673
+uy inc -657 if hg != 1317
+fk inc -670 if umr > 8568
+x inc 791 if j != 634
+mmw dec -872 if uy >= -73
+yk inc -771 if eri <= -3034
+umr dec -125 if kg < 645
+mmw inc -617 if aao > -2581
+mmw dec -90 if mmw != 3145
+es dec 182 if aao <= -2574
+kg dec 903 if ada >= -1934
+um inc 319 if lbf == 358
+uy inc -958 if f <= -1447
+ada dec -965 if eri == -3033
+fk dec 750 if es >= -393
+hg inc -488 if hg >= 1307
+lx inc 742 if umr != 8703
+uy inc 378 if kg != 643
+lx dec -584 if um != -233
+kg dec -654 if ada >= -986
+is dec 181 if f == -1453
+eri inc 302 if lx < 1080
+uy inc -907 if kg != 1289
+yk dec 652 if is < 4223
+lbf inc -147 if hg != 823
+fk dec -584 if kg < 1300
+fk dec -593 if f <= -1449
+dy dec -83 if gk < -1189
+a dec -568 if es <= -377
+aao inc -742 if gk <= -1193
+kg dec -560 if hg <= 831
+es dec -871 if fk > -1899
+lx inc 239 if kg != 1855
+uy dec 696 if ada >= -984
+kg dec -899 if yk >= 452
+x inc -303 if is <= 4223
+um inc -207 if lbf != 211
+eri dec 520 if eri >= -2731
+is dec -251 if t < 6675
+umr inc 19 if kg == 1857
+lbf dec -365 if uy != -2632
+yk dec 192 if fk < -1883
+dy dec 451 if hg > 820
+j dec -789 if lx <= 1320
+um dec -577 if lx > 1309
+es dec 954 if dy != 2800
+aao dec 798 if f <= -1446
+mmw dec -339 if mmw >= 3143
+j inc 126 if yk == 259
+ada inc -898 if umr != 8718
+kg inc -365 if eri == -3251
+aao dec 718 if lx > 1307
+x inc -872 if kg <= 1495
+j dec -862 if is != 4464
+mmw dec -785 if is == 4469
+t dec 355 if uy != -2627
+ada dec -528 if ada == -977
+yk dec -139 if hg >= 823
+mmw dec -97 if is == 4469
+j dec -454 if is == 4469
+yk dec -151 if kg < 1500
+lbf inc -19 if lbf != 576
+yk inc 281 if umr == 8718
+gk dec 59 if mmw <= 4374
+umr dec 266 if hg < 828
+fk inc -54 if is <= 4477
+is inc 468 if is >= 4477
+mmw inc -749 if ada != -442
+is inc 22 if mmw > 3608
+uy inc -436 if ada != -449
+umr dec -545 if gk == -1256
+mmw inc -716 if ada <= -447
+fk dec -470 if f >= -1450
+ada inc -429 if uy != -2633
+aao inc -28 if a < 1984
+umr inc -826 if aao >= -4867
+lbf dec 141 if kg < 1493
+lbf inc 307 if eri == -3251
+um dec -120 if um == 335
+j inc -674 if fk == -1956
+mmw inc -784 if lx == 1315
+x inc -524 if dy == 2805
+mmw dec 911 if kg == 1492
+gk inc 260 if mmw >= 1200
+es inc 638 if hg > 819
+mmw dec 276 if ada == -449
+eri dec -682 if kg != 1489
+um inc 790 if t > 6321
+a inc 288 if eri >= -2560
+eri dec -477 if lbf >= 747
+kg inc 922 if kg > 1489
+ada dec -65 if uy >= -2634
+ada dec -106 if umr >= 8170
+is dec -609 if aao >= -4866
+t dec -598 if mmw == 930
+gk dec 89 if t != 6912
+t dec -500 if f < -1456
+is dec -169 if es == 171
+f dec -633 if f <= -1453
+aao dec -191 if t > 6905
+a dec -772 if eri > -2574
+x inc -272 if x >= -818
+es dec 135 if j <= 2862
+uy inc 950 if aao == -4674
+ada dec 380 if aao != -4676
+aao inc 111 if kg < 2415
+lx inc -339 if umr == 8171
+yk dec 63 if ada <= -653
+yk inc -894 if j > 2863
+f dec -590 if eri != -2560
+hg inc -281 if gk == -996
+lx inc -529 if hg >= 539
+ada dec -133 if es != 163
+f dec -510 if t != 6912
+uy inc -761 if um != 465
+a inc -466 if um > 452
+f dec 811 if lbf <= 747
+umr dec 206 if umr >= 8170
+x dec -606 if dy <= 2814
+t dec 823 if hg <= 553
+yk inc 130 if um != 453
+aao inc 984 if fk > -1948
+x dec -152 if um > 447
+fk dec -958 if kg > 2418
+eri dec 996 if a < 2290
+aao inc 702 if x != -330
+lbf dec -8 if aao > -2872
+mmw inc 346 if hg != 554
+is dec -255 if fk == -1946
+gk dec -139 if x >= -335
+j dec -238 if x != -332
+lbf inc 649 if a < 2283
+lx inc 702 if es < 178
+fk dec -918 if j > 2858
+lbf inc 971 if hg == 544
+f dec -807 if a < 2283
+eri dec -263 if dy != 2814
+fk dec 128 if kg == 2414
+hg dec 541 if mmw > 1270
+uy inc -144 if um <= 458
+um dec 362 if mmw == 1276
+yk inc -346 if mmw == 1276
+mmw inc -543 if yk <= -340
+hg inc -358 if mmw == 733
+es dec -652 if f >= -232
+uy dec 401 if ada == -525
+x inc 736 if kg >= 2412
+uy inc -489 if mmw == 733
+yk inc 134 if is > 5522
+lbf dec 531 if uy != -3470
+f inc 472 if umr >= 7960
+f dec -410 if lbf >= 1836
+eri inc 522 if gk == -857
+um inc -672 if es != 178
+fk dec -774 if j <= 2871
+f inc 825 if kg != 2414
+j dec -713 if es <= 178
+um inc 769 if t <= 6079
+lx inc 995 if dy > 2797
+is dec 359 if es < 180
+a inc -680 if es < 177
+eri inc -102 if mmw < 736
+ada inc 39 if eri != -2889
+lx dec -935 if lx != 2145
+hg inc 741 if es >= 165
+kg dec -156 if lbf <= 1835
+f dec 376 if eri > -2892
+aao inc 570 if j == 3577
+dy inc 708 if is > 5162
+a dec 737 if aao == -2307
+x inc 936 if hg == 391
+aao inc -405 if j > 3576
+mmw inc -42 if kg > 2561
+j dec 295 if um != -588
+yk dec -641 if j <= 3282
+umr inc -633 if gk != -864
+dy inc -202 if gk < -858
+aao inc -244 if gk != -861
+uy inc -97 if kg == 2573
+mmw dec -889 if ada < -482
+es inc -166 if fk == -382
+eri dec -962 if eri >= -2889
+umr dec 201 if t >= 6086
+gk dec -700 if mmw == 1580
+ada inc -158 if gk < -159
+t inc 650 if es < -2
+lbf dec 870 if aao > -2966
+uy dec 727 if j <= 3289
+umr inc 483 if lbf < 971
+hg dec -283 if fk != -379
+kg dec 202 if t < 6090
+eri inc 607 if a >= 864
+lbf dec 282 if lx > 3074
+yk dec 490 if mmw >= 1573
+uy dec -536 if aao >= -2959
+uy dec -306 if lx > 3071
+fk dec 982 if lx == 3069
+aao dec 431 if aao < -2947
+mmw inc 145 if t < 6093
+is inc -222 if es <= 11
+mmw inc -953 if fk < -372
+a inc 588 if x != 406
+gk dec 464 if lx <= 3080
+mmw dec -655 if a > 1448
+mmw dec 251 if aao < -3394
+t inc 582 if dy < 3508
+lbf dec 816 if ada < -492
+uy inc 374 if a >= 1445
+f inc 98 if f >= -129
+gk dec -206 if gk == -621
+lbf dec -368 if fk != -382
+mmw dec -16 if um == -579
+dy dec 522 if umr == 7614
+fk inc -645 if dy != 2998
+hg dec 829 if lbf > 676
+aao dec 472 if t != 6098
+kg inc 926 if aao >= -3868
+x dec -485 if j <= 3284
+x dec 987 if mmw > 1433
+yk dec -933 if aao != -3859
+fk inc -446 if lx <= 3080
+kg dec 573 if f != -129
+hg dec 231 if dy <= 2992
+eri dec -162 if es < 14
+t dec 975 if lx > 3086
+dy dec -144 if f < -147
+lx dec 122 if lbf < 682
+mmw inc -438 if umr == 7614
+j inc 149 if mmw < 1009
+t inc 749 if lx > 2947
+um inc -970 if hg >= -400
+kg inc 368 if kg != 2721
+aao dec 845 if kg == 2721
+eri dec -521 if yk > -59
+gk dec -200 if ada >= -495
+hg inc 462 if um == -1549
+eri dec -54 if mmw >= 998
+hg dec -268 if a >= 1450
+j dec 86 if t != 6840
+a dec -394 if a == 1452
+aao inc 166 if kg >= 2720
+x inc -146 if is == 4943
+es inc 496 if kg < 2723
+t dec -949 if uy <= -2989
+")
+
 (def day-9-input "{{{{{{<e<{!i!>},<oe'!><!}}\"ao,o>},{{},<!!!>e}\"!!!!!>!}!>,<\",!}!>},<{>}},{<{e!!i{\"!!!>!!!>>,{<!!e!>},<!>,<!>!u!!!!!!i{!><!>!!!>},<!!,!!!>!!,>}}},{{{{}},{<a!!!e<o!!!>!u,!!!>,<\"io!!{!>},<\"!!!>!!!>i>}},{{<eui!!!>e,e!>,<>},{}}},{{{{}},{}},{{{<{,i\"!>!!\",u{\"!>!>'!!u>}},{{}}},{{},<\"}'{!>,<{!!!>a\",!!!>>}},{{<i<ao\"'a!>!>},<!!ouo\"!!!!>,{{{<}!!!u\"u!!!!!!'<ui!!!>'!!i<!!!>ie\">},{{<e!!!>o{!>,<>},{<}!>,<<uo!>},<i,o!!\"a!}!>},<}!>},<>}}}}},{{{<!>'>},<!!>},{{<i>}},{{<{!!u>},<e'aa{'<!>,<<auo!{!!!!u>}},{<{!!\"!!!>!!!>!\"!>,<!>},<u!!!a>,{<\"!!!>'<!'!,\"}}!>},<i}i!!!><!!!>i>}}}},{{{{<!!!>\"}!>i!a{>},{{{{<!>},<o!!<o!u!>,<}!>,<a\"!!!>,<'!!>}},{<,\"!!\"uu<,<!>',i\"!>!>,<,!<>}}},{{{},{{<\"!!!{ai!!!>},<u!!!>,<\"e!>!>!>{<!!!!!>>},{<uu!!uo}'!>},<!>!u'a\"i<}!>,<'>,{<i!!!>},<!!!<!>},<>}}}},{{{<\"!>},<}\">,<!}!>!>},<>}},<'!>!!!>,<!'!!}!>ei!!!>,<!>,<<!>,<!>,<>},{{<!>,<e!\"<!!!!!>,<!>},<!!!!!'u!>,<!!!>uo!!!>}a>},{{<ae!!a\"i!>,<!>},<!>,<!!o'}>}}}}},{{<!>\"'ue!!!>!!>}}},{{{<'e!>,<!\"!!!>>}},{<!>,<!ea!!!>!o!!!!!!!>'>},{{{{<!!!!!!!>!>!>,<!>},<<,<{>}},<}ue!,{,!io>},{}}},{{{<'!i!!i!!!>,<\"!>!>},<>,<,!!,!!}{!>},<{e!>},<ii{!!!!!>>},{{{<,<ii,>}}}},{{{<{{e!!!>!<i!>!!!>u!!!!{{a!!!!{!>>}},{{},{}}},{{},{{<<!!!>!!!>{!!!>,<\"!!{<eo!}!!!>!!!>{>,{<i>}},{{{}},{<!e!>,<{!>!!!>i>}},{{<!>,<!>},<>},{{<!!!>i!>,<>}}}}}},{{{{{<>}},{{},{{<!!!>'!!>}},{<oa!!!>!}e>,{}}}},{{{<oe!!u!>a!!!>ii<{{!!!!!!!><,!>,>}},{<!!!!!i!!!>'e,'!>,<u!a!!\"!!!{,!{!>,<e!!!!!>},<}>},{{},{<}!!i!>,<a!>},<a!>,<!!\"o!!!!!>,<<!!>,{<o!}<!!\"{\"o}!>},<!!!><u!!}u!>},<!!!>!>,<\">}}}}},{{{{<!!i,!!{o!>a!!!>!>},<!u!!!>e{!!!>!!u!!!!a}>}},{<!!u!<\",a}!!!>{{}o!>},<e\">}},{<!!!>!>},<!!\"o!i!!}u!>},<{<!>},<!!!!!!>,{<!!e!!i,'<e\"o>,<!!\"<aeo>}},{{<'e}!>,<!!}!\"!!!<!!,!!!>,<!>,<'u!}!>},<{,>},{<>}}},{{<u!!}!!!>!!i!!a!>},<!>>},{},{{},<a!!!>e{!!!>!!!!!>i}e,}!!a!}!>},<>}}}},{{{<!}!>},<>,<'!!o>}},{{{{},{{<!>},{a!>},<>},{<i}u>,<,!>,<!>},<!!!>,!>!>},<{!!!>',ae!<!>},<!!!>e'>}}}},{{{{{{<o!<uoo!!!>}\"o,'{!,a,>}},{{<<!o!>,<',\"'!'!>,<!!!>}a<!!>}}},<!!u!!'e!<!>,<!!!a,u!>},<!!!>},<>},{},{{}}},{{{{{{{<<!!e!!<u<!!\"i!!>},{<i\"!>},<!!!>},<o{!>},<!>,<{{a!>},<i!{e>}},<\"!,!!u!!>},{{}},{{<u!>},<>},{<!,}a{oo<}{}i<!!!>eu\"!>,<>}}},{{<!>},<ae!>,<!>!>>,<!!!!uei{!!!!'}!o{u{!<!>,<,>},{{<'a!>,<!!o,!>},<!>!>},<!>},<<!!\"!!>},{}},{{{<,!\">}},<!>,<!!aa,!>},<e!!!!!>},<!>{!!!>e'!!i!!!>,<>}}},{{{{<i!!!!<u'!>o!>,<!!!>},<\"\"!>,<!\"ui!i'}!!!>>},{{<,ao!>},<!>,<!}e!!!!i{a!>,<!u<!'}<o>}}}},{{{<!,}{{{!>},<!!!!,uia!a<}ei\"!!>,{}},{<i!!}!>},<!>,<'!<ou>}},{<oo}a{!o!!<!>},<!!!>!!!!!>!!e!{!!u!>},<,!!e!e!!,>,<!!!>,<\"<'!!!>},<>}},{{<!!{>},{}}}},{{{<!'!>,<!!{!>},<!>,<o<!>,<!>,<>}},{<!!!i}!u'!>,<{u!!ea!,a'o!!!!!!!>i!{>}},{{<a},i!!!!!>,<\"<<!!!!!>{>},{{}},{{<!!!!\"'u{!!!o!!!>},<!!u>},{<u!!o!>},<'!>,<o}!>,<u!!<!>,<!!!>>,<i\"'i{!>,<e\"'!}>}}}}}},{{{<'!u,{a!!!>u!>},<!>,<e>}},{{<}!>},<!{!!!>},<!!!>a!'!!!>!o!!,<o>,{<{<!!!>!!!>!!!!<}\"!!!!>}},{{}},{{<!>',!!i!!u\">,{<o,!!!>a!>},<a!!!!!>!!,ai,!!>}},{{<'!!!>!{!!!>},<{\"\",!!!>!>},<o<!!!>!!{>},{}}}}},{{{{}},{{{<!>},<!>},<!!!>ii!!!>!!!>,<i<!!'<{>},{<}!>>}},{{<e!>},<!{e!>!!!>{>,<>},{{{<,!>},<e<a\"o!!!!!>,}''>},{}},{},{<{'>,<!!!>{\"!>,<u>}},{{{<{\"eu!a!>,<!>e!u,i\"u!!!>,<}!><>},{{<!!!>,<!!!>!!\"i!!\"}!>},<\"<!!o,!\"!eo!!!>!!!>i!i>}}},{<!e>,{<\"e!>,<!!{!><<,u>}}}},{<>}},{{<<e<!!a>}}},{{{{<u''{!>!o'>}},{{{<>}},{}},{{<'!>},<uia!>},<!!!!!!u!>!>!uu!>,<!!!>>},{{<<'i!!!>,<!!!>,<},\">},{<!>o{aiae}u}e>}}}},{{{<!!u,<uu},i'!!!!!>!>,<i>},{<!>,<!\"!,}a!!ii{<<{{!>>,{{{<!!!><,!!''ie<!>},<!u!,aa>},{}}}}},{<e!!\"!>},<!!!!!>}!!!>o,!!iu{ua!>,<!!!!!!a>,{<io'!!e!!!!!>!>},<e,<o>}},{{<oi>},<}o!!!>!,!!!>!!u>}},{{{{{{<!!}!>,<!>,<!>>},{<,>}},{{{},{{<{>},{<{!>},<'!e}!a!!!>o'>,<e!{,a!!!}!!i!!<{'!>!!<\"!>>}}}},{{{<>}},{{<u!>!>,<!!!>},<!>},<io!!''io!>,<>}}}},{{{<,a<o!>},<!!,,}o!!!><\"!!,i!!!>,>},{{{},{}},{}}}},{{},{<!>e'a!!!><u{!>\"!}>,{<>}}}},{{{{<!>},<<!!!>oe'!}!>},<'au,oai!>!{!>,<>}},{<\"a!!ee!>,<!!!!a}!>\"!u\"{',>,<!!!>\"!>!!a{'!>,<\">}},{{{{{{<!>,<u!e!>ae!!!>!>},<{!!a!>},<>}},{<a{!>,<'i!!o}}!!,i!>,<!!{\"!e!!\"!ou>}},{{<!!'!!!<a!'<!!!>\",>}}},{{{{{<!>,<!,a!!!>,<!>,<>}},{}}},{{<!!!!}i!!!>,<!!!!{'euu>},{{<}>}},{{{{{},<!,o,!'!>},<}aie!!!!!>!!!>!!!>},<!<{{!!!>,<!!!><>},{{<o!>},<!!!>!!!>,!!!a!!{{a{!!<a\"i>}}},{<!>,<'!!!><ai!{!!<e\"a<'!!{!'!!u!>,<a!!!>>}},{{<!!!>o,,>}}}},{{<!!i'!!{>,<\"!>,<!!,<oi\"'iu!>ou>},{{<!>},<>},<!\"o!!,u,!!!>!!!>{,,}'<!!!>e!>},<<>}},{{{{<'!>,<{!!!>o!!u,u>}},{},{{{{{<!!>,{<}e',!!!!!>}!>,<{!!!>!!!>a'uia>}}},{{{{<!!,!!!!!>!>!!i>},{{<\"!>},<{!!'!>},<!!!e!!!!!>}!>>}}},{{},<a'!!!!\"!>,<!>,<{!>,<a,!>,<,!!oaa>}},{}}}},<{u!!!>{'!{}!!u!!!>},<!!}>}},{{<!!o!!!!a!>},<!>},<ie\"{\"i>,{<!!!>}'a!>uii{o\">}},{{<!>,a'!!'ea<'!!e'{\"u!>,<{,!!}>},{<!!!!!>,<!!!>!>},<{,<>}},{<{!>},<!>},<!!!>}>}},{{{<!!!><!o!>!i!>,<!>!>o!!!>!!!!!!,>,{{<\"uu!,a<ii'{u{!>},<{<!!,!<>}}}},{<{'!>!!\"i>,{<!>},<!{!!!!u\"<i!!!>ie>}},{}}}},{{<}!!,,e!!!!!><\",<!ia>}}},{{{<o!!!><>}},{{}}}},{{{<a!>iu'\"e>}},{{},<,\"'!!!!!u>},{<!>,<!!!>\"e!>,<!!}!!!>!!o{'a>}}},{{{<!!!a,!>,<!}!!o'!!e>},{<<<e\">,{{<!!!>!!!>!,!>},<!!'}!!!!!>!>,<!!!>},<a>},{<a!!\"<!!!{a!o!!!>!i}i>,<!eu!!u!i\"!!!!}o!!!!!!>}}}}},{{<!!o!>},<i\"'e!!<{!!!>>}}},{{<!!u\"<!,!!!\"oie>,<i,eo<>},{},{<u{!!!>,<a>,{{<!>,<!>,<!!!iu!!!>!>,<!!ao!!!>!i\"!{!>>}}}},{},{{},{{<!>},<!e>,<!ie!>},<!!i!>uio!>!!!>ui>},{},{<!'!e!!a'!>},<ii>,{<{,>}}}}},{{{{<ue!>,<}oa,}!!>},{<,!!!!!>i,e,!>},<!\"<!a}i<a>}},{<\"!>,<!!a!>,<,>},{<,!>},<\"o!!i!!!>!>!!!>ui{!!!>a'i!!!>},<{!!>}},{{{}},{{<!u!>a'!>!!o<!!,,o<!!o>}},{}},{}}},{{<!>!!!>!>,<\"'}{!>,<!!!>>},{{<'{!'o!>,<o\"\"e!!,o!!!>,<e!!!>!>o>},{<!!!!a}'!!e!>},<!>},<!!e'>}}}}}},{{{{{<{u!!!>aeu'>},<!!!>,!>!i!!a\"o!>!u!!\"!>},<o!,{!>,!!',>},{<!!!>o\",}o!>!!!>'!!o'!!e!,<{!!u>,{<!!ou!>!!o,\"!!!>\"!u,!!{e,}o>}},{{{{<'!!!>},<>},<!!{'!>},<\"!!<a<!>},<i!!a!>,<>},{}},{{<!e<e!!{>},<{!>,}!!a,>},{{<o!!,>},{}}}},{{{<o\"!>,<u!>u!>},<!!!>!>ee>},{},{{{<!!!>{!\"\"!>},<a>},{}},{{<au,!>'>}}}}},{{{{<'!!e,u!i'',!>,<!><,!>,<\"!>,<>}},{{<!>,<!'!>,<!>>}},{{},{{<!!i!>},<\"!<!!ue!>},<e}\"oee!!<!>},<>}}}}},{{{{{<!>,<<!!!>!!!>u!>!>,<!!i}<i,\">},<a{!!\"!>!>,<uo!!,!!!!>}},{{{<e\"!!a!!}'{<>},{{<}i'<a!u}!e!!!>!>,<!!!>,!\"!>,<!>,<>}}},{{{},<e!!{'o!!!>u!>,<!!!>'!>},<}!>,<}!>!!!>>},{<!!u!!!!!>!>,<!!<},!!,'o<!!!,,<!>}\">},{{<e!!!>\"<{!!i'\",ae'!!!>i>},<o!!!!!>{<aeu<!'!>,<>}}}},{{{{<>}}},{<uieoou'}<i!!!>!!!>!>>,{}},{{<o\"e'<\"!!e,!'e!>},<\">}}},{{{{<!i'!!i'!!e!}e!a!>},<e!>,<o!!>},{{<}!\"!!i{!!u}!>},<u\"u<'e}>},{<,i!>},<!>!>,<{{,!>!!!>!!!>\"''i!!!>,<!<!!<>}}},{{{<oe}!!\"!!!>,<\"eo,>},{<'!o<,}>}},{<!{!>,<!>,<'<!!}e'!<!\"a{e!>o'!>,<'!!!>>}},{<!oa{!!'!,a!!,u!>!!a,!>e!!!>\",oi>}},{{{{{{<e}!>,<<e}!!oa>}},{{<'<!!!>,<\"!>,<>},{{<!><!>'u>}}}},{{{{{},<\"!!i!{!>!>,<{i!!!'!<ei!>!>},<!!!!e!>},<{a!!>},{{<e>},{<'uiaoe!!,!!o!!\">}}},{{},{}}}}},{{<a}!>},<!>oo!>},<!iu!>},<>,<!!aoae}>}},{}},{{<!i}{a!>,<{}!>},<<a>,{{<\"!>!!!!au!>,<!!!!!!u\"<>},{{{<!!{{\"u}!!}a!>,<!'!>,<}}a>}},<o!!!!u!>},<',o<i{!>},<!!a}>}}},{{{{<oi!'o!>,<ao<ouie!!!>{'\">},{}}},{{<!e!>,<>},{<e!>},<!!}ei{}o!!!u,!>}!},!>,<>}},{{{<!>{!,o<aa!}'!!!o'!!!>!!!!!>>},{}}}}}},{{{},<!\"}!>!!!!\"!!!>a!!!>!!!>>},{{<\"eoe!!!>>,{<u{'io!>},<!!\"!>>}},<!>!!',,'!>eui<!e<i,!!!!!''!!{<\">}},{{{{},{<i'o!>},<'<a!i{o>}},{{<u\"!!<\"!!!!!>!><au!>},<!!!!!>'a}'!u!>,<>},<}'}!!!>!o,!>,<!>},<!!a!!!>ea>}},{}}}}},{{{<e<!!!>\"!!!>>,{{<!>!>!>},<!>,<!>!>!>,<!>},<!>'i!>o>}}}},{{{},{<!!!!!>},<!>},<a!>,<!!}!\">,{{},{<,!>!!!!<!!u>}}}},{{{{{<!!{!!!>i>},<o''!\"'e!!!{,a!<a!!!>,>},{},{{<!>,<{!>},<{ua>},{<!>'!!!!!>,<>},{{{<{o\"!>},<!!o{!!{e<}!!{'!>},<>},{<i!}u!!!>\">}}}}},{<!!!>,<!>,<,<!>>},{{{<!>},<>},<<!!u{!>!!!>},<!>,<!>!e!!i<!>,<!!i\"!!!u{}!>},<!!u>},<'!!e}!!!>,!>}>}},{{<e!>,<!>!,!!{!!!>!!!!!>}!>>}},{{{<\"eiuu!>>,{{}}},{{{},{<!!!>i!\"{>}}},{<!!\"!<u>,<\"!e,'e>}},{{{<,o,!>},<eeei!!!>i,!!!>u!!\">},{},{{<}o'<,{!!a!!!>}{{!>,<e<!>,<!!!!,>}}},{{{{<!!a!!ou!!,e!!e!!!}!!a'!!!>ioi{!>},<a!!e!!>},{{<!!o>}}},{<i!>o,'!!!>!>},<i,\"\"a,ie!>},<u\"!!'>,{}},{{{<!!!>'\"!>!>!!!>!>,<!>auu}u\"o!>},<!!'!>,<>,{<{!>,<!!!>,<a\"ioa}!>,<i!<>}}}}},{{<<!>!!!>!!\"!>,<{!>e<e{>,<!!!>,<{>},{{<\"a\"\"\",!!e!!!>!!{!>!<\"!>,<!!,u'!>!>,<>},<u<o!!ee!!e\"o>}},{<ua!>,<!>},<{!!'<!!!>!>},<>}},{}}},{{{<!>},<\"!>},<<!o,!{'!!o{!!!>a',!!i!!o!>,<o!>},<>}},{<ei!}!>},<ea{ooe',>,<!>},<!>,<!!!><>}}},{{<o{!!!!!>!>},<<'!>>,{{}}},{{},{<<\"oo!>!!!!!!'!!!!!!!>i!!!!!><\"\"u>}}},{{{{<!!,!i!>}u!!,<u,!>},<!>,<a!!{!!<uo>},<!>{!!!!!>!'{\"u!!!>!!!>!>},<!!>}},{{{{{},{<!>},<u!!i<a>,{{{<e!!o!,'u!!>,{{{<u!!e!!!{!!!>,<,<o>}},{<!>,<{<!!!>ei!!!!!>!>},<a,,>,{}}}},{}}}}},{{}},{}},{{<}\">}}},{{<!!{u!i!a>},{},{}}},{{{{{<a!!!>},<u\"!!!>},<o!>!!!>u}a<>},{<!><u<!!!!!>,<!!!>eu!!!!!>!}o!!>}}},{{},<,!<!!!>,<!>},<!!'\"!!!>!!'>},{{{<o!>,<!!}u!!!>!!\">}},{<<!!{'!>},<<!!e<!!'!!!i!!!>,<>}}},{}},{}}},{{<u!>,<!!!!!!!>},<}{,!!'}\"!>,<!>,<\"{!!<iu>,{<i!>e}oi!e!!!>!>!>>}},{{<<a'{i!>,<!}!>,<!!!>'}}}!>'a}!>},<!>>}}}},{{{},{{{<!>!!ae<!!'!>\"!>},<!!!!{!!!!!i>},<!!i>},{{{{<!!{a,!<i{o!!o!!a!>},<u'u!!{>}},{{{<,u!>\"!a!'!>},<>,{<!}ee!\"e!{!!!>,<e>}},<!!,!!{a!!!>!!!o!'\",>},{{{<!>},<!>!>},<!!!>!!<i>,{}},{<a,'<{!}},!!i{<>}},<!>,<<!!u>}}},{<\"!o!!!!!>i<<!>>,<a,\"!!!e>},{{<{!!!>a!'uo!!{o!\"u,!!,!>,<a!u!!eoe>},{{{},{<<!!!>i!!e!>},<\"!>},<ao{!>!!!!,!!!>>}},{{<e!!'{u!>,<a!\"!,u>},{{<!!'!>\"!!!!!>}<{!!!>>},{<a!!!>e!!!>!{!<!!!>},<,'<u!!!>},<e>}}},{}},{{<!>,<!o}>},<''<!!!>,<!<!!'!!\"!>,<!!a!!,>}}},{}}},{{<!,i!!!>ee{!!,u!!i<!>},<!>,<!>},<,!>!!!!}>,{<\"!!a\">}}},{{{{<!!!>oeeau!>,<,i<!>},<,ae!>!!>},{<>}}}},{{},{{{<{,\",a'{a!!u!>},<,!!!!e!!!>>}}}}}},{{{{{{<!!!!!!i!!!><!>!!\">},{<!!!>aoa'{{ea!!\"!!!>!>},<!!!>>}},{<u{\"'<!'>},{{<!i!!e!>,<!}\"a<>}}},{{<!''u!!!!o}!,!>a!!!a!>,<!>,<>,<!>},<}u!>},<u!<\"!!!>{'!>,<{>}}},{{<!!aa!!!>\"!!!>,<'!i,}\"!!!>>},{{{<u>}},{{<e!>},<ui\"!>,<!>a!!!!!!,>},{{{<!!!>!!!!e<!>},<>}}}}},{{{{},<>},{{<}!!!>},<'u!>ue!>,<!!!>!!a!ia\"a,ua>,<i!e>},{<>}},{<,<!>!!\"!>},<!!!>!!ai!e\"!>{o>,{<!>,<!>},<!>!>,<}oe'i,!>,<>}}},{{<!>,<a!>,<>},<!!e}!>!>},<!>},<io!>,<!!!>!!!>!!eoe!>},<>}}},{{{{{{<!>,<,!><,!!!>,<a>,<!!!!!>}}oo\"{!!!>!>},<!!!>}!!ae>}},{{{}},{{{{<!>,<i<!<e!>},<!>!>},<!!!!!!!>!>},<!!!i\"!!o!{i!>,<i}>},<'!!!>},<!!!>,<\"!!,{!>},<e{>}}},{{{<}!!!>},<!!'!>},<!a!>!!!!!>auo!!u'o!!!>>},{<!!e!>,,,!!!!!!!>!o!!\"u!>},<!!e!u!>},<>}}}}}},{<!!!oe!>}!!\">,<!>},<!!!>}!!!>,<>}},{{<{!>},<!>},<!>},<}!>,<!!,!}!\"\",!!!>!\"!!!>'!>,<!!{>},{<!!\"a!a!a!!!>{!><u!!!>!>},<eau!>},<\"<ii>}}}},{{{{<!>},<ei!!!>!uui!!a,!!}!>,<>},{}},{{{<u!>oa,}!>!>,<!>},<\">}},{<!!!!!>!!'!!a>}}},{{{{{<uo!!!>u'!!u!>},<}>}},{<!!!>\"!!!>o\"!!i{}!!>}},{{{}},<,o}!><!ua!>},<>},{<,>,<\"e!!i}!!!>,<!>,<!>,<>}},{<!!a!>},<>,{}},{<!!e!>'}!>},<!ii!!!>!>,<!>},<!>},<!!>,<aa,iui{!!u!'>}},{{<\"a!>},<!!}!>,>,{}},{{},<!!<}e!!!>,<!>,<!>'{e<>},{<!!!>},<!>,<eo\"!!!>u!>},<!!!>!!,\"!!!>},<!>,<!>,<!!{i!!e>,<o<!<!>},<!>},<!>>}}},{{{{<a!>},<'!>,<i!>},<,!!{<a!>,<,>,{<a,<!!!>i!!!>!o!!!!!>,<!>,<!>!>,<}!>\">}},{<}!>,<!!u!!ae>,{<}!!!>!!!!!>!!!!!>},<!!o}e>}}},{{{<oi!!!!e!>,<!!!!{,!>!!!}!>,<ee!!!!!>!!!>!>},<{e!>>}},{{{},<\"e,!!!>},<,ae}!>!!!>u!>'a!!!>},<,>},{{}}},{{{<!><u!>,<!>,<!!!>\"{a!!!>!!!>{<>}}}},{<!>,<<<!ei{}!>,<>,{<u,!>!,!\"i!>},<!!e!}>,<'<o'>}}},{{{{<!!'!{i>},{}},{{<!>,<e!>,<!!\",!o!>,<!>!>},<u<e!!!>},<o>,{{},{{},{{<!!!>\"e!>},<,!>,<>}}}}}},{<o<!!!>!!!<!>,<o!>,<ia<!>},<!!!>'>}},{{<'!>,<!!!a!!ee!>,<ee\",!,o{>},{}},{{<{!>,<e\"e!>,<'!!!!<i{!!!>,<,o!'e>}}},{{{},{<'!>,<!>},<}!{,!!>,{<u!!!>'\"u}!!\",'!!!>'\"i!!,>}}},{}},{{{<a!\"{!!ei!!!>i!!!{>},<!!!>>},{{{<!!!!<,,<!!!>!>u\"!>},<'!o{o!!!>>},<<!<!>!o>},{{},<!i',!>,<!<}!>,!>},<>}},{{},{{{<!}!!}ou!!>}}}}}}},{{{{<!>!<oe{uo!>!e,!!}!!!>},<e>,{}},{<!!!!!!i!>!>},<>,{<<!>!!u>}}},{{{},<a<}o!>},<!!{ui!>,<e}i,!!}<>},{<u>,<}<a!>}>},{}}},{{{{{{{<\"!!!>'}!!!>!'\"\">,{{<!>!!i,!!!\"i'>,<>},<!>},<o>}},{}}},<<!!!>>},<a!!!e{<}{uu!}!!!!'!>,<!>,<!!\"!!<!>},<>},{<<!>\"!!!>},<,>,<!>,<!!\"!!!>!>!!!>!>},<!><e'!!!>,e}>},{{{<\"ua}i!!!>,<>},{{},{}}},{{<'!>},<>,{{{},<'!i!a,<!!!,!!,<>}}},{<!!!!!>,<u!!e\"a!>,<!!!>,<'!>},<,e'<>}},{<}u!<'<'{u<',!>},<!!!!!>{!!ue>,<!>,<!!!>,}i>}}},{{{<!!!>!,o\"!>,<'\"!!!>!!!>\"!o{o}!}!'!!<!>>},{{<!!!>!!!>,!!!>a}!!{}a'u>},<ae!,o!!<o,!!io!<>}},{{{<!>,<!!!>!!!>e!!!>!>,<>}},{{<ei!>},<>}}}}},{{{{{}},{{<!!u!!!!'\"ii!!\"\"<!>},<>,<}u\"'>},{{}}}},{{{<>,<!}o!!!!!>a!!!!!!\",!!'>},{<!!!>{!o!!!!!}e}<>},{<a!>}!!!>!o},}{}'aeee!o>}},{{{<!!!!ua{!>},<e<{!!!>!!<ao>},{}},{{},{}},{{{<<}>},<\"!!,u!>},<!!!>!>},<!!!!!>\"{!\",!,!!!>},<ue>}}},{{{<!!a,'!!!>'o!!i!>},<!\"ue!!{!!!>,<>},{<e!>,<e{!!!!ue!<}!>},<\"!!!',u{!>,<,>,{<!!!>!!!>!>},<!!,>}}}},{{{},{{{<!!!>}!!<!>aou<'>}},{{}},{{{},<!>'uae,u\"i!>},<u,!!!!''!!>},{}}},{{},<a>}}}}},{{{{<!!!!o\"!>,<!>},<!a!>!u!u}o}!!!>a!<>},<uo\"i!>},<!!}<>},{{{<o<!>},<!!!>},<i!!!>!!}<e,!!!>u}>,<!!e<u{}'}!i!'!>},<<!!!>o>},{{{{<!!!>},<!>eo'!>},<'}{\"!!>},<{o!!!!!>i>}},{<!>!!!>!!!!u>,<\"oooe>},{<!>>,{}}}},{{},<e!>},<!!!>!!!>,<{u<u!{!}{>}},{}}},{{{<{{!!!>!!!!u!!'!!!>},<!>},<!>!!!!u!!a>},{<!>},<!u>}},{{<\"eu!!}!>!!!>}!>,<>,{<!!,!e!!!>!>},<ioe!!e!!!>i!><!,!>!!!>>,<!>,<!!!>>}},{{<>},{}},{{{<{!>,<!>,<!ua!>},<>},{<!!!>eo!!!>{}}{!\"i{!!!!{!!'{a!>i>}}}},{{{<{!!!>!>},<e\"}u{<u\"\"eu>,<{!>,<o\"!>u>}}}},{{<i!>ou<<<!!!!!>,<!!!!!>!>},<>,{<!!>}},{{{<o!>},<,ai\"!!!>{!!,!!{u!>,<o!>!>},<!!!>,<>,{{<\"!!!>},<!!ue!>!!!'!!!>\"u>}}},{{}},{<!!u'e<!!<u<<!>},<\"ui}e!!\"!>>}},{{<}a>}},{{<,\"!>!!!>\"}>},<i!>},<!><'\"e<!\"e,!}\"{',\"'\">}}}},{{{},{{},{<,{{>}}},{{{<{!!}aua\"\"o!!a!!eoe,{>,<ii!!!!!!!e!!<u!!u!!\"!!!>!>},<!>au>}},{{},{{<a!!!>},<!!!!aou'>}},{<\",e>,{<,!!}ou\"'!!!>!!!!ooe>}}}}}},{{{{<!!!!o!><o!!{!'!>,<\"!!!>{}u!>!\",!>>,{<!!'a!\",>}},{{<!!!>!}}!!o!!a!!!>},<!e!!!><o!><>},{<!>,<!u>}}},{{{<o!o!>,<!{!!!>},<e\"!!!>a}!!{{'>},<!!!>},<!>!!!>o!'>},{{<u!!!>},<e!!!>{{\"!>,<i!>,<!!!!!><'!>},<!!!>>}}}},{{{{}},{<!>ooo<!>,<ee<i''>,<u\"<e}<!>''!a{!!!>a}!>,<\">},{}}},{{},{{{<i!!!>e!>},<}<!><!!{o!>},<,!o!>},<>},<i{u{o!!<e!!!e!!i!!!>e,ua!>},<{>}}}}}")
 
 (def day-10-input "34,88,2,222,254,93,150,0,199,255,39,32,137,136,1,167")
@@ -2014,3 +5013,53 @@
 1997 <-> 554
 1998 <-> 168
 1999 <-> 818")
+
+(def day-13-example "0: 3
+1: 2
+4: 4
+6: 4")
+
+(def day-13-input "0: 5
+1: 2
+2: 3
+4: 4
+6: 6
+8: 4
+10: 8
+12: 6
+14: 6
+16: 14
+18: 6
+20: 8
+22: 8
+24: 10
+26: 8
+28: 8
+30: 10
+32: 8
+34: 12
+36: 9
+38: 20
+40: 12
+42: 12
+44: 12
+46: 12
+48: 12
+50: 12
+52: 12
+54: 12
+56: 14
+58: 14
+60: 14
+62: 20
+64: 14
+66: 14
+70: 14
+72: 14
+74: 14
+76: 14
+78: 14
+80: 12
+90: 30
+92: 17
+94: 18")

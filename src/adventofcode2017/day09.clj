@@ -1,7 +1,6 @@
-(ns adventofcode2017.day9
+(ns adventofcode2017.day09
   (:require [clojure.string :as str])
-  (:use adventofcode2017.common
-        adventofcode2017.inputs))
+  (:use adventofcode2017.inputs))
 
 ;;======================================================================
 ;; Day 9. Stream Processing

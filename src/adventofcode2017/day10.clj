@@ -1,7 +1,6 @@
 (ns adventofcode2017.day10
   (:require [clojure.string :as str])
-  (:use adventofcode2017.common
-        adventofcode2017.inputs))
+  (:use adventofcode2017.inputs))
 
 ;;======================================================================
 ;; Day 10. Knot Hash
