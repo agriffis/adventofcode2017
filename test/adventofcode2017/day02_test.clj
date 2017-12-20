@@ -1,6 +1,7 @@
-(ns adventofcode2017.core-test
-  (:require [clojure.test :refer :all]
-            [adventofcode2017.day02 :refer :all]))
+(ns adventofcode2017.day02-test
+  (:use clojure.test
+        adventofcode2017.day02
+        adventofcode2017.inputs))
 
 (deftest test-day-2a
   (testing "Day 2. Corruption Checksum - Part 1"

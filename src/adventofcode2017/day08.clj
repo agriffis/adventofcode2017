@@ -6,6 +6,10 @@
 ;; Day 8. I Heard You Like Registers
 ;;======================================================================
 
+(defn parse-int
+  [s]
+  (. Integer parseInt (str s)))
+
 (defn parse-lines
   [input]
   (->> input

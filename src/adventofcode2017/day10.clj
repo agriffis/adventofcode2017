@@ -6,6 +6,10 @@
 ;; Day 10. Knot Hash
 ;;======================================================================
 
+(defn parse-int
+  [s]
+  (. Integer parseInt (str s)))
+
 (defn- knot-hashes
   ([n lengths]
    (knot-hashes (vec (range n)) 0 0 lengths))

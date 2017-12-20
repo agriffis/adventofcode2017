@@ -1,4 +1,4 @@
-(ns adventofcode2017.day7
+(ns adventofcode2017.day07
   (:require [clojure.string :as str])
   (:use clojure.walk
         adventofcode2017.inputs))
@@ -8,6 +8,10 @@
 ;;======================================================================
 
 (defn dbg [s] (prn s) s)
+
+(defn parse-int
+  [s]
+  (. Integer parseInt (str s)))
 
 (defn- inc-nil [x] (if x (inc x) 1))
 

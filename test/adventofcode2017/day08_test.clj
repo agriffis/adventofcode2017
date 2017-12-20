@@ -1,3 +1,3 @@
-(ns adventofcode2017.core-test
-  (:require [clojure.test :refer :all]
-            [adventofcode2017.day08 :refer :all]))
+(ns adventofcode2017.day08-test
+  (:use clojure.test
+        adventofcode2017.day08))
