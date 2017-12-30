@@ -20,13 +20,8 @@
 
 (defn- run-program
   [line input]
-  (loop [line line
-         program (str/split input #",")]
-    (let [ins (first program)]
-      (if-not ins
-        line
-        (recur ((dispatch (first ins)) line (subs ins 1))
-               (rest program))))))
+  (let [program (str/split input #",")]
+    (reduce #((dispatch (first %2)) % (subs %2 1)) line program)))
 
 (def input (slurp "resources/day16.txt"))
 
