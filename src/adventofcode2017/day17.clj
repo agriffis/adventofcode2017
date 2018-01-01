@@ -1,23 +1,35 @@
-(ns adventofcode2017.day17
-  (:require [clojure.string :as str]
-            [clojure.data.finger-tree :as ft]))
+(ns adventofcode2017.day17)
 
-(defn ft-insert-at
-  [dl index & args]
-  (if (>= index (count dl))
-    (apply conj dl args)  ; ft-split-at returns mid=nil which is inconvenient
-    (let [[left mid right] (ft/ft-split-at dl index)]
-      (ft/ft-concat (conj (into left args) mid) right))))
+(defn insert-at
+  "Insert args into collection at index. Return a lazy seq."
+  [coll index & args]
+  (let [[left right] (split-at index coll)]
+    (concat left (apply conj right (reverse args)))))
+
+(defn next-buffer
+  "Calculate the next buffer state given an input state, step and number to
+  insert. Returns a vector of [buffer pos]."
+  [step [buffer pos] n]
+  (let [next-pos (inc (mod (+ pos step) n))]
+    [(insert-at buffer next-pos n) next-pos]))
 
 (defn calc-buffer
-  [step times]
+  "Calculate the resulting buffer, given a transformation function and
+  number of times to run."
+  [fun times]
   (first
-    (reduce (fn [[buffer pos] n]
-              (let [pos (inc (mod (+ pos step) (count buffer)))]
-                [(ft-insert-at buffer pos n) pos]))
-            [(ft/counted-double-list 0) 0] (range 1 (inc times)))))
+    (reduce fun [[0] 0] (range 1 (inc times)))))
 
 (defn day-17a []
-  (first
-    (drop-while #(not= (nth % 3) 2017)
-                (partition-all 7 1 (calc-buffer 343 2017)))))
+  (first (->> (calc-buffer (partial next-buffer 343) 2017)
+              (partition-all 7 1)
+              (drop-while #(not= (nth % 3) 2017)))))  ;=> (1330 1759 1626 2017 1914 1443 484)
+
+(defn next-buffer'
+  "Calculate the first two elements of the next buffer state."
+  [& args]
+  (let [[buffer pos] (apply next-buffer args)]
+    [(take 2 buffer) pos]))
+
+(defn day-17b []
+  (calc-buffer (partial next-buffer' 343) 50000000))  ;=> (0 41797835) in 103 seconds
