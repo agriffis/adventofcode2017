@@ -21,9 +21,8 @@
     (reduce fun [[0] 0] (range 1 (inc times)))))
 
 (defn day-17a []
-  (first (->> (calc-buffer (partial next-buffer 343) 2017)
-              (partition-all 7 1)
-              (drop-while #(not= (nth % 3) 2017)))))  ;=> (1330 1759 1626 2017 1914 1443 484)
+  (second (->> (calc-buffer (partial next-buffer 343) 2017)
+               (drop-while #(not= % 2017)))))  ;=> 1914
 
 (defn next-buffer'
   "Calculate the first two elements of the next buffer state."
