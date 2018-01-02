@@ -1,4 +1,4 @@
-(ns adventofcode2017.day18
+(ns adventofcode2017.day18a
   (:require [clojure.string :as str]))
 
 (def input (slurp "resources/day18.txt"))
@@ -28,3 +28,4 @@
        (lazy-seq (cons next-regs (run-program program next-regs)))))))
 
 (defn day-18a [] (first (filter :rcv (run-program input))))
+;=> {:ip 26, "i" 126, "a" 2147483647, "p" 1666308600, "b" 8600, :snd 8600, "f" 0, :rcv 8600}
