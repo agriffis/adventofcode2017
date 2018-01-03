@@ -8,14 +8,14 @@
   (let [[i a b] (re-seq #"\S+" ins)
         [va vb] (map #(try (Integer/parseInt %)
                            (catch NumberFormatException e (regs % 0))) [a b])
-        {:keys [blk cnt snd rcv]} regs]
+        {:keys [ip blk cnt snd rcv]} regs]
     (merge (update regs :ip inc)
            (case i
              "set" {a vb}
              "add" {a (+ va vb)}
              "mul" {a (* va vb)}
              "mod" {a (mod va vb)}
-             "jgz" (when (pos? va) {:ip (+ (:ip regs) vb)})
+             "jgz" (when (pos? va) {:ip (+ ip vb)})
              "snd" (let [p (promise)]
                      (swap! blk dec)
                      (deliver snd [va p])
