@@ -3,14 +3,12 @@
 
 (def input (slurp "resources/day18.txt"))
 
-(def blocked (atom 0))
-
 (defn dispatch
   [regs ins]
   (let [[i a b] (re-seq #"\S+" ins)
         [va vb] (map #(try (Integer/parseInt %)
                            (catch NumberFormatException e (regs % 0))) [a b])
-        {:keys [cnt snd rcv]} regs]
+        {:keys [blk cnt snd rcv]} regs]
     (merge (update regs :ip inc)
            (case i
              "set" {a vb}
@@ -19,10 +17,10 @@
              "mod" {a (mod va vb)}
              "jgz" (when (pos? va) {:ip (+ (:ip regs) vb)})
              "snd" (let [p (promise)]
-                     (swap! blocked dec)
+                     (swap! blk dec)
                      (deliver snd [va p])
                      {:snd p})
-             "rcv" (if (= cnt (swap! blocked inc))
+             "rcv" (if (= cnt (swap! blk inc))
                      {:done true}
                      (let [[v p] @rcv]
                        (if v {a v :rcv p} {:done true})))))))
@@ -39,11 +37,13 @@
 (defn run-futures
   [input funs]
   (let [program (vec (str/split input #"\n"))
-        mailboxes (repeatedly promise)]
+        mailboxes (repeatedly promise)
+        blocked (atom 0)]
     (map-indexed
      (fn [pid fun]
        (future
          (let [regs {:ip 0
+                     :blk blocked
                      :cnt (count funs)
                      :rcv (nth mailboxes pid)
                      :snd (nth mailboxes (mod (inc pid) (count funs)))
@@ -57,3 +57,4 @@
    (let [funs [dorun
                #(dec (count (dedupe (map :snd %))))]]
      (map deref (run-futures input funs)))))
+;=> (nil 7239)
