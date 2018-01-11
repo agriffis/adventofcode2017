@@ -1,35 +1,17 @@
 (ns adventofcode2017.day08
-  (:require [clojure.string :as str])
-  (:use adventofcode2017.inputs))
+  (:require [clojure.string :as str]))
 
-;;======================================================================
-;; Day 8. I Heard You Like Registers
-;;======================================================================
-
-(defn parse-int
-  [s]
-  (. Integer parseInt (str s)))
-
-(defn parse-lines
-  [input]
-  (->> input
-       (#(str/split % #"\n"))
-       (map str/trim)
-       (filter #(not (str/blank? %)))))
+(def input (slurp "resources/day08.txt"))
 
 (defn parse-ins
   [line]
-  (let [[reg op val _ test-reg test-op test-val] (str/split line #"\s+")]
+  (let [[reg op val _ test-reg test-op test-val] (re-seq #"\S+" line)]
     {:reg reg
      :op op
-     :val (parse-int val)
+     :val (Integer/parseInt val)
      :test-reg test-reg
      :test-op test-op
-     :test-val (parse-int test-val)}))
-
-(defn parse-input
-  [input]
-  (map parse-ins (parse-lines input)))
+     :test-val (Integer/parseInt test-val)}))
 
 (def ops
   {"inc" +
@@ -49,32 +31,30 @@
   ([instructions] (run-program {} instructions))
   ([regs instructions]
    (lazy-seq
-     (when-let [ins (first instructions)]
-       (let [new-regs (if (run-op (:test-op ins)
-                                  (:test-reg ins)
-                                  (:test-val ins) regs)
-                        (assoc regs (:reg ins) (run-op (:op ins)
-                                                       (:reg ins)
-                                                       (:val ins) regs))
-                        regs)]
-         (cons new-regs (run-program new-regs (rest instructions))))))))
+    (when-let [ins (first instructions)]
+      (let [new-regs (if (run-op (:test-op ins)
+                                 (:test-reg ins)
+                                 (:test-val ins) regs)
+                       (assoc regs (:reg ins) (run-op (:op ins)
+                                                      (:reg ins)
+                                                      (:val ins) regs))
+                       regs)]
+        (cons new-regs (run-program new-regs (rest instructions))))))))
 
-(defn day-8a
-  ([input]
-   (->> input
-        parse-input
-        run-program
-        last
-        vals
-        (apply max)))
-  ([] (day-8a day-8-input)))
+(defn part1
+  [input]
+  (->> (str/split-lines input)
+       (map parse-ins)
+       run-program
+       last
+       vals
+       (apply max)))
 
-(defn day-8b
-  ([input]
-   (->> input
-        parse-input
-        run-program
-        (map vals)
-        flatten
-        (apply max)))
-  ([] (day-8b day-8-input)))
+(defn part2
+  [input]
+  (->> (str/split-lines input)
+       (map parse-ins)
+       run-program
+       (map vals)
+       flatten
+       (apply max)))
