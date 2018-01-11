@@ -1,9 +1,6 @@
-(ns adventofcode2017.day06
-  (:use adventofcode2017.inputs))
+(ns adventofcode2017.day06)
 
-;;======================================================================
-;; Day 6. Memory Reallocation
-;;======================================================================
+(def input (slurp "resources/day06.txt"))
 
 (defn bank-with-most
   [banks]
@@ -25,6 +22,8 @@
   (rotate-banks banks (- (count banks) index 2)))
 
 (defn redistribute-bank
+  ([banks]
+   (redistribute-bank banks (bank-with-most banks)))
   ([banks index]
    (let [value (get banks index)
          n (count banks)]
@@ -33,9 +32,7 @@
          (rotate-banks index)
          (#(map-indexed (fn [i v] (+ v (quot value n)
                                      (if (< i (mod value n)) 1 0))) %))
-         (unrotate-banks index))))
-  ([banks]
-   (redistribute-bank banks (bank-with-most banks))))
+         (unrotate-banks index)))))
 
 (defn -while-unique
   ([s]
@@ -54,15 +51,13 @@
   [s]
   (second (last (-while-unique s))))
 
-(defn day-6a
-  "Day 6. Memory Reallocation - Part 1"
-  ([input]
-   (count (take-while-unique (iterate redistribute-bank input))))
-  ([] (day-6a day-6-input)))
+(defn part1
+  [input]
+  (let [banks (mapv #(Integer/parseInt %) (re-seq #"\S+" input))]
+    (count (take-while-unique (iterate redistribute-bank banks)))))
 
-(defn day-6b
-  "Day 6. Memory Reallocation - Part 2"
-  ([input]
-   (count (take-while-unique
-            (drop-while-unique (iterate redistribute-bank input)))))
-  ([] (day-6b day-6-input)))
+(defn part2
+  [input]
+  (let [banks (mapv #(Integer/parseInt %) (re-seq #"\S+" input))]
+    (count (take-while-unique
+            (drop-while-unique (iterate redistribute-bank banks))))))
