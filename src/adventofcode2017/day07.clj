@@ -1,19 +1,16 @@
 (ns adventofcode2017.day07
-  (:require [clojure.string :as str])
-  (:use clojure.walk
-        adventofcode2017.inputs))
+  (:require [clojure.string :as str]
+            [clojure.walk :refer :all]))
 
-;;======================================================================
-;; Day 7. Recursive Circus
-;;======================================================================
+(def input (slurp "resources/day07.txt"))
 
 (defn dbg [s] (prn s) s)
 
 (defn parse-int
   [s]
-  (. Integer parseInt (str s)))
+  (Integer/parseInt (str s)))
 
-(defn- inc-nil [x] (if x (inc x) 1))
+(defn- inc-nil [x] (inc (or x 0)))
 
 (defn- word-counts
   ([s] (word-counts {} s))
@@ -23,11 +20,10 @@
      (recur (update-in words [(first s)] inc-nil) (rest s)))))
 
 ;; grep -Ewo '[a-z]+' | sort | uniq -u
-(defn day-7a
-  ([input]
-   (let [words (re-seq #"[^\d\W]+" input)]
-     (filter #(= (second %) 1) (word-counts words))))
-  ([] (day-7a day-7-input)))
+(defn part1
+  [input]
+  (let [words (re-seq #"[^\d\W]+" input)]
+    (filter #(= (second %) 1) (word-counts words))))
 
 (defn- ->node
   [name weight]
@@ -43,8 +39,7 @@
 
 (defn- parse-adj-map
   [input]
-  (->> input
-       (#(str/split % #"\n"))
+  (->> (str/split-lines input)
        (filter #(.contains % "->"))
        (map #(re-seq #"[a-z]+" %))
        (map #(vector (first %) (rest %)))
@@ -65,12 +60,12 @@
   (->branch (get nodes name)
             (map #(->tree % nodes adj-map) (get adj-map name))))
 
-(defn day-7b
-  ([input]
+(defn part2
+  [input]
    (let [nodes (parse-nodes input)
          adj-map (parse-adj-map input)
          root (find-root adj-map)
-         tree (->tree nodes adj-map root)]
+         tree (->tree root nodes adj-map)]
      (->> tree
           (postwalk (fn [node]
                       (if-let [w (:weight node)]
@@ -84,5 +79,4 @@
 ;;        (map #(vec (map :sum (:children %))))
 ;;        (filter #(< 1 (count (into #{} %))))
           )))
-)
 
