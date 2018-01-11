@@ -1,33 +1,26 @@
 (ns adventofcode2017.day04
-  (:require [clojure.string :as str])
-  (:use adventofcode2017.inputs))
+  (:require [clojure.string :as str]))
 
-;;======================================================================
-;; Day 4. High-Entropy Passphrases
-;;======================================================================
+(def input (slurp "resources/day04.txt"))
 
 (defn valid-passphrase?
   [p]
   (let [ps (into #{} p)]
     (= (count p) (count ps))))
 
-(defn day-4a
-  "Day 4. High-Entropy Passphrases - Part 1"
-  ([input]
-   (let [pp (map #(str/split % #"\s+")
-                 (str/split input #"\n\s*"))]
-     (count (filter valid-passphrase? pp))))
-  ([] (day-4a day-4-input)))
+(defn part1
+  [input]
+  (let [lines (str/split-lines input)
+        pp (map #(re-seq #"\S+" %) lines)]
+    (count (filter valid-passphrase? pp))))
 
 (defn sort-words
   [p]
   (map #(apply str (sort %)) p))
 
-(defn day-4b
-  "Day 4. High-Entropy Passphrases - Part 2"
-  ([input]
-   (let [pp (map #(str/split % #"\s+")
-                 (str/split input #"\n\s*"))
-         pps (map sort-words pp)]
-     (count (filter valid-passphrase? pps))))
-  ([] (day-4b day-4-input)))
+(defn part2
+  [input]
+  (let [lines (str/split-lines input)
+        pp (map #(re-seq #"\S+" %) lines)
+        pps (map sort-words pp)]
+    (count (filter valid-passphrase? pps))))

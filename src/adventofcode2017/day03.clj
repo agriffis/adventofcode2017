@@ -1,9 +1,6 @@
-(ns adventofcode2017.day03
-  (:use adventofcode2017.inputs))
+(ns adventofcode2017.day03)
 
-;;======================================================================
-;; Day 3. Spiral Memory
-;;======================================================================
+(def input 289326)
 
 ;; An = An-1 + (An-1 - An-2) + 8
 (defn spiral
@@ -36,13 +33,12 @@
            v (mod around edge)]
        (Math/abs (- v (/ edge 2)))))))
 
-(defn day-3a
+(defn part1
   "Day 3. Spiral Memory - Part 1"
-  ([input]
-   (let [[ring base] (spiral-ring input)
-         rung (spiral-rung input ring base)]
-     (+ ring rung)))
-  ([] (day-3a day-3-input)))
+  [input]
+  (let [[ring base] (spiral-ring input)
+        rung (spiral-rung input ring base)]
+    (+ ring rung)))
 
 (defn spiral-sum
   [grid x y]
@@ -65,11 +61,10 @@
                                 (pos? dx) [(dec dx) dy]
                                 :else [0 (dec dy)])]
      (lazy-seq
-       (cons value (spiral-sums new-grid new-x new-y new-edge
-                                new-dx new-dy new-dir))))))
+      (cons value (spiral-sums new-grid new-x new-y new-edge
+                               new-dx new-dy new-dir))))))
 
-(defn day-3b
+(defn part2
   "Day 3. Spiral Memory - Part 2"
-  ([input]
-   (first (filter #(< input %) (spiral-sums))))
-  ([] (day-3b day-3-input)))
+  [input]
+  (first (filter #(< input %) (spiral-sums))))

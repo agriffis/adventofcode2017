@@ -1,30 +1,22 @@
 (ns adventofcode2017.day02
-  (:require [clojure.string :as str])
-  (:use adventofcode2017.inputs))
+  (:require [clojure.string :as str]))
 
-;;======================================================================
-;; Day 2. Corruption Checksum
-;;======================================================================
+(def input (slurp "resources/day02.txt"))
 
 (defn parse-int
   [s]
-  (. Integer parseInt (str s)))
+  (Integer/parseInt (str s)))
 
 (defn- parse-spreadsheet
   [input]
-  (->> input
-       str/trim
-       (#(str/split % #"\n"))
-       (map str/trim)
-       (map #(str/split % #"\s+"))
+  (->> (str/split-lines input)
+       (map #(re-seq #"\d+" %))
        (map #(map parse-int %))))
 
-(defn day-2a
-  "Day 2. Corruption Checksum - Part 1"
-  ([input]
-   (let [rows (parse-spreadsheet input)]
-     (apply + (map #(- (apply max %) (apply min %)) rows))))
-  ([] (day-2a day-2-input)))
+(defn part1
+  [input]
+  (let [rows (parse-spreadsheet input)]
+    (apply + (map #(- (apply max %) (apply min %)) rows))))
 
 (defn whittle
   [s] (map #(identity %2) s (iterate rest s)))
@@ -37,10 +29,8 @@
                           :when (zero? (mod divisor dividend))]
                       (/ divisor dividend))))))
 
-(defn day-2b
-  "Day 2. Corruption Checksum - Part 2"
-  ([input]
-   (let [rows (parse-spreadsheet input)
-         quotients (map divide-evenly rows)]
-     (apply + quotients)))
-  ([] (day-2b day-2-input)))
+(defn part2
+  [input]
+  (let [rows (parse-spreadsheet input)
+             quotients (map divide-evenly rows)]
+    (apply + quotients)))
