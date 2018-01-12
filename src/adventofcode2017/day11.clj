@@ -1,11 +1,8 @@
 (ns adventofcode2017.day11
-  (:require [clojure.string :as str])
-  (:use adventofcode2017.inputs
-        clojure.walk))
+  (:require [clojure.string :as str]
+            [clojure.walk :refer :all]))
 
-;;======================================================================
-;; Day 11. Hex Ed
-;;======================================================================
+(def input (slurp "resources/day11.txt"))
 
 (def opposites [[:n :s]
                 [:nw :se]
@@ -65,13 +62,12 @@
       cut-corners
       cancel-opposites))
 
-(defn day-11a
+(defn part1
   "Length of shortest path to final destination."
-  ([input]
-   (let [steps (str/split input #",")
-         step-counts (keywordize-keys (frequencies steps))]
-     (apply + (vals (optimize-steps step-counts)))))
-  ([] (day-11a day-11-input)))
+  [input]
+  (let [steps (str/split input #",")
+        step-counts (keywordize-keys (frequencies steps))]
+    (apply + (vals (optimize-steps step-counts)))))
 
 (defn- take-a-step
   "Take a step in any direction, update and optimize the step-counts map.
@@ -81,11 +77,10 @@
       (update step inc)
       (optimize-steps)))
 
-(defn day-11b
+(defn part2
   "Find the max distance wandered from starting point, incrementally by
    mapping over steps."
-  ([input]
-   (let [steps (map keyword (str/split input #","))]
-     (apply max (map #(apply + (vals %))
-                     (reductions take-a-step {} steps)))))
-  ([] (day-11b day-11-input)))
+  [input]
+  (let [steps (map keyword (str/split input #","))]
+    (apply max (map #(apply + (vals %))
+                    (reductions take-a-step {} steps)))))

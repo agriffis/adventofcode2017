@@ -1,10 +1,9 @@
 (ns adventofcode2017.day09
-  (:require [clojure.string :as str])
-  (:use adventofcode2017.inputs))
+  (:require [clojure.string :as str]))
 
-;;======================================================================
-;; Day 9. Stream Processing
-;;======================================================================
+(def input (slurp "resources/day09.txt"))
+
+(def examples ["{{<!>},{<!>},{<!>},{<a>}}"])
 
 (def garbage ["<>"
               "<random characters>"
@@ -14,27 +13,22 @@
               "<!!!>>"
               "<{o\"i!a,<{i<a>"])
 
-(def examples ["{{<!>},{<!>},{<!>},{<a>}}"])
-
 (defn remove-garbage
   [input]
   (str/replace input #"((?:!.|[^<])*)<(?:!.|[^>])*>" "$1"))
 
 (defn total-score
-  ([input]
-   (total-score (str/replace input #"[^{}]" "") 0 0))
-  ([input level score]
+  [input]
+  (loop [input (str/replace input #"[^{}]" "")
+         level 0
+         score 0]
    (if (empty? input)
      score
-     (let [next-score (if (= (first input) \}) (+ score level) score)
-           next-level (if (= (first input) \{) (inc level) (dec level))
-           next-input (rest input)]
-       (total-score next-input next-level next-score)))))
+     (recur (rest input)
+            (if (= (first input) \{) (inc level) (dec level))
+            (if (= (first input) \}) (+ score level) score)))))
 
-(defn day-9a
-  ([input]
-   (total-score (remove-garbage input)))
-  ([] (day-9a day-9-input)))
+(defn part1 [input] (total-score (remove-garbage input)))
 
 (defn keep-garbage-no-angles
   [input]
@@ -44,10 +38,9 @@
   [input]
   (str/replace input #"!." ""))
 
-(defn day-9b
-  ([input]
-   (-> input
-       keep-garbage-no-angles
-       drop-canceled
-       count))
-  ([] (day-9b day-9-input)))
+(defn part2
+  [input]
+  (-> input
+      keep-garbage-no-angles
+      drop-canceled
+      count))
