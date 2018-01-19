@@ -1,37 +1,22 @@
 (ns adventofcode2017.day12
-  (:require [clojure.string :as str])
-  (:use adventofcode2017.inputs))
+  (:require [clojure.string :as str]))
 
-;;======================================================================
-;; Day 12. Digital Plumber
-;;======================================================================
+(def input (slurp "resources/day12.txt"))
 
 (defn- dbg [s] (prn s) s)
-
-(defn- parse-lines
-  "Parse an input string into neat lines."
-  [input]
-  (->> (str/split input #"\n")
-       (map str/trim)
-       (filter not-empty)))
-
-(defn- parse-int
-  "Parse string to integer."
-  [x]
-  (. Integer parseInt (str x)))
 
 (defn- parse-node
   "Parse a line of input into a node for an adjacency list.
    The node format is [k (children...)]"
   [line]
   (->> (re-seq #"\d+" line)
-       (map parse-int)
+       (map #(Integer/parseInt %))
        (#(vector (first %) (rest %)))))
 
 (defn- parse-graph
   "Parse an input string into an adjacency list stored as a map."
   [input]
-  (into {} (map parse-node (parse-lines input))))
+  (into {} (map parse-node (str/split-lines input))))
 
 (defn- graph-seq
   "Return a lazy sequence of nodes connected to k."
@@ -53,16 +38,12 @@
        (lazy-seq
          (cons group (graph-groups graph visited)))))))
 
-(defn day-12a
-  "How many programs in group 0?"
-  ([input]
-   (let [graph (parse-graph input)]
-     (count (dbg (graph-seq graph 0)))))
-  ([] (day-12a day-12-input)))
+(defn part1
+  [input]
+  (let [graph (parse-graph input)]
+    (count (dbg (graph-seq graph 0)))))
 
-(defn day-12b
-  "How many groups in the graph?"
-  ([input]
-   (let [graph (parse-graph input)]
-     (count (dbg (graph-groups graph)))))
-  ([] (day-12b day-12-input)))
+(defn part2
+  [input]
+  (let [graph (parse-graph input)]
+    (count (dbg (graph-groups graph)))))
