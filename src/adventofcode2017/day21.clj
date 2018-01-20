@@ -4,25 +4,26 @@
 
 (def input (str/split-lines (slurp "resources/day21.txt")))
 
-(defn ->tile [s] (mapv vec (str/split s #"/")))
+(defn parse-tile [s]
+  (mapv vec (str/split s #"/")))
 
-(def grid (->tile ".#./..#/###"))
+(def grid (parse-tile ".#./..#/###"))
 
-(defn rotate [tile] (->> tile (map reverse) (apply mapv vector)))
+(defn rotate [tile]
+  (->> tile (map reverse) (apply mapv vector)))
 
-(defn flip [tile] (->> tile (map reverse) (mapv vec)))
+(defn flip [tile] 
+  (->> tile (map reverse) (mapv vec)))
 
-(defn ->rules [line]
-  "Read a line to produce a map of tile patterns (rotated, flipped) to
-  resulting tile."
-  (let [[patt result] (map ->tile (str/split line #" => "))]
+(defn parse-rule [line]
+  (let [[patt result] (map parse-tile (str/split line #" => "))]
     (into {} (map vector
                   (->> (iterate rotate patt)
                        (take 4)
                        (mapcat #(vector % (flip %))))
                   (repeat result)))))
 
-(def rules (reduce merge (map ->rules input)))
+(def rules (reduce merge (map parse-rule input)))
 
 (defn get-tile [grid x y z]
   (mapv #(subvec % x (+ x z))
@@ -36,7 +37,8 @@
       (get-tile grid x y z))))
 
 (defn assemble [tiles]
-  (->> (partition (math/sqrt (count tiles)) tiles)
+  (->> tiles
+       (partition (math/sqrt (count tiles)))
        (mapcat #(apply map (comp vec concat) %))
        vec))
 
