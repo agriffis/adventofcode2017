@@ -13,7 +13,7 @@
 (defn flip [tile] (->> tile (map reverse) (mapv vec)))
 
 (defn ->rules [line]
-  "Read a line to produce a hash of tile patterns (rotated, flipped) to
+  "Read a line to produce a map of tile patterns (rotated, flipped) to
   resulting tile."
   (let [[patt result] (map ->tile (str/split line #" => "))]
     (into {} (map vector
