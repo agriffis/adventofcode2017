@@ -1,5 +1,6 @@
 (ns adventofcode2017.day21
-  (:require [clojure.string :as str]))
+  (:require [clojure.math.numeric-tower :as math]
+            [clojure.string :as str]))
 
 (def input (str/split-lines (slurp "resources/day21.txt")))
 
@@ -14,8 +15,7 @@
 (defn ->rules [line]
   "Read a line to produce a hash of tile patterns (rotated, flipped) to
   resulting tile."
-  (let [[patt result] (->> (str/split line #" => ")
-                           (map ->tile))]
+  (let [[patt result] (map ->tile (str/split line #" => "))]
     (into {} (map vector
                   (->> (iterate rotate patt)
                        (take 4)
@@ -24,22 +24,24 @@
 
 (def rules (reduce merge (map ->rules input)))
 
-(defn get-tile [grid x y size]
-  (mapv #(subvec % x (+ x size))
-        (subvec grid y (+ y size))))
+(defn get-tile [grid x y z]
+  (mapv #(subvec % x (+ x z))
+        (subvec grid y (+ y z))))
 
-(defn put-tile [grid y tile]
-  (mapv #(into % %2)
-        (concat grid (repeat []))
-        (concat (repeat y []) tile)))
+(defn disassemble [grid]
+  (let [n (count grid)
+        z (if (even? n) 2 3)
+        r (range 0 n z)]
+    (for [y r x r]
+      (get-tile grid x y z))))
+
+(defn assemble [tiles]
+  (->> (partition (math/sqrt (count tiles)) tiles)
+       (mapcat #(apply map (comp vec concat) %))
+       vec))
 
 (defn enhance [grid]
-  (let [size (if (even? (count grid)) 2 3)]
-    (->> (for [y (range 0 (count grid) size)
-               x (range 0 (count grid) size)]
-           [y (get-tile grid x y size)])
-         (map (fn [[y tile]] [(* (/ y size) (inc size)) (get rules tile)]))
-         (reduce (fn [grid [y tile]] (put-tile grid y tile)) []))))
+  (->> grid disassemble (map rules) assemble))
 
 (defn part1 []
   (->> (nth (iterate enhance grid) 5)

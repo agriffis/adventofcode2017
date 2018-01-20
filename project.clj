@@ -3,5 +3,6 @@
   :url "http://adventofcode.com/"
   :license {:name "Public Domain"
             :url "http://unlicense.org"}
-  :dependencies [[org.clojure/clojure "1.8.0"]]
+  :dependencies [[org.clojure/clojure "1.8.0"]
+                 [org.clojure/math.numeric-tower "0.0.4"]]
   :test-paths ["src" "test"])
