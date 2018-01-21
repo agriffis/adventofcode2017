@@ -17,11 +17,10 @@
 
 (defn parse-rule [line]
   (let [[patt result] (map parse-tile (str/split line #" => "))]
-    (into {} (map vector
-                  (->> (iterate rotate patt)
-                       (take 4)
-                       (mapcat #(vector % (flip %))))
-                  (repeat result)))))
+    (zipmap (->> (iterate rotate patt)
+                 (take 4)
+                 (mapcat #(vector % (flip %))))
+            (repeat result))))
 
 (def rules (reduce merge (map parse-rule input)))
 
